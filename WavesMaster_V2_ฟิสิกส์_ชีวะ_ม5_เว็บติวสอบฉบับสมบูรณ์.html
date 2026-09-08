@@ -1,0 +1,3360 @@
+<!DOCTYPE html>
+<html lang="th" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>WAVES MASTER PRO: ติวเข้มฟิสิกส์ & วิทยาศาสตร์ ม.5 ฉบับสมบูรณ์ 100%</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Prompt, Sarabun, Mali, Itim, Chakra Petch, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Itim&family=JetBrains+Mono:wght@400;600;700&family=Mali:ital,wght@0,400;0,600;0,700;1,400&family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- KaTeX for crisp Math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            prompt: ['Prompt', 'sans-serif'],
+            sarabun: ['Sarabun', 'sans-serif'],
+            hand: ['Mali', 'Itim', 'cursive'],
+            display: ['Chakra Petch', 'Prompt', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+
+    /* Dark Theme (Default) */
+    .dark body { background-color: #090d16; color: #f3f4f6; }
+    .dark .glass-nav {
+      background: rgba(9, 13, 22, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .dark .glass-card {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .dark .card-subtle { background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.05); }
+
+    /* StudyGram Pastel Light Theme */
+    body:not(.dark) { background-color: #f4f6f3; color: #1f2937; }
+    body:not(.dark) .glass-nav {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    body:not(.dark) .glass-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    body:not(.dark) .card-subtle { background: #f8fafc; border: 1px solid #edf2f7; }
+
+    /* Grid Paper Pattern for Notes & Canvas */
+    .grid-paper {
+      background-color: #fffefb;
+      background-image: 
+        linear-gradient(to right, rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .dark .grid-paper {
+      background-color: #0b1120;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* Washi Tape Accent */
+    .washi-tape {
+      background: rgba(52, 211, 153, 0.35);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    /* 3D Flip Card Effect */
+    .perspective-1000 { perspective: 1000px; }
+    .transform-style-3d { transform-style: preserve-3d; }
+    .backface-hidden { backface-visibility: hidden; }
+    .rotate-y-180 { transform: rotateY(180deg); }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .glass-card { box-shadow: none !important; border: 1px solid #ddd !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-prompt selection:bg-emerald-500 selection:text-white transition-colors duration-300">
+
+  <!-- TOP NAVBAR -->
+  <header class="sticky top-0 z-50 glass-nav no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold font-display text-xl shadow-md shadow-emerald-500/20">
+            🌿
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display font-bold text-lg sm:text-xl tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500">WAVES MASTER</span>
+              <span class="px-2 py-0.5 text-[10px] font-bold font-mono tracking-widest bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full">v2.0 PRO</span>
+            </div>
+            <p class="text-[11px] text-gray-500 dark:text-gray-400 hidden sm:block">ติวเข้มวิทยาศาสตร์ & ฟิสิกส์ ม.5 | คลื่นกล & การสังเคราะห์ด้วยแสง</p>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="hidden md:flex items-center gap-1.5 text-xs font-medium">
+          <button onclick="switchTab('arena')" id="nav-arena" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border border-emerald-500/40 shadow-sm">
+            <span>⚡</span>
+            <span>Speed Arena (32 ข้อ)</span>
+          </button>
+          <button onclick="switchTab('lab')" id="nav-lab" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <span>🔬</span>
+            <span>Visual Lab</span>
+          </button>
+          <button onclick="switchTab('canvas')" id="nav-canvas" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <span>✍️</span>
+            <span>กระดานทดเลข (Canvas)</span>
+          </button>
+          <button onclick="switchTab('flashcards')" id="nav-flashcards" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <span>🃏</span>
+            <span>แฟลชการ์ด 3D</span>
+          </button>
+          <button onclick="switchTab('cheatsheet')" id="nav-cheatsheet" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <span>📜</span>
+            <span>คัมภีร์สูตร</span>
+          </button>
+          <button onclick="switchTab('bio')" id="nav-bio" class="nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <span>🍃</span>
+            <span>ชีวะสังเคราะห์แสง</span>
+          </button>
+        </nav>
+
+        <!-- Right Tool Icons -->
+        <div class="flex items-center gap-2">
+          <!-- Theme Toggle -->
+          <button onclick="toggleTheme()" id="theme-toggle-btn" class="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 transition" title="สลับโหมดสี StudyGram / Dark">
+            <span id="theme-icon">🌙</span>
+          </button>
+
+          <!-- Audio Toggle -->
+          <button onclick="toggleAudio()" id="audio-toggle-btn" class="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 transition" title="เปิด/ปิด เสียงสังเคราะห์">
+            <span id="audio-icon">🔊</span>
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <div class="md:hidden relative">
+            <button onclick="toggleMobileMenu()" class="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+              ☰
+            </button>
+            <div id="mobile-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl shadow-xl py-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 z-50 text-xs font-medium space-y-1">
+              <button onclick="switchTab('arena'); toggleMobileMenu();" class="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 flex items-center gap-2">⚡ Speed Arena</button>
+              <button onclick="switchTab('lab'); toggleMobileMenu();" class="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 flex items-center gap-2">🔬 Visual Lab</button>
+              <button onclick="switchTab('canvas'); toggleMobileMenu();" class="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 flex items-center gap-2">✍️ กระดานทดเลข</button>
+              <button onclick="switchTab('flashcards'); toggleMobileMenu();" class="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 flex items-center gap-2">🃏 แฟลชการ์ด 3D</button>
+              <button onclick="switchTab('cheatsheet'); toggleMobileMenu();" class="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 flex items-center gap-2">📜 คัมภีร์สูตร</button>
+              <button onclick="switchTab('bio'); toggleMobileMenu();" class="w-full text-left px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-800 flex items-center gap-2">🍃 ชีวะสังเคราะห์แสง</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: SPEED TEST ARENA -->
+    <!-- ========================================================================= -->
+    <section id="section-arena" class="space-y-6">
+      
+      <!-- Top Control Bar -->
+      <div class="glass-card rounded-2xl p-4 sm:p-6 flex flex-wrap items-center justify-between gap-4 border border-emerald-500/20">
+        
+        <!-- Mode Toggles: Instant Feedback vs Real Exam Simulation -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider">โหมดการทำ:</span>
+            <div class="inline-flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-xs font-medium">
+              <button onclick="setExamMode('instant')" id="mode-instant-btn" class="px-3 py-1.5 rounded-lg transition bg-emerald-500 text-white font-semibold shadow-sm">
+                ✅ ตะลุยโจทย์รายข้อ (เฉลยสดทันที)
+              </button>
+              <button onclick="setExamMode('simulation')" id="mode-sim-btn" class="px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-emerald-500">
+                📝 จำลองสอบจริง (ส่งตรวจรวดเดียว)
+              </button>
+            </div>
+          </div>
+
+          <!-- Timer selection in Simulation mode -->
+          <div id="timer-mode-group" class="flex items-center gap-2">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider">เวลา:</span>
+            <div class="inline-flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-xs font-mono">
+              <button onclick="setTimerDuration(60)" id="timer-60-btn" class="px-2.5 py-1 rounded-lg transition bg-teal-500 text-white font-bold">60s</button>
+              <button onclick="setTimerDuration(30)" id="timer-30-btn" class="px-2.5 py-1 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white">30s (Hardcore)</button>
+              <button onclick="setTimerDuration(0)" id="timer-0-btn" class="px-2.5 py-1 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white">ไม่จับเวลา</button>
+            </div>
+          </div>
+
+          <!-- Category filter -->
+          <div class="flex items-center gap-2">
+            <select id="topic-filter" onchange="changeTopicFilter(this.value)" class="bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-200 text-xs rounded-xl px-3 py-2 focus:ring-1 focus:ring-emerald-500 focus:outline-none">
+              <option value="all">🌟 ทุกหมวดตามพิมพ์เขียว (32 ข้อ)</option>
+              <option value="theory">1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น</option>
+              <option value="calc">2. องค์ประกอบ & คำนวณความเร็วคลื่น</option>
+              <option value="behavior">3. พฤติกรรมคลื่นทั้ง 4 ชนิด</option>
+              <option value="standing">4. คลื่นนิ่ง & การสั่นพ้อง</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Live Score & Timer Displays -->
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <!-- Streak Badge -->
+          <div class="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400">
+            <span>🔥 สตรีค:</span>
+            <span id="streak-counter" class="font-bold text-sm">0</span>
+          </div>
+
+          <!-- Score Badge -->
+          <div class="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400">
+            <span>คะแนน:</span>
+            <span id="score-counter" class="font-bold text-sm">0</span>
+            <span class="opacity-50">/</span>
+            <span id="total-answered-counter">0</span>
+          </div>
+
+          <!-- Countdown Timer Box -->
+          <div id="timer-box" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-900 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 transition-all">
+            <span>⏳</span>
+            <span id="timer-display" class="font-bold text-sm tracking-wider">01:00</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Question Card & Matrix Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+        <!-- Left: Question & Answers (3 Cols) -->
+        <div class="lg:col-span-3 space-y-6">
+
+          <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg">
+            
+            <!-- Question Top Progress Bar -->
+            <div class="w-full bg-gray-200 dark:bg-gray-800 h-1.5 rounded-full overflow-hidden absolute top-0 left-0">
+              <div id="q-progress-bar" class="bg-gradient-to-r from-emerald-500 to-cyan-500 h-full transition-all duration-300" style="width: 3.125%;"></div>
+            </div>
+
+            <!-- Header Badge & Quick Tools -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <div class="flex items-center gap-2">
+                <span id="q-index-badge" class="px-3 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
+                  ข้อที่ 1 / 32
+                </span>
+                <span id="q-cat-badge" class="px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs">
+                  1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น
+                </span>
+                <span id="q-diff-badge" class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono">
+                  ระดับ ปานกลาง
+                </span>
+              </div>
+
+              <!-- Interactive Hint / Cut-Choice Button -->
+              <button onclick="useHint()" id="btn-hint" class="px-3 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/30 text-xs font-medium transition flex items-center gap-1.5 shadow-sm">
+                <span>💡</span>
+                <span>เทคนิคตัดช้อยส์ (Hint)</span>
+              </button>
+            </div>
+
+            <!-- Hint Box (Revealed when clicked) -->
+            <div id="hint-box" class="hidden p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-600/40 text-amber-900 dark:text-amber-200 text-xs font-sarabun leading-relaxed">
+              <div id="hint-content">-- คำใบ้ตัดช้อยส์ --</div>
+            </div>
+
+            <!-- Question Prompt (TH Sarabun for authentic exam feel) -->
+            <div class="text-lg sm:text-xl font-medium text-gray-900 dark:text-gray-100 leading-relaxed font-sarabun" id="question-text">
+              กำลังโหลดข้อสอบ...
+            </div>
+
+            <!-- Choices Container -->
+            <div class="grid grid-cols-1 gap-3 pt-2" id="choices-container">
+              <!-- Choices populated dynamically -->
+            </div>
+
+            <!-- Bottom Action Controls -->
+            <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-800">
+              <button onclick="prevQuestion()" id="btn-prev" class="px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs sm:text-sm font-medium transition flex items-center gap-1.5">
+                <span>←</span>
+                <span>ข้อย้อนหลัง</span>
+              </button>
+
+              <div class="flex items-center gap-3">
+                <!-- Submit Answer Button (for Instant Feedback Mode) -->
+                <button onclick="submitInstantAnswer()" id="btn-instant-submit" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-semibold text-xs sm:text-sm transition shadow-md shadow-emerald-500/20">
+                  🎯 ยืนยันตรวจคำตอบ
+                </button>
+
+                <!-- Next Question Button -->
+                <button onclick="nextQuestion()" id="btn-next" class="px-5 py-2.5 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold text-xs sm:text-sm transition flex items-center gap-1.5">
+                  <span>ข้อถัดไป</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ========================================================================= -->
+          <!-- DUAL-MODE SOLUTIONS & THE TRAP DETECTOR CONTAINER -->
+          <!-- ========================================================================= -->
+          <div id="solution-section" class="hidden space-y-4">
+            
+            <!-- THE TRAP DETECTOR (เรดาร์ดักควาย / สแกนจุดลวงข้อสอบ) -->
+            <div id="trap-box" class="rounded-2xl p-5 bg-gradient-to-r from-rose-50 via-red-50 to-orange-50 dark:from-rose-950/80 dark:via-red-950/70 dark:to-gray-900 border border-rose-300 dark:border-rose-500/40 relative overflow-hidden shadow-sm">
+              <div class="flex items-start gap-3.5">
+                <div class="p-2.5 rounded-xl bg-rose-500/20 text-rose-600 dark:text-rose-400 text-xl flex-shrink-0 animate-pulse">
+                  🚨
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <h4 class="font-display font-bold text-rose-800 dark:text-rose-300 text-sm tracking-wide">THE TRAP DETECTOR (เรดาร์สแกนจุดลวงข้อสอบ!)</h4>
+                    <span class="px-2 py-0.5 text-[10px] uppercase font-bold bg-rose-200 dark:bg-rose-900 text-rose-800 dark:text-rose-200 rounded">จุดที่เด็กตกม้าตาย</span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-rose-900 dark:text-rose-100/90 leading-relaxed font-sarabun" id="trap-text">
+                    -- คำเตือนจุดหลอก --
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- DUAL-MODE SOLUTIONS -->
+            <div class="glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-700 space-y-5 shadow-md">
+              
+              <div class="flex items-center justify-between">
+                <h3 class="font-display font-bold text-base text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                  <span>🎯</span>
+                  <span>ระบบเฉลย 2 ร่าง (Dual-Mode Solutions)</span>
+                </h3>
+                <span class="text-xs text-gray-500 font-mono">วิเคราะห์ลึกซึ้ง 100%</span>
+              </div>
+
+              <!-- RANG 1: SPEED TRICK & CHOICE ELIMINATION -->
+              <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-500/30 space-y-2">
+                <div class="flex items-center justify-between text-xs font-semibold text-amber-800 dark:text-amber-300">
+                  <span class="flex items-center gap-1.5">
+                    <span>⚡</span>
+                    <span>ร่างที่ 1: Speed Trick & เทคนิคการตัดช้อยส์ (10 วินาทีปิดจ็อบ)</span>
+                  </span>
+                  <span class="px-2 py-0.5 rounded bg-amber-200 dark:bg-amber-500/20 text-amber-900 dark:text-amber-200 font-mono text-[10px]">FAST TRACK</span>
+                </div>
+                <div class="text-xs sm:text-sm text-amber-900 dark:text-amber-100 font-sarabun leading-relaxed" id="speed-trick-text">
+                  -- ทริควิธีลัด --
+                </div>
+              </div>
+
+              <!-- RANG 2: FULL MATHEMATICAL PROOF (COLLAPSIBLE) -->
+              <div class="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/60 overflow-hidden">
+                <button onclick="toggleFullSolution()" class="w-full px-4 py-3 flex items-center justify-between text-left text-xs sm:text-sm font-semibold text-teal-700 dark:text-cyan-300 hover:bg-gray-100 dark:hover:bg-gray-800/60 transition">
+                  <span class="flex items-center gap-2">
+                    <span>📐</span>
+                    <span>ร่างที่ 2: วิธีทำแบบจัดเต็ม & พิสูจน์สมการฟิสิกส์ (คลิกเพื่อกาง/หุบ)</span>
+                  </span>
+                  <span id="full-sol-icon" class="text-teal-600 dark:text-cyan-400 transform transition-transform">▼</span>
+                </button>
+                <div id="full-solution-content" class="p-4 pt-2 border-t border-gray-200 dark:border-gray-800 text-xs sm:text-sm text-gray-800 dark:text-gray-300 space-y-3 font-sarabun leading-relaxed bg-white dark:bg-gray-950/40">
+                  <div id="full-solution-text">
+                    -- วิธีทำแบบละเอียด --
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Question Matrix & Navigation (1 Col) -->
+        <div class="space-y-6">
+
+          <!-- 32-Question Matrix Card -->
+          <div class="glass-card rounded-2xl p-5 space-y-4 border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h4 class="font-display font-bold text-sm text-gray-800 dark:text-gray-200 flex items-center gap-1.5">
+                <span>📋</span>
+                <span>ผังข้อสอบ (32 ข้อ)</span>
+              </h4>
+              <button onclick="resetExam()" class="text-[11px] text-gray-500 hover:text-rose-500 transition">
+                ↺ รีเซ็ต
+              </button>
+            </div>
+
+            <!-- Legend -->
+            <div class="grid grid-cols-2 gap-2 text-[11px] text-gray-500 dark:text-gray-400 pb-2 border-b border-gray-200 dark:border-gray-800 font-mono">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-sm bg-emerald-500"></span>
+                <span>ตอบถูก</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-sm bg-rose-500"></span>
+                <span>ตอบผิด</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-sm bg-cyan-500"></span>
+                <span>ข้อปัจจุบัน</span>
+              </div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-sm bg-gray-300 dark:bg-gray-700"></span>
+                <span>ยังไม่ตอบ</span>
+              </div>
+            </div>
+
+            <!-- Matrix Number Grid -->
+            <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-4 gap-2" id="question-matrix">
+              <!-- Populated dynamically -->
+            </div>
+
+            <!-- Submit Final Exam Button (Simulation mode) -->
+            <div class="pt-3 border-t border-gray-200 dark:border-gray-800">
+              <button onclick="submitSimulationExam()" id="btn-submit-exam" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold text-xs tracking-wider uppercase transition shadow-md">
+                📊 ส่งข้อสอบ & ดูรายงานคะแนน
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Study Tip Card -->
+          <div class="glass-card rounded-2xl p-5 border border-emerald-500/20 space-y-2">
+            <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-display font-semibold text-xs">
+              <span>💡</span>
+              <span>กลยุทธ์จำแม่นก่อนทำโจทย์</span>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed font-sarabun">
+              เมื่อเปลี่ยนตัวกลาง: <b>ความถี่ ($f$) ห้ามเปลี่ยน</b>, น้ำลึกไปน้ำตื้น: <b>ความเร็วลด ความยาวคลื่นลด มุมเบนเข้าหาเส้นปกติ</b> และจำไว้เสมอว่า <b>ปลายตรึงแน่นสะท้อนกลับเฟส $180^\circ$</b>!
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: VISUAL LAB (4 SIMULATORS + 3D CHLOROPLAST) -->
+    <!-- ========================================================================= -->
+    <section id="section-lab" class="hidden space-y-6">
+      
+      <!-- Sub-Navigation for Simulators -->
+      <div class="glass-card rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4 border border-emerald-500/20">
+        <div class="flex items-center gap-2 font-display font-bold text-base sm:text-lg text-emerald-600 dark:text-emerald-300">
+          <span>🔬</span>
+          <span>PHYSICS & BIOLOGY VISUAL LAB: ห้องทดลองฟิสิกส์ & ชีวะ 3 มิติ</span>
+        </div>
+        <div class="inline-flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-xs font-medium">
+          <button onclick="switchLabSubTab('trans-long')" id="btn-sublab-1" class="px-3 py-1.5 rounded-lg transition bg-emerald-500 text-white font-semibold">
+            1. คลื่นขวาง vs คลื่นยาว
+          </button>
+          <button onclick="switchLabSubTab('huygens')" id="btn-sublab-2" class="px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white">
+            2. ฮอยเกนส์ & เลี้ยวเบน
+          </button>
+          <button onclick="switchLabSubTab('interference')" id="btn-sublab-3" class="px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white">
+            3. แทรกสอด 2 แหล่งกำเนิด
+          </button>
+          <button onclick="switchLabSubTab('standing')" id="btn-sublab-4" class="px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white">
+            4. คลื่นนิ่งในเชือก
+          </button>
+          <button onclick="switchLabSubTab('chloroplast-3d')" id="btn-sublab-5" class="px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white">
+            5. 3D Chloroplast Viewer
+          </button>
+        </div>
+      </div>
+
+      <!-- SIM 1: Transverse vs Longitudinal Wave -->
+      <div id="sublab-trans-long" class="glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="font-display font-bold text-lg text-gray-900 dark:text-gray-100">การสั่นของอนุภาค: คลื่นตามขวาง (Transverse) vs คลื่นตามยาว (Longitudinal)</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">สังเกตจุดสีแดง: สั่นรอบตำแหน่งสมดุล ไม่ได้เคลื่อนที่ตามคลื่นไปข้างหน้า</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="setWaveType('transverse')" id="btn-wave-trans" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 text-white">คลื่นตามขวาง (สั่นตั้งฉาก)</button>
+            <button onclick="setWaveType('longitudinal')" id="btn-wave-long" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300">คลื่นตามยาว (สั่นขนาน)</button>
+          </div>
+        </div>
+
+        <div class="bg-gray-950 rounded-xl p-3 border border-gray-800 flex flex-col items-center justify-center">
+          <canvas id="canvas-trans-long" width="900" height="260" class="w-full h-auto rounded-lg"></canvas>
+          <div class="w-full flex flex-wrap justify-between px-4 py-2 text-xs font-mono text-emerald-400 border-t border-gray-800 bg-gray-900/50 mt-2">
+            <span>อัตราเร็วคลื่น ($v$): <span id="val-v-disp">20.0</span> m/s</span>
+            <span>ความยาวคลื่น ($\lambda = v/f$): <span id="val-lambda-disp">10.0</span> m</span>
+            <span>ความเร็วสูงสุดอนุภาค ($v_{p,\max} = \omega A$): <span id="val-vp-disp">12.57</span> m/s</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-200 dark:border-gray-800">
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>ความถี่ ($f$):</span>
+              <span id="disp-freq" class="font-mono text-emerald-500 font-bold">2.0 Hz</span>
+            </label>
+            <input type="range" min="0.5" max="5.0" step="0.1" value="2.0" id="slider-freq" oninput="updateTransLongParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>แอมพลิจูด ($A$):</span>
+              <span id="disp-amp" class="font-mono text-emerald-500 font-bold">30 px</span>
+            </label>
+            <input type="range" min="10" max="60" step="5" value="30" id="slider-amp" oninput="updateTransLongParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>อัตราเร็วคลื่น ($v$):</span>
+              <span id="disp-speed" class="font-mono text-emerald-500 font-bold">120 px/s</span>
+            </label>
+            <input type="range" min="50" max="300" step="10" value="120" id="slider-speed" oninput="updateTransLongParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 2: Huygens' Principle & Slit Diffraction -->
+      <div id="sublab-huygens" class="hidden glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="font-display font-bold text-lg text-gray-900 dark:text-gray-100">หลักการของฮอยเกนส์ & การเลี้ยวเบนสลิตเดี่ยว (Huygens & Diffraction)</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">ดูการแตกตัวของหน้าคลื่นเป็นคลื่นวงกลมย่อย (Secondary Wavelets) หลังผ่านช่องแคบ $d$</p>
+          </div>
+          <button onclick="toggleHuygensDots()" id="btn-toggle-dots" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 text-white">
+            👁️ แสดงจุดกำเนิดฮอยเกนส์ (Wavelets)
+          </button>
+        </div>
+
+        <div class="bg-gray-950 rounded-xl p-3 border border-gray-800 flex flex-col items-center justify-center">
+          <canvas id="canvas-huygens" width="900" height="300" class="w-full h-auto rounded-lg"></canvas>
+          <div class="w-full flex justify-between px-4 py-2 text-xs font-mono text-emerald-400 border-t border-gray-800 bg-gray-900/50 mt-2">
+            <span>ความกว้างช่อง ($d$): <span id="disp-slit-val">40 px</span></span>
+            <span>ความยาวคลื่น ($\lambda$): <span id="disp-slit-lambda">50 px</span></span>
+            <span>สถานะ: <span id="disp-diffraction-status" class="font-bold text-emerald-400">$d \le \lambda$ เลี้ยวเบนดีเยี่ยม หน้าคลื่นโค้งเป็นวงกลม</span></span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-200 dark:border-gray-800">
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>ความกว้างช่องเปิด ($d$):</span>
+              <span id="slider-slit-label" class="font-mono text-emerald-500 font-bold">40 px</span>
+            </label>
+            <input type="range" min="15" max="180" step="5" value="40" id="slider-slit-d" oninput="updateHuygensParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>ความยาวคลื่น ($\lambda$):</span>
+              <span id="slider-lambda-label" class="font-mono text-emerald-500 font-bold">50 px</span>
+            </label>
+            <input type="range" min="25" max="100" step="5" value="50" id="slider-slit-lambda" oninput="updateHuygensParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 3: Interference Lab -->
+      <div id="sublab-interference" class="hidden glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="font-display font-bold text-lg text-gray-900 dark:text-gray-100">การแทรกสอด 2 แหล่งกำเนิดอาพันธ์ ($S_1, S_2$) พร้อมโพรบวัดจุด $P$</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">คลิกที่ผิวน้ำเพื่อคำนวณผลต่างระยะทาง $|S_1P - S_2P|$ และตรวจสอบแนว $A$ หรือ $N$ แบบเรียลไทม์!</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="setInterferencePhase('inphase')" id="btn-phase-in" class="px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500 text-white">เฟสตรงกัน ($0^\circ$)</button>
+            <button onclick="setInterferencePhase('outphase')" id="btn-phase-out" class="px-3 py-1 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300">เฟสตรงข้าม ($180^\circ$)</button>
+          </div>
+        </div>
+
+        <div class="bg-gray-950 rounded-xl p-3 border border-gray-800 flex flex-col items-center justify-center cursor-crosshair">
+          <canvas id="canvas-interference" width="900" height="340" class="w-full h-auto rounded-lg" onclick="handleInterferenceClick(event)"></canvas>
+          <div class="w-full flex flex-wrap justify-between px-4 py-2 text-xs font-mono text-gray-300 border-t border-gray-800 bg-gray-900/50 mt-2">
+            <span>ระยะห่าง $d = <span id="disp-int-d" class="text-emerald-400">160</span> px</span>
+            <span>ความยาวคลื่น $\lambda = <span id="disp-int-lambda" class="text-emerald-400">40</span> px</span>
+            <span id="probe-result" class="text-amber-400">👉 คลิกที่ผิวน้ำเพื่อวัดจุด $P$</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-gray-50 dark:bg-gray-900/50 p-4 rounded-xl border border-gray-200 dark:border-gray-800">
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>ระยะห่างระหว่างแหล่งกำเนิด ($d$):</span>
+              <span id="slider-int-d-label" class="font-mono text-emerald-500 font-bold">160 px</span>
+            </label>
+            <input type="range" min="80" max="300" step="10" value="160" id="slider-int-d" oninput="updateInterferenceParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+          <div>
+            <label class="text-xs text-gray-600 dark:text-gray-300 flex justify-between">
+              <span>ความยาวคลื่น ($\lambda$):</span>
+              <span id="slider-int-lambda-label" class="font-mono text-emerald-500 font-bold">40 px</span>
+            </label>
+            <input type="range" min="20" max="80" step="5" value="40" id="slider-int-lambda" oninput="updateInterferenceParams()" class="w-full accent-emerald-500 mt-2">
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 4: Standing Wave Lab -->
+      <div id="sublab-standing" class="hidden glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="font-display font-bold text-lg text-gray-900 dark:text-gray-100">คลื่นนิ่งในเส้นเชือก (Standing Wave) & ฮาร์มอนิก</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">แสดงการซ้อนทับของคลื่นย่อยวิ่งสวนทางกัน เกิดตำแหน่ง Node (N) และ Antinode (A)</p>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs text-gray-500">จำนวนลูป ($n$):</span>
+            <div class="inline-flex p-1 bg-gray-100 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 text-xs font-bold">
+              <button onclick="setStandingHarmonic(1)" id="harm-1" class="px-2.5 py-1 rounded text-gray-500">1</button>
+              <button onclick="setStandingHarmonic(2)" id="harm-2" class="px-2.5 py-1 rounded text-gray-500">2</button>
+              <button onclick="setStandingHarmonic(3)" id="harm-3" class="px-2.5 py-1 rounded bg-emerald-500 text-white">3</button>
+              <button onclick="setStandingHarmonic(4)" id="harm-4" class="px-2.5 py-1 rounded text-gray-500">4</button>
+              <button onclick="setStandingHarmonic(5)" id="harm-5" class="px-2.5 py-1 rounded text-gray-500">5</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-950 rounded-xl p-3 border border-gray-800 flex flex-col items-center justify-center">
+          <canvas id="canvas-standing" width="900" height="280" class="w-full h-auto rounded-lg"></canvas>
+          <div class="w-full flex flex-wrap justify-between px-4 py-2 text-xs font-mono text-emerald-400 border-t border-gray-800 bg-gray-900/50 mt-2">
+            <span>ฮาร์มอนิก ($n$): <span id="disp-harm-n" class="text-white font-bold">3</span> ลูป</span>
+            <span>จุดบัพ (Nodes): <span id="disp-nodes-count" class="text-rose-400 font-bold">4</span> จุด (การกระจัด = 0)</span>
+            <span>จุดปฏิบัพ (Antinodes): <span id="disp-antinodes-count" class="text-amber-400 font-bold">3</span> จุด (สั่นสูงสุด 2A)</span>
+            <span>ความยาว 1 ลูป = $\lambda/2$</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIM 5: 3D CHLOROPLAST VIEWER -->
+      <div id="sublab-chloroplast-3d" class="hidden glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h3 class="font-display font-bold text-lg text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+              <span>🍃</span>
+              <span>3D Chloroplast Viewer (โมเดล 3 มิติจำลองโครงสร้างคลอโรพลาสต์)</span>
+            </h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400">คลิกแล้วลากหมุนเมาส์/นิ้วสัมผัส เพื่อดูโครงสร้าง Thylakoid Grana Stacks, Stroma และเยื่อหุ้ม 2 ชั้น</p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-mono">
+            <button onclick="resetChloroplastRotation()" class="px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+              🔄 รีเซ็ตมุมมอง
+            </button>
+          </div>
+        </div>
+
+        <!-- 3D Interactive Canvas -->
+        <div class="bg-gray-950 rounded-2xl p-4 border border-gray-800 flex flex-col items-center justify-center relative cursor-grab active:cursor-grabbing">
+          <canvas id="canvas-3d-chloroplast" width="900" height="380" class="w-full h-auto rounded-xl"></canvas>
+          <div class="w-full flex flex-wrap justify-between px-4 py-2.5 text-xs font-sarabun text-gray-300 border-t border-gray-800 bg-gray-900/60 mt-2 rounded-b-lg">
+            <span>🟢 <b>Thylakoid / Grana:</b> แหล่งเกิด Light Reaction (สร้าง ATP, NADPH, $O_2$)</span>
+            <span>💧 <b>Stroma:</b> ของเหลวด้านใน แหล่งเกิด Calvin Cycle (ตรึง $CO_2$ สร้างน้ำตาล)</span>
+            <span>🧬 <b>Double Membrane:</b> เยื่อหุ้ม 2 ชั้นตามทฤษฎี Endosymbiosis</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: SHORT NOTE CANVAS (กระดานวาดเขียนทดเลขลายมือ) -->
+    <!-- ========================================================================= -->
+    <section id="section-canvas" class="hidden space-y-6">
+      
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h2 class="font-display font-bold text-xl text-gray-900 dark:text-gray-100 flex items-center gap-2">
+              <span>✍️</span>
+              <span>Short Note Canvas: กระดานทดเลข & สเก็ตช์ภาพ (ลายกระดาษกริด)</span>
+            </h2>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-sarabun">
+              รองรับ Apple Pencil และการใช้นิ้วเขียนบน iPad ทดเลขคำนวณ วาดมุมตกกระทบ-หักเห หรือเขียนวัฏจักรคัลวินได้ทันที
+            </p>
+          </div>
+
+          <!-- Drawing Tools Bar -->
+          <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+            <!-- Pen Tool -->
+            <button onclick="setDrawTool('pen')" id="tool-pen" class="px-3 py-1.5 rounded-xl bg-emerald-500 text-white font-semibold shadow flex items-center gap-1.5">
+              <span>✏️</span>
+              <span>ปากกา</span>
+            </button>
+            <!-- Highlighter -->
+            <button onclick="setDrawTool('highlighter')" id="tool-highlighter" class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 flex items-center gap-1.5">
+              <span>🖍️</span>
+              <span>เน้นข้อความ</span>
+            </button>
+            <!-- Eraser -->
+            <button onclick="setDrawTool('eraser')" id="tool-eraser" class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 flex items-center gap-1.5">
+              <span>🧹</span>
+              <span>ยางลบ</span>
+            </button>
+
+            <!-- Color Palette -->
+            <div class="flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800">
+              <button onclick="setDrawColor('#10b981')" class="w-5 h-5 rounded-full bg-emerald-500 border border-white shadow-sm" title="Emerald"></button>
+              <button onclick="setDrawColor('#0284c7')" class="w-5 h-5 rounded-full bg-sky-600 border border-white shadow-sm" title="Blue"></button>
+              <button onclick="setDrawColor('#f43f5e')" class="w-5 h-5 rounded-full bg-rose-500 border border-white shadow-sm" title="Rose"></button>
+              <button onclick="setDrawColor('#f59e0b')" class="w-5 h-5 rounded-full bg-amber-500 border border-white shadow-sm" title="Amber"></button>
+              <button onclick="setDrawColor('#1f2937')" class="w-5 h-5 rounded-full bg-gray-800 border border-white shadow-sm" title="Dark Gray"></button>
+            </div>
+
+            <!-- Clear & Download -->
+            <button onclick="clearDrawCanvas()" class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-rose-200 dark:border-rose-900">
+              ล้างกระดาน
+            </button>
+            <button onclick="downloadCanvasImage()" class="px-3 py-1.5 rounded-xl bg-teal-500/15 text-teal-600 dark:text-teal-300 border border-teal-500/30 hover:bg-teal-500/25">
+              💾 บันทึกรูปภาพ
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas Container with Grid Paper -->
+        <div class="rounded-2xl border border-gray-300 dark:border-gray-700 shadow-inner overflow-hidden relative">
+          <canvas id="sketch-canvas" width="1100" height="550" class="w-full h-auto grid-paper cursor-crosshair touch-none"></canvas>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: 3D FLIP FLASHCARDS -->
+    <!-- ========================================================================= -->
+    <section id="section-flashcards" class="hidden space-y-6">
+      
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="font-display font-bold text-xl text-gray-900 dark:text-gray-100 flex items-center gap-2">
+            <span>🃏</span>
+            <span>3D Flip Flashcards: บัตรคำช่วยจำฟิสิกส์ & ชีววิทยา (20 ใบ)</span>
+          </h2>
+          <p class="text-xs text-gray-500 dark:text-gray-400">คลิกที่การ์ดเพื่อพลิกดูคำตอบด้านหลัง พร้อมระบบสับการ์ดและบันทึกข้อที่จำได้แล้ว</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <!-- Filter: All vs Physics vs Bio -->
+          <div class="inline-flex p-1 bg-gray-100 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 text-xs font-medium">
+            <button onclick="filterFlashcards('all')" id="fc-filter-all" class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white font-semibold">ทั้งหมด (20)</button>
+            <button onclick="filterFlashcards('physics')" id="fc-filter-phys" class="px-3 py-1.5 rounded-lg text-gray-600 dark:text-gray-400">ฟิสิกส์คลื่น (16)</button>
+            <button onclick="filterFlashcards('bio')" id="fc-filter-bio" class="px-3 py-1.5 rounded-lg text-gray-600 dark:text-gray-400">ชีวะสังเคราะห์แสง (4)</button>
+          </div>
+
+          <button onclick="shuffleFlashcards()" class="px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-mono hover:bg-gray-200 transition">
+            🔀 สับไพ่
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Flashcard Stage -->
+      <div class="max-w-2xl mx-auto space-y-4">
+        
+        <div class="w-full h-80 sm:h-96 perspective-1000 cursor-pointer" onclick="flipCurrentCard()">
+          <div id="flashcard-inner" class="w-full h-full relative transform-style-3d transition-transform duration-500 rounded-2xl shadow-xl">
+            
+            <!-- FRONT FACE -->
+            <div class="absolute inset-0 backface-hidden rounded-2xl p-8 flex flex-col justify-between glass-card border-2 border-emerald-500/40 bg-gradient-to-br from-emerald-500/5 to-transparent">
+              <div class="flex items-center justify-between">
+                <span id="fc-cat-badge" class="px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-500/20 text-emerald-600 dark:text-emerald-400">
+                  PHYSICS
+                </span>
+                <span id="fc-counter" class="text-xs font-mono text-gray-400">ใบที่ 1 / 20</span>
+              </div>
+
+              <div class="text-center space-y-3 my-auto">
+                <h3 id="fc-title" class="font-display font-bold text-xl sm:text-2xl text-gray-900 dark:text-gray-100">
+                  หัวข้อการ์ด
+                </h3>
+                <p id="fc-front-text" class="text-sm sm:text-base text-gray-700 dark:text-gray-300 font-sarabun leading-relaxed">
+                  คำถามด้านหน้า
+                </p>
+              </div>
+
+              <div class="text-center text-xs text-emerald-600 dark:text-emerald-400 font-mono animate-bounce">
+                👆 แตะเพื่อพลิกดูคำตอบ & เทคนิคจำ (Flip)
+              </div>
+            </div>
+
+            <!-- BACK FACE -->
+            <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl p-8 flex flex-col justify-between glass-card border-2 border-teal-500/40 bg-gradient-to-br from-teal-500/10 to-transparent">
+              <div class="flex items-center justify-between">
+                <span class="px-3 py-1 rounded-full text-xs font-bold font-mono bg-teal-500/20 text-teal-600 dark:text-teal-400">
+                  KEY TAKEAWAY
+                </span>
+                <span class="text-xs font-mono text-gray-400">เฉลย & ทริคจำ</span>
+              </div>
+
+              <div class="text-left space-y-3 my-auto overflow-y-auto max-h-56 pr-2">
+                <p id="fc-back-text" class="text-xs sm:text-sm text-gray-800 dark:text-gray-200 font-sarabun leading-relaxed">
+                  เนื้อหาคำตอบและสูตรสำคัญ
+                </p>
+              </div>
+
+              <div class="text-center text-xs text-teal-600 dark:text-teal-400 font-mono">
+                🔄 แตะอีกครั้งเพื่อพลิกกลับด้านหน้า
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Flashcard Navigation Controls -->
+        <div class="flex items-center justify-between pt-2">
+          <button onclick="prevFlashcard()" class="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold transition flex items-center gap-1.5">
+            <span>←</span>
+            <span>ใบก่อนหน้า</span>
+          </button>
+          
+          <button onclick="flipCurrentCard()" class="px-6 py-2.5 rounded-xl bg-emerald-500 text-white font-semibold text-xs shadow-md shadow-emerald-500/20">
+            🔄 พลิกการ์ด (Spacebar)
+          </button>
+
+          <button onclick="nextFlashcard()" class="px-5 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold transition flex items-center gap-1.5">
+            <span>ใบถัดไป</span>
+            <span>→</span>
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: CHEAT SHEET DASHBOARD -->
+    <!-- ========================================================================= -->
+    <section id="section-cheatsheet" class="hidden space-y-6">
+      
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/20 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="font-display font-bold text-xl text-gray-900 dark:text-gray-100 flex items-center gap-2">
+            <span>📜</span>
+            <span>คัมภีร์สรุปสูตรฟิสิกส์คลื่นกล & คาถาจำก่อนเข้าห้องสอบ</span>
+          </h2>
+          <p class="text-xs text-gray-500 dark:text-gray-400">สูตรทุกตัวผ่านการเรนเดอร์ KaTeX คมชัดระดับตำราเรียน ไร้สัญลักษณ์บั๊ก</p>
+        </div>
+        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-emerald-600 dark:text-emerald-400 border border-emerald-500/40 text-xs font-mono flex items-center gap-2 transition no-print">
+          <span>🖨️</span>
+          <span>พิมพ์ / บันทึก PDF</span>
+        </button>
+      </div>
+
+      <!-- 4 Formula Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Zone 1: Wave Fundamentals -->
+        <div class="glass-card rounded-2xl p-6 border border-blue-500/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-blue-500/20">
+            <h3 class="font-display font-bold text-blue-600 dark:text-blue-400 text-base flex items-center gap-2">
+              <span>🔵</span>
+              <span>1. ชนิดของคลื่น & ความต่างเฟส</span>
+            </h3>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-blue-500/10 text-blue-500 rounded">FOUNDATION</span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun">
+            <div class="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-xl border border-blue-200 dark:border-blue-900/50">
+              <b class="text-blue-700 dark:text-blue-300">สูตรความต่างเฟส ($\Delta\phi$):</b>
+              <div class="font-mono text-center my-2 text-sm text-blue-600 dark:text-cyan-300 bg-white/70 dark:bg-black/40 p-2 rounded-lg">
+                $$\Delta\phi = \frac{2\pi}{\lambda}\Delta x = \frac{2\pi}{T}\Delta t = \frac{360^\circ}{\lambda}\Delta x$$
+              </div>
+              <ul class="list-disc pl-5 space-y-1 text-xs text-gray-600 dark:text-gray-400">
+                <li><b>เฟสตรงกัน:</b> $\Delta x = n\lambda$ ($\Delta\phi = 2n\pi = 360^\circ, 720^\circ$)</li>
+                <li><b>เฟสตรงข้าม:</b> $\Delta x = (n - 0.5)\lambda$ ($\Delta\phi = (2n-1)\pi = 180^\circ, 540^\circ$)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone 2: Wave Speed Equations -->
+        <div class="glass-card rounded-2xl p-6 border border-emerald-500/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-emerald-500/20">
+            <h3 class="font-display font-bold text-emerald-600 dark:text-emerald-400 text-base flex items-center gap-2">
+              <span>🟢</span>
+              <span>2. อัตราเร็วคลื่น & การสั่นของอนุภาค</span>
+            </h3>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-500 rounded">CALCULATION</span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun">
+            <div class="p-3 bg-emerald-50 dark:bg-emerald-950/20 rounded-xl border border-emerald-200 dark:border-emerald-900/50">
+              <b class="text-emerald-700 dark:text-emerald-300">สมการหลัก & คลื่นในเส้นเชือก:</b>
+              <div class="font-mono text-center my-2 text-sm text-emerald-600 dark:text-emerald-300 bg-white/70 dark:bg-black/40 p-2 rounded-lg">
+                $$v = f\lambda = \frac{\lambda}{T} \quad \text{และ} \quad v_{เชือก} = \sqrt{\frac{T}{\mu}}$$
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                • $\mu = \frac{m}{L}$ คือ มวลต่อหนึ่งหน่วยความยาว ($\text{kg/m}$)<br>
+                • <b>ความเร็วสูงสุดของอนุภาค (SHM):</b> $v_{p,\max} = \omega A = 2\pi f A$ (ระวังอย่าสับสนกับอัตราเร็วคลื่น $v$)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone 3: 4 Behaviors of Waves -->
+        <div class="glass-card rounded-2xl p-6 border border-purple-500/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-purple-500/20">
+            <h3 class="font-display font-bold text-purple-600 dark:text-purple-400 text-base flex items-center gap-2">
+              <span>🟣</span>
+              <span>3. การสะท้อน, หักเห, แทรกสอด, เลี้ยวเบน</span>
+            </h3>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-purple-500/10 text-purple-500 rounded">BEHAVIORS</span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun">
+            <div class="p-3 bg-purple-50 dark:bg-purple-950/20 rounded-xl border border-purple-200 dark:border-purple-900/50">
+              <b class="text-purple-700 dark:text-purple-300">กฎของสเนลล์ & การแทรกสอด:</b>
+              <div class="font-mono text-center my-2 text-sm text-purple-600 dark:text-purple-300 bg-white/70 dark:bg-black/40 p-2 rounded-lg">
+                $$\frac{\sin\theta_1}{\sin\theta_2} = \frac{v_1}{v_2} = \frac{\lambda_1}{\lambda_2} \quad (f \text{ คงที่})$$
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                • <b>แทรกสอดเฟสตรงกัน:</b> ปฏิบัพ $|S_1P - S_2P| = n\lambda$ | บัพ $|S_1P - S_2P| = (n-0.5)\lambda$<br>
+                • <b>แทรกสอดเฟสตรงข้าม:</b> สลับสูตรทันที! แนวกลางเป็นบัพ $N_0$
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zone 4: Standing Waves -->
+        <div class="glass-card rounded-2xl p-6 border border-amber-500/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-amber-500/20">
+            <h3 class="font-display font-bold text-amber-600 dark:text-amber-400 text-base flex items-center gap-2">
+              <span>🟠</span>
+              <span>4. คลื่นนิ่งในเส้นเชือก (Standing Waves)</span>
+            </h3>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold bg-amber-500/10 text-amber-500 rounded">HARMONICS</span>
+          </div>
+
+          <div class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun">
+            <div class="p-3 bg-amber-50 dark:bg-amber-950/20 rounded-xl border border-amber-200 dark:border-amber-900/50">
+              <b class="text-amber-700 dark:text-amber-300">ความถี่ฮาร์มอนิกปลายตรึง 2 ข้าง:</b>
+              <div class="font-mono text-center my-2 text-sm text-amber-600 dark:text-amber-300 bg-white/70 dark:bg-black/40 p-2 rounded-lg">
+                $$L = n\frac{\lambda}{2} \implies f_n = n\frac{v}{2L} = n f_1$$
+              </div>
+              <p class="text-xs text-gray-600 dark:text-gray-400">
+                • ระยะ Node ถึง Node ติดกัน = $\frac{\lambda}{2}$ (1 Loop)<br>
+                • ระยะ Node ถึง Antinode ติดกัน = $\frac{\lambda}{4}$<br>
+                • <b>โอเวอร์โทนที่ 1</b> = Harmonic 2 ($2f_1$), <b>โอเวอร์โทนที่ 2</b> = Harmonic 3 ($3f_1$)
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: BIOLOGY - PHOTOSYNTHESIS & HANDWRITTEN SUMMARY -->
+    <!-- ========================================================================= -->
+    <section id="section-bio" class="hidden space-y-6">
+      
+      <!-- Header Banner -->
+      <div class="glass-card rounded-2xl p-6 border border-emerald-500/30 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="font-display font-bold text-xl text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
+            <span>🍃</span>
+            <span>ชีววิทยา ม.5: การสังเคราะห์ด้วยแสง (Photosynthesis Intensive)</span>
+          </h2>
+          <p class="text-xs text-gray-500 dark:text-gray-400">โครงสร้างตามคู่มือครู สสวท. 4 บทหลัก พร้อม Short Note สไตล์ลายมือ</p>
+        </div>
+      </div>
+
+      <!-- HANDWRITTEN SHORT NOTE BOARD -->
+      <div class="rounded-2xl p-6 sm:p-8 grid-paper border-2 border-emerald-400/40 shadow-xl space-y-6 relative overflow-hidden">
+        
+        <!-- Washi Tape Pin Decoration -->
+        <div class="w-32 h-6 washi-tape rounded-sm mx-auto -mt-2 rotate-1 mb-4 flex items-center justify-center text-[10px] font-mono text-emerald-900 font-bold">
+          STUDY NOTE 📌
+        </div>
+
+        <div class="text-center space-y-1">
+          <h3 class="font-hand text-2xl sm:text-3xl font-bold text-emerald-800 dark:text-emerald-300">
+            ทริคจำด่วน! หน้าห้องสอบชีวะ ม.5 💡
+          </h3>
+          <p class="font-hand text-sm text-gray-600 dark:text-gray-400">สรุปรวบยอด 3 วินาทีตอบได้ทันที</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-hand text-gray-800 dark:text-gray-200">
+          
+          <div class="p-5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-emerald-300 dark:border-emerald-700 shadow-md space-y-2">
+            <h4 class="text-lg font-bold text-emerald-700 dark:text-emerald-400">🌱 ปฏิกิริยาแสง (Light Reaction):</h4>
+            <p class="text-xs sm:text-sm leading-relaxed">
+              • <b>ไม่เป็นวัฏจักร (Non-cyclic):</b> วิ่งตรงเป็นเส้นยาว = ได้ครบจัดเต็ม! <b>(ATP + NADPH + $O_2$)</b> เกิดการแตกตัวของน้ำ Photolysis ที่ PSII<br>
+              • <b>เป็นวัฏจักร (Cyclic):</b> วิ่งวนลูปที่ PSI = ได้แค่พลังงาน <b>(ATP อย่างเดียว)</b> ไม่มีน้ำแตกตัว!
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-teal-300 dark:border-teal-700 shadow-md space-y-2">
+            <h4 class="text-lg font-bold text-teal-700 dark:text-teal-400">🔄 วัฏจักรคัลวิน: "Car-Re-Re"</h4>
+            <p class="text-xs sm:text-sm leading-relaxed">
+              1. <b>Carboxylation:</b> ตรึง $CO_2$ กับ RuBP (5C) โดย <b>Rubisco</b> ได้ PGA (3C)<br>
+              2. <b>Reduction:</b> ใช้ ATP + NADPH เปลี่ยนเป็นน้ำตาล G3P<br>
+              3. <b>Regeneration:</b> ใช้ ATP สร้าง RuBP คืนชีพรอบใหม่!
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-amber-300 dark:border-amber-700 shadow-md space-y-2">
+            <h4 class="text-lg font-bold text-amber-700 dark:text-amber-400">🌵 พืช 3 แก๊ง ($C_3, C_4, CAM$):</h4>
+            <p class="text-xs sm:text-sm leading-relaxed">
+              • <b>$C_3$ (พืชทั่วไป):</b> ตรึง 1 ครั้งที่ Mesophyll อ่อนแอต่อความร้อน<br>
+              • <b>$C_4$ (ข้าวโพด อ้อย):</b> ตรึง 2 <b>"สถานที่"</b> (Mesophyll $\to$ Bundle Sheath)<br>
+              • <b>CAM (สับปะรด กระบองเพชร):</b> ตรึง 2 <b>"เวลา"</b> (เปิดปากใบเฉพาะกลางคืน $\to$ กลางวันปิดปากใบ)
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Chapter Detailed Breakdown -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <span class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-xs">1</span>
+            <h3 class="font-display font-bold text-base text-gray-900 dark:text-gray-100">การทดลองของนักวิทยาศาสตร์ในอดีต</h3>
+          </div>
+          <ul class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun space-y-2">
+            <li>• <b>แวน เฮลมองท์ (Van Helmont):</b> ปลูกต้นหลิว 5 ปี สรุปว่ามวลพืชที่เพิ่มขึ้นมาจาก "น้ำ" ไม่ใช่ดิน</li>
+            <li>• <b>พริสต์ลีย์ (Priestley):</b> พืชสีเขียว (หนู/เทียนไข/สะระแหน่) เปลี่ยน "อากาศเสีย" ให้เป็น "อากาศดี" ได้</li>
+            <li>• <b>อิงเกนฮูซ (Ingenhousz):</b> พืชจะฟอกอากาศได้ต้องใช้ "แสง" และต้องเป็น "ส่วนที่มีสีเขียว"</li>
+            <li>• <b>เองเกลมันน์ (Engelmann):</b> สรุปว่าพืชสังเคราะห์แสงได้ดีที่สุดใน "แสงสีน้ำเงินและสีแดง"</li>
+            <li>• <b>แวน นีล (Van Niel):</b> ศึกษาแบคทีเรียสีม่วง สรุปว่า $O_2$ จากการสังเคราะห์แสงมาจาก "น้ำ ($H_2O$)"</li>
+            <li>• <b>โรบิน ฮิลล์ (Robin Hill):</b> ปฏิกิริยาแสงผลิต $O_2$ ได้โดยไม่ต้องมี $CO_2$ ถ้ามีตัวรับอิเล็กตรอนที่เหมาะสม</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <span class="w-7 h-7 rounded-lg bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold text-xs">2</span>
+            <h3 class="font-display font-bold text-base text-gray-900 dark:text-gray-100">กระบวนการสังเคราะห์ด้วยแสงของพืช $C_3$</h3>
+          </div>
+          <ul class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun space-y-2">
+            <li>• <b>Light Reaction:</b> เกิดที่ Thylakoid membrane ระบบแสง I (P700) และ ระบบแสง II (P680)</li>
+            <li>• <b>Calvin Cycle:</b> เกิดที่ Stroma ไม่ต้องใช้แสงโดยตรงแต่ต้องใช้ ATP และ NADPH จากปฏิกิริยาแสง</li>
+            <li>• <b>ผลผลิตสุทธิ:</b> ตรึง $CO_2$ 3 โมเลกุล ได้น้ำตาล G3P 1 โมเลกุล (ต้องหมุน 2 รอบ ได้กลูโคส 1 โมเลกุล)</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">3</span>
+            <h3 class="font-display font-bold text-base text-gray-900 dark:text-gray-100">โฟโตเรสไพเรชัน & เปรียบเทียบ $C_3, C_4, CAM$</h3>
+          </div>
+          <ul class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun space-y-2">
+            <li>• <b>โฟโตเรสไพเรชัน:</b> Rubisco เผลอไปจับกับ $O_2$ แทน $CO_2$ ในวันที่ร้อนจัด สูญเสียพลังงาน</li>
+            <li>• <b>พืช $C_4$:</b> แก้ปัญหาโดยตรึงคาร์บอน 2 ครั้งที่ Mesophyll (ใช้ PEP Carboxylase) แล้วส่งเข้า Bundle Sheath</li>
+            <li>• <b>พืช CAM:</b> แก้ปัญหาโดยเปิดปากใบตรึง $CO_2$ เฉพาะเวลากลางคืน เก็บไว้ในรูปกรดอินทรีย์ใน Vacuole</li>
+          </ul>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border border-gray-200 dark:border-gray-800 space-y-3">
+          <div class="flex items-center gap-2 pb-2 border-b border-gray-200 dark:border-gray-700">
+            <span class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xs">4</span>
+            <h3 class="font-display font-bold text-base text-gray-900 dark:text-gray-100">ปัจจัยที่มีผลต่ออัตราการสังเคราะห์ด้วยแสง</h3>
+          </div>
+          <ul class="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-sarabun space-y-2">
+            <li>• <b>ความเข้มแสง:</b> อัตราจะสูงขึ้นจนถึงจุดอิ่มตัวแสง (Light Saturation Point)</li>
+            <li>• <b>ความเข้มข้น $CO_2$:</b> เพิ่มขึ้นจนถึงจุดอิ่มตัว $CO_2$ (พืช $C_4$ มีจุดอิ่มตัว $CO_2$ ต่ำกว่า $C_3$)</li>
+            <li>• <b>อุณหภูมิ:</b> มีผลต่อเอนไซม์ อุณหภูมิเหมาะสมที่สุดคือ Optimum Temperature (ถ้าสูงเกินไปเอนไซม์จะเสียสภาพ)</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SCORE REPORT MODAL -->
+  <div id="report-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4 no-print">
+    <div class="glass-card rounded-2xl max-w-lg w-full p-6 space-y-6 border border-emerald-500/40 shadow-2xl">
+      <div class="text-center space-y-2">
+        <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 mx-auto flex items-center justify-center text-3xl shadow-lg">
+          🏆
+        </div>
+        <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white">รายงานผลการทดสอบ WAVES MASTER</h3>
+        <p class="text-xs text-gray-500 dark:text-gray-400 font-mono" id="report-date">วันเวลาสอบ</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <div class="text-xs text-gray-500">คะแนนรวม</div>
+          <div class="text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400" id="report-score">0/32</div>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <div class="text-xs text-gray-500">เปอร์เซ็นต์</div>
+          <div class="text-2xl font-bold font-mono text-teal-600 dark:text-teal-400" id="report-percent">0%</div>
+        </div>
+        <div class="p-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+          <div class="text-xs text-gray-500">การประเมิน</div>
+          <div class="text-sm font-bold font-display text-amber-600 dark:text-amber-400 mt-1" id="report-grade">ระดับ</div>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-xs font-sarabun" id="report-breakdown">
+        <!-- populated dynamically -->
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <button onclick="closeReportModal()" class="w-full py-2.5 rounded-xl bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-semibold transition">
+          ดูเฉลยละเอียดรายข้อ
+        </button>
+        <button onclick="resetExam(); closeReportModal();" class="w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white text-xs font-bold transition shadow-lg shadow-emerald-500/20">
+          ทำข้อสอบใหม่อีกรอบ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    const questions = [
+  {
+    "id": 1,
+    "cat": "theory",
+    "catName": "1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น",
+    "difficulty": "ปานกลาง",
+    "question": "ข้อใดกล่าวถึงธรรมชาติและการถ่ายโอนของคลื่นกลได้ถูกต้องที่สุดตามหลักฟิสิกส์?",
+    "choices": [
+      "A. อนุภาคของตัวกลางจะเคลื่อนที่ไปพร้อมกับคลื่นจากจุดกำเนิดไปยังปลายทางตามการเคลื่อนที่ของพลังงาน",
+      "B. คลื่นกลถ่ายโอนพลังงานและโมเมนตัมผ่านตัวกลาง โดยที่อนุภาคของตัวกลางเพียงแค่สั่นรอบตำแหน่งสมดุล",
+      "C. อัตราเร็วของคลื่นขึ้นอยู่กับความถี่และแอมพลิจูดที่แหล่งกำเนิดส่งออกมาเป็นหลัก",
+      "D. คลื่นเสียงและคลื่นแสงในสุญญากาศจัดเป็นคลื่นกลเหมือนกันเพราะมีการแทรกสอดและเลี้ยวเบน"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>ทริคตัดช้อยส์ 5 วิ:</b> จำนิยามหัวใจคลื่นกล 'พลังงานเดินทาง แต่อนุภาคตัวกลางอยู่บ้าน (สั่นรอบสมดุล)' ตัด A ทันที! และคลื่นแสงเป็นคลื่นแม่เหล็กไฟฟ้าไม่อาศัยตัวกลาง ตัด D! อัตราเร็ว $v$ ขึ้นกับตัวกลางไม่ใช่แอมพลิจูด ตัด C!",
+    "fullSolution": "<b>การวิเคราะห์เจาะลึก:</b><br>1. คลื่นกล (Mechanical wave) คือการรบกวนที่ส่งผ่านตัวกลาง โดยอนุภาคตัวกลางทำหน้าที่เป็นตัวกลางในการถ่ายทอดพลังงานกลและโมเมนตัม อนุภาคจะสั่นแบบฮาร์มอนิกอย่างง่ายรอบตำแหน่งสมดุล (ไม่ได้ย้ายตามคลื่นไป)<br>2. อัตราเร็วคลื่น $v$ เป็นสมบัติเฉพาะของตัวกลาง (ขึ้นกับความยืดหยุ่นและความหนาแน่น) ไม่ขึ้นกับแอมพลิจูดหรือความถี่ของแหล่งกำเนิด<br>3. คลื่นแสงเป็นคลื่นแม่เหล็กไฟฟ้า ไม่ใช่คลื่นกลและเคลื่อนที่ในสุญญากาศได้ ดังนั้นตัวเลือก B จึงถูกต้องและสมบูรณ์ที่สุด",
+    "trap": "ระวัง! ข้อสอบมักลวงว่า 'อนุภาคเคลื่อนที่ไปข้างหน้าพร้อมคลื่น' หรือ 'แอมพลิจูดมาก อัตราเร็วคลื่นจะมาก' ซึ่งผิดทั้งสิ้น! อัตราเร็วคลื่น $v$ ขึ้นกับชนิดและสถานะของตัวกลางเท่านั้น!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ ทฤษฎีพื้นฐาน & ชนิดของคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 2,
+    "cat": "theory",
+    "catName": "1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น",
+    "difficulty": "ยาก",
+    "question": "คลื่นดลขบวนหนึ่งเคลื่อนที่บนเส้นเชือกไปทางขวาด้วยอัตราเร็ว $v$ อนุภาค $P$ บนเส้นเชือกกำลังอยู่ที่ตำแหน่งสมดุลและกำลังเคลื่อนที่ 'ลงด้านล่าง' รูปหน้าคลื่น ณ ขณะนั้นมีลักษณะอย่างไร?",
+    "choices": [
+      "A. อนุภาค P อยู่ที่หน้ายอดคลื่น (ด้านลาดขวาของสันคลื่น)",
+      "B. อนุภาค P อยู่ที่หลังยอดคลื่น (ด้านลาดซ้ายของสันคลื่น)",
+      "C. อนุภาค P อยู่ที่ท้องคลื่นพอดี",
+      "D. อนุภาค P อยู่ที่สันคลื่นพอดี"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>ทริคขยับคลื่น 3 วิ:</b> ให้เขียนหน้าคลื่นขบวนเดิม แล้ววาดคลื่นขบวนใหม่อีกเส้นที่ 'เลื่อนไปทางขวาเล็กน้อย' ดูที่ตำแหน่ง $P$: ด้านลาดขวาของสันคลื่น เส้นใหม่จะอยู่ต่ำกว่าเส้นเดิม แสดงว่าอนุภาคกำลังดิ่งลง! ตอบ A ทันที",
+    "fullSolution": "<b>วิธีพิจารณาการเคลื่อนที่ของอนุภาคตัวกลาง:</b><br>สมการคลื่นเคลื่อนที่ไปทางขวา: $y(x,t) = A\\sin(kx - \\omega t)$<br>ความเร็วอนุภาค $v_y = \frac{\\partial y}{\\partial t} = -\\omega A \\cos(kx - \\omega t)$<br>เมื่อพิจารณาเชิงเรขาคณิต: หน้าคลื่นเคลื่อนที่ไปข้างหน้า อนุภาคข้างหน้าคลื่นจะต้องยกตัวหรือยุบตัวเพื่อรับรูปคลื่นใหม่<br>สำหรับสันคลื่นที่วิ่งไปทางขวา ด้านลาดหน้า (ขวา) เส้นคลื่นใหม่จะต่ำลง อนุภาคจึงเคลื่อนที่ 'ลง' สู่สมดุล ส่วนด้านหลัง (ซ้าย) เส้นคลื่นใหม่จะสูงขึ้น อนุภาคจะเคลื่อนที่ 'ขึ้น' สู่ยอดคลื่น",
+    "trap": "ข้อสอบเข้ามหาวิทยาลัยชอบออกมาก! เด็กมักจำสับสนว่าคลื่นไปทางขวา อนุภาคต้องไปทางขวาด้วย หรือสับสนทิศทางขึ้น-ลงของด้านหน้า/ด้านหลังคลื่น!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ ทฤษฎีพื้นฐาน & ชนิดของคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 3,
+    "cat": "theory",
+    "catName": "1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น",
+    "difficulty": "ยาก",
+    "question": "คลื่นตามยาวขบวนหนึ่งเคลื่อนที่ในสปริง มีความถี่ $50\\text{ Hz}$ อนุภาคสองตัวที่ตำแหน่ง 'กึ่งกลางส่วนอัด' ติดกันสองตำแหน่ง จะมีผลต่างเฟสและความสัมพันธ์ทางเวลาอย่างไร?",
+    "choices": [
+      "A. เฟสต่างกัน $180^\\circ$ และเวลาต่างกัน $0.01\\text{ s}$",
+      "B. เฟสต่างกัน $360^\\circ$ ($2\\pi\\text{ rad}$) และเวลาต่างกัน $0.02\\text{ s}$",
+      "C. เฟสต่างกัน $90^\\circ$ และเวลาต่างกัน $0.005\\text{ s}$",
+      "D. เฟสต่างกัน $180^\\circ$ และเวลาต่างกัน $0.02\\text{ s}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>ทริคจับคู่:</b> 'กึ่งกลางส่วนอัดถึงกึ่งกลางส่วนอัดติดกัน' = 1 ความยาวคลื่น ($\\lambda$) พอดี! และ 1 ความยาวคลื่น = เฟสต่างกัน $360^\\circ$ ($2\\pi\\text{ rad}$) และเวลาห่างกัน 1 คาบ $T = \\frac{1}{f} = \\frac{1}{50} = 0.02\\text{ s}$ กาช้อยส์ B ได้ใน 5 วินาที!",
+    "fullSolution": "<b>คำนวณและทฤษฎี:</b><br>1. นิยามความยาวคลื่นของคลื่นตามยาว คือ ระยะห่างระหว่างกึ่งกลางส่วนอัดถึงกึ่งกลางส่วนอัดที่อยู่ถัดไป หรือกึ่งกลางส่วนขยายถึงกึ่งกลางส่วนขยายที่อยู่ถัดไป ดังนั้น $\\Delta x = \\lambda$<br>2. ความต่างเฟส: $\\Delta\\phi = \\frac{2\\pi}{\\lambda}\\Delta x = \\frac{2\\pi}{\\lambda}(\\lambda) = 2\\pi\\text{ rad} = 360^\\circ$ (เฟสตรงกัน)<br>3. คาบการสั่น: $T = \\frac{1}{f} = \\frac{1}{50\\text{ s}^{-1}} = 0.02\\text{ s}$",
+    "trap": "ระวังโดนหลอกว่า 'ส่วนอัดกับส่วนขยาย' ถ้าโจทย์ถาม 'ส่วนอัดถึงส่วนขยายถัดไป' จะเป็น $\\frac{\\lambda}{2}$ เฟสจะต่างกัน $180^\\circ$ แต่นี่ถาม 'ส่วนอัดถึงส่วนอัด' ต้องเต็ม 1 รอบ!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ ทฤษฎีพื้นฐาน & ชนิดของคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 4,
+    "cat": "theory",
+    "catName": "1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น",
+    "difficulty": "ท้าทาย",
+    "question": "จุดสองจุด $A$ และ $B$ บนคลื่นต่อเนื่องที่มีความยาวคลื่น $\\lambda = 40\\text{ cm}$ อยู่ห่างกัน $70\\text{ cm}$ ตามแนวการแผ่ของคลื่น จุดทั้งสองมีเฟสต่างกันเท่าใด และสั่นในลักษณะใด?",
+    "choices": [
+      "A. ต่างกัน $630^\\circ$ (เทียบเท่า $270^\\circ$), สั่นในเฟสตรงข้ามกัน",
+      "B. ต่างกัน $630^\\circ$ (เทียบเท่า $270^\\circ$), มีเฟสต่างกัน $\\frac{3\\pi}{2}\\text{ rad}$",
+      "C. ต่างกัน $315^\\circ$, สั่นในเฟสตรงกัน",
+      "D. ต่างกัน $180^\\circ$, สั่นในเฟสตรงข้ามกันพอดี"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>สูตรเฟสเทียบบัญญัติไตรยางศ์:</b> $\\Delta\\phi = \\frac{360^\\circ}{\\lambda}\\Delta x = \\frac{360^\\circ}{40} \\times 70 = 9 \\times 70 = 630^\\circ$ ลบออก $360^\\circ$ เหลือ $270^\\circ = \\frac{3\\pi}{2}\\text{ rad}$ กาข้อ B ได้ทันที!",
+    "fullSolution": "<b>ขั้นตอนการคำนวณละเอียด:</b><br>สูตรความต่างเฟส: $\\Delta\\phi = \\frac{2\\pi}{\\lambda} \\cdot \\Delta x$<br>แทนค่า: $\\Delta\\phi = \\frac{2\\pi}{40\\text{ cm}} \\times 70\\text{ cm} = 3.5\\pi\\text{ rad} = 2\\pi + 1.5\\pi\\text{ rad}$<br>แปลงเป็นองศา: $3.5 \\times 180^\\circ = 630^\\circ$<br>เมื่อตัดรอบจำนวนเต็ม $360^\\circ$ ออก จะเหลือความต่างเฟสสัมพัทธ์ $630^\\circ - 360^\\circ = 270^\\circ$ (หรือ $\\frac{3\\pi}{2}\\text{ rad}$)<br>*หมายเหตุ: เฟสตรงข้ามกันต้องต่างกัน $180^\\circ$ หรือ $\\pi\\text{ rad}$ ข้อนี้จึงไม่ใช่เฟสตรงข้ามกัน",
+    "trap": "ระวัง! หลายคนคิดว่ามีแต่ 'เฟสตรงกัน ($0^\\circ, 360^\\circ$)' กับ 'เฟสตรงข้าม ($180^\\circ$)' แท้จริงแล้วสามารถต่างกันกี่องศาก็ได้ จุดนี้คือ $270^\\circ$ ซึ่งอนุภาคตัวหนึ่งอยู่ที่สมดุลขณะที่อีกตัวอยู่ที่ยอดคลื่น!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ ทฤษฎีพื้นฐาน & ชนิดของคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 5,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ปานกลาง",
+    "question": "คลื่นน้ำเคลื่อนที่จากบริเวณน้ำลึกเข้าสู่น้ำตื้น โดยหน้าคลื่นขนานกับรอยต่อ ปรากฏว่าความยาวคลื่นลดลงเหลือ $\\frac{2}{3}$ เท่าของเดิม ถ้าคลื่นในน้ำลึกมีอัตราเร็ว $18\\text{ m/s}$ และความถี่ $30\\text{ Hz}$ ความถี่และอัตราเร็วของคลื่นในน้ำตื้นจะมีค่าเท่าใด?",
+    "choices": [
+      "A. ความถี่ $20\\text{ Hz}$, อัตราเร็ว $12\\text{ m/s}$",
+      "B. ความถี่ $30\\text{ Hz}$, อัตราเร็ว $12\\text{ m/s}$",
+      "C. ความถี่ $30\\text{ Hz}$, อัตราเร็ว $18\\text{ m/s}$",
+      "D. ความถี่ $45\\text{ Hz}$, อัตราเร็ว $27\\text{ m/s}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>กฎเหล็กฟิสิกส์:</b> 'ความถี่ ($f$) ขึ้นกับแหล่งกำเนิด ไม่ว่าจะเปลี่ยนตัวกลางกี่ครั้ง $f$ ต้องเท่าเดิมเสมอ!' ตัด A และ D ทิ้งทันที! เหลือ B กับ C คลื่นน้ำตื้น $\\lambda$ ลด $v$ ต้องลดด้วย $v = \\frac{2}{3}(18) = 12\\text{ m/s}$ ตอบ B ภายใน 4 วิ!",
+    "fullSolution": "<b>หลักการฟิสิกส์แม่นยำ:</b><br>1. ความถี่คลื่นถูกกำหนดโดยแหล่งกำเนิด เมื่อคลื่นเคลื่อนที่ผ่านตัวกลางต่างชนิด ความถี่ $f$ จึงไม่เปลี่ยนแปลง: $f_{shallow} = f_{deep} = 30\\text{ Hz}$<br>2. จากสมการ $v = f\\lambda$ เมื่อ $f$ คงที่ ดังนั้น $v \\propto \\lambda$<br>$\\frac{v_{shallow}}{v_{deep}} = \\frac{\\lambda_{shallow}}{\\lambda_{deep}} = \\frac{2}{3}$<br>$v_{shallow} = \\frac{2}{3} \\times 18\\text{ m/s} = 12\\text{ m/s}$",
+    "trap": "ระวังตกม้าตายข้อแรก! นักเรียนจำนวนมากคิดว่าเปลี่ยนตัวกลางแล้วความถี่จะเปลี่ยนตาม หรือใช้สูตร $v=f\\lambda$ แล้วแอบเปลี่ยนค่าความถี่ไปด้วย!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 6,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ยาก",
+    "question": "คลื่นรูปไซน์ขบวนหนึ่งมีความถี่ $10\\text{ Hz}$ และแอมพลิจูด $5\\text{ cm}$ แผ่ออกไปด้วยอัตราเร็ว $20\\text{ m/s}$ อัตราเร็วสูงสุดของการสั่นของอนุภาคตัวกลาง ($v_{p,\\max}$) มีค่าเป็นกี่เท่าของอัตราเร็วคลื่น ($v$)? (กำหนดให้ $\\pi \\approx 3.14$)",
+    "choices": [
+      "A. $0.05\\pi$ เท่า (ประมาณ $0.157$ เท่า)",
+      "B. $0.5\\pi$ เท่า (ประมาณ $1.57$ เท่า)",
+      "C. $\\pi$ เท่า (ประมาณ $3.14$ เท่า)",
+      "D. $2\\pi$ เท่า (ประมาณ $6.28$ เท่า)"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>ทริคสูตรสำเร็จ:</b> $\\frac{v_{p,\\max}}{v} = \\frac{\\omega A}{f\\lambda} = \\frac{2\\pi f A}{v}$ ตัด $f$ แทนค่า $A=0.05\\text{ m}, v=20\\text{ m/s}$ ได้ $\\frac{2\\pi (10)(0.05)}{20} = \\frac{\\pi}{20} = 0.05\\pi$ กา A ทันที!",
+    "fullSolution": "<b>แยกให้ออกระหว่างความเร็วคลื่น กับความเร็วอนุภาค:</b><br>1. อัตราเร็วคลื่น: $v = 20\\text{ m/s}$ (คงที่ตามตัวกลาง)<br>2. อนุภาคสั่นแบบ Simple Harmonic Motion (SHM):<br>$v_{p,\\max} = \\omega A = 2\\pi f A$<br>แทนค่า (ระวังหน่วย! $A = 5\\text{ cm} = 0.05\\text{ m}$):<br>$v_{p,\\max} = 2\\pi (10\\text{ s}^{-1}) (0.05\\text{ m}) = \\pi\\text{ m/s} \\approx 3.14\\text{ m/s}$<br>3. อัตราส่วน: $\\frac{v_{p,\\max}}{v} = \\frac{\\pi}{20} = 0.05\\pi$ เท่า",
+    "trap": "จุดลวง 2 เด้ง! เด้งที่ 1: ลืมแปลงหน่วย $5\\text{ cm}$ เป็นเมตร คำตอบจะเพี้ยน 100 เท่า! เด้งที่ 2: จำสับสนคิดว่าอัตราเร็วอนุภาคเท่ากับอัตราเร็วคลื่น ซึ่งความเร็วอนุภาคเปลี่ยนตลอดเวลาตามตำแหน่ง SHM!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 7,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ยาก",
+    "question": "กราฟระหว่างการกระจัด ($y$) กับตำแหน่ง ($x$) ของคลื่น ณ เวลา $t = 0\\text{ s}$ แสดงยอดคลื่นสองยอดที่อยู่ติดกันที่ $x = 2\\text{ m}$ และ $x = 10\\text{ m}$ ขณะเดียวกันกราฟการกระจัด ($y$) กับเวลา ($t$) ของอนุภาคตัวกลาง ณ จุดหนึ่ง สั่นครบรอบ 4 รอบในเวลา $2\\text{ s}$ อัตราเร็วของคลื่นนี้คือเท่าใด?",
+    "choices": [
+      "A. $8\\text{ m/s}$",
+      "B. $16\\text{ m/s}$",
+      "C. $20\\text{ m/s}$",
+      "D. $32\\text{ m/s}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>ถอดรหัสกราฟ:</b> กราฟ $y-x$ ให้ $\\lambda = 10 - 2 = 8\\text{ m}$, กราฟ $y-t$ ให้ $f = \\frac{4\\text{ รอบ}}{2\\text{ วินาที}} = 2\\text{ Hz}$ คูณกันทันที $v = f\\lambda = 2 \\times 8 = 16\\text{ m/s}$ ตอบ B!",
+    "fullSolution": "<b>หลักการอ่านกราฟฟิสิกส์ 2 รูป:</b><br>1. กราฟ $y$ กับ $x$ (ภาพนิ่ง Snapshot ของคลื่น): ระยะระหว่างยอดคลื่นสองยอดติดกัน คือ 1 ความยาวคลื่น ($\\lambda$)<br>$\\lambda = 10\\text{ m} - 2\\text{ m} = 8\\text{ m}$<br>2. กราฟ $y$ กับ $t$ (ประวัติการสั่นของอนุภาคเดี่ยว): ความถี่ $f$ คือ จำนวนรอบใน 1 วินาที<br>$f = \\frac{4\\text{ รอบ}}{2\\text{ s}} = 2\\text{ Hz}$ (คาบ $T = 0.5\\text{ s}$)<br>3. หาอัตราเร็วคลื่นจากสมการการเคลื่อนที่:<br>$v = f\\lambda = 2\\text{ s}^{-1} \\times 8\\text{ m} = 16\\text{ m/s}$",
+    "trap": "ข้อสอบชอบเอากราฟ $y-x$ กับ $y-t$ มาประกบคู่กัน! เด็กมักสับสน แกนนอนคือ $x$ (ระยะทาง) หรือ $t$ (เวลา) อ่านสลับกันปุ๊บผิดทันที!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 8,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ท้าทาย",
+    "question": "เชือกยาว $10\\text{ m}$ มีมวลรวม $0.5\\text{ kg}$ ถูกขึงตึงด้วยแรงตึง $180\\text{ N}$ ถ้าทำให้เกิดคลื่นความถี่ $30\\text{ Hz}$ ในเส้นเชือกนี้ ความยาวคลื่นในเส้นเชือกจะมีค่าเท่าใด?",
+    "choices": [
+      "A. $1.0\\text{ m}$",
+      "B. $2.0\\text{ m}$",
+      "C. $3.0\\text{ m}$",
+      "D. $6.0\\text{ m}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>ทริคไว 3 สเตป:</b><br>1) มวลต่อความยาว $\\mu = \\frac{0.5}{10} = 0.05 = \\frac{1}{20}$<br>2) $v = \\sqrt{\\frac{T}{\\mu}} = \\sqrt{180 \\times 20} = \\sqrt{3600} = 60\\text{ m/s}$<br>3) $\\lambda = \\frac{v}{f} = \\frac{60}{30} = 2.0\\text{ m}$ ตอบ B ใน 10 วินาที!",
+    "fullSolution": "<b>แสดงวิธีทำเชิงลึก:</b><br>1. อัตราเร็วของคลื่นตามขวางในเส้นเชือกขึ้นกับแรงตึงเชือก ($T$) และมวลต่อหน่วยความยาว ($\\mu$):<br>$\\mu = \\frac{m}{L} = \\frac{0.5\\text{ kg}}{10\\text{ m}} = 0.05\\text{ kg/m}$<br>$v = \\sqrt{\\frac{T}{\\mu}} = \\sqrt{\\frac{180}{0.05}} = \\sqrt{3600} = 60\\text{ m/s}$<br>2. จากสมการคลื่น $v = f\\lambda$:<br>$\\lambda = \\frac{v}{f} = \\frac{60\\text{ m/s}}{30\\text{ Hz}} = 2.0\\text{ m}$",
+    "trap": "ระวังสูตร $v = \\sqrt{T/\\mu}$! หลายคนเอา มวลรวม $0.5\\text{ kg}$ ไปแทนเป็น $\\mu$ เลยโดยไม่หารความยาวเชือก $L=10\\text{ m}$ ทำให้ได้ $\\sqrt{180/0.5} = \\sqrt{360}$ ตัวเลขติดรูทไปต่อไม่ถูก!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 9,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ปานกลาง",
+    "question": "คลื่นดลบนเส้นเชือกที่มี 'สันคลื่น' เคลื่อนที่เข้าชนจุดตรึงแน่น (Fixed end) คลื่นสะท้อนที่เคลื่อนที่สะท้อนกลับมาจะมีลักษณะและเฟสอย่างไร?",
+    "choices": [
+      "A. เป็นสันคลื่นเหมือนเดิม เฟสไม่เปลี่ยนแปลง ($0^\\circ$)",
+      "B. กลับเป็นท้องคลื่น เฟสเปลี่ยนไป $180^\\circ$ ($\\pi\\text{ rad}$)",
+      "C. เป็นสันคลื่น แต่อัตราเร็วลดลงครึ่งหนึ่ง",
+      "D. หายไปทั้งหมดเนื่องจากจุดตรึงดูดกลืนพลังงานคลื่น 100%"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>คาถาจำแม่น:</b> 'ตรึงแน่น = สู้กลับ (เฟสกลับ $180^\\circ$), ปลายอิสระ = ยอมตาม (เฟสเดิม $0^\\circ$)' ข้อนี้ปลายตรึงแน่น สันคลื่นจึงเด้งกลับเป็นท้องคลื่น เฟสเปลี่ยน $180^\\circ$ กา B ทันที!",
+    "fullSolution": "<b>ฟิสิกส์เบื้องหลังการสะท้อน:</b><br>ตามกฎการเคลื่อนที่ข้อที่ 3 ของนิวตัน เมื่อสันคลื่นดึงจุดตรึงขึ้น จุดตรึงจะออกแรงดึงเชือกกลับลงมาในทิศตรงข้ามด้วยขนาดเท่ากัน (Action = Reaction) ส่งผลให้เกิดคลื่นสะท้อนที่มีการกระจัดในทิศทางตรงกันข้าม เฟสจึงเปลี่ยนไป $180^\\circ$ (หรือ $\\pi$ เรเดียน) สันคลื่นกลายเป็นท้องคลื่น โดยอัตราเร็ว ความถี่ และความยาวคลื่นยังคงเท่าเดิมทุกประการ",
+    "trap": "จุดสับสนยอดฮิต: จำสลับระหว่าง 'ปลายตรึงแน่น' (Fixed end -> เฟสเปลี่ยน $180^\\circ$) กับ 'ปลายอิสระ' (Free end คล้องห่วงลื่น -> เฟสไม่เปลี่ยน $0^\\circ$)!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 10,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ยาก",
+    "question": "คลื่นน้ำเคลื่อนที่จากบริเวณน้ำลึกเข้าสู่น้ำตื้น โดยทำมุมตกกระทบ $53^\\circ$ กับ 'ผิวรอยต่อ' ระหว่างตัวกลาง และหักเหไปโดยหน้าคลื่นในน้ำตื้นทำมุม $30^\\circ$ กับ 'ผิวรอยต่อ' จงหาอัตราส่วนของอัตราเร็วคลื่นในน้ำลึกต่ออัตราเร็วคลื่นในน้ำตื้น ($v_{deep}/v_{shallow}$)",
+    "choices": [
+      "A. $\\frac{\\sin 53^\\circ}{\\sin 30^\\circ} = \\frac{0.8}{0.5} = 1.6$",
+      "B. $\\frac{\\sin 37^\\circ}{\\sin 60^\\circ} = \\frac{0.6}{\\sqrt{3}/2} = \\frac{2\\sqrt{3}}{5}$",
+      "C. $\\frac{\\sin 37^\\circ}{\\sin 30^\\circ} = 1.2$",
+      "D. $\\frac{\\sin 53^\\circ}{\\sin 60^\\circ} = \\frac{1.6}{\\sqrt{3}}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>เรดาร์ดักมุมหลอก:</b> กฎของสเนลล์ $\\theta$ ต้องวัดเทียบกับ 'เส้นแนวฉาก (Normal line)' หรือ 'หน้าคลื่นทำกับรอยต่อ'! แต่โจทย์ข้อนี้บอก 'ทิศคลื่นทำกับผิวรอยต่อ $53^\\circ$' ดังนั้น $\\theta_1 = 90^\\circ - 53^\\circ = 37^\\circ$! ส่วนน้ำตื้นบอก 'หน้าคลื่นทำมุม $30^\\circ$ กับรอยต่อ' นี่คือ $\\theta_2 = 30^\\circ$ ทันที หรือถ้ามองทิศคลื่นคือ $60^\\circ$ มาดูการเทียบสเปก: $\\frac{v_1}{v_2} = \\frac{\\sin\\theta_1}{\\sin\\theta_2} = \\frac{\\sin 37^\\circ}{\\sin 60^\\circ}$ กา B!",
+    "fullSolution": "<b>วิเคราะห์มุมตามกฎของสเนลล์อย่างรอบคอบ:</b><br>1. ในบริเวณน้ำลึก (ตัวกลาง 1): รังสีคลื่น (ทิศการเคลื่อนที่) ทำมุม $53^\\circ$ กับผิวรอยต่อ<br>ดังนั้น มุมตกกระทบเทียบกับเส้นปกติ $\\theta_1 = 90^\\circ - 53^\\circ = 37^\\circ$<br>2. ในบริเวณน้ำตื้น (ตัวกลาง 2): หน้าคลื่นทำมุมกับรอยต่อเท่ากับมุมหักเหพอดี แต่ถ้าโจทย์บอกหน้าคลื่นทำมุม $60^\\circ$ หรือรังสีทำมุม ให้ดูความสัมพันธ์ทางเรขาคณิต:<br>มุมระหว่างรังสีคลื่นกับเส้นแนวฉาก $\\theta_2 = 60^\\circ$ (เมื่อหน้าคลื่นทำมุมกับรอยต่อ $60^\\circ$ หรือรังสีทำมุม $30^\\circ$ กับรอยต่อ)<br>3. กฎของสเนลล์: $\\frac{v_{deep}}{v_{shallow}} = \\frac{\\sin\\theta_{deep}}{\\sin\\theta_{shallow}} = \\frac{\\sin 37^\\circ}{\\sin 60^\\circ} = \\frac{3/5}{\\sqrt{3}/2} = \\frac{6}{5\\sqrt{3}} = \\frac{2\\sqrt{3}}{5}$",
+    "trap": "กับดักมหาโหดอันดับ 1 ของเรื่องคลื่น! โจทย์ให้มุมมา 2 แบบ: 'รังสีคลื่นทำกับรอยต่อ' vs 'หน้าคลื่นทำกับรอยต่อ' vs 'รังสีคลื่นทำกับเส้นปกติ' นักเรียน 85% เอาตัวเลข $53^\\circ$ กับ $30^\\circ$ ไปเข้า $\\sin 53^\\circ / \\sin 30^\\circ$ ทันทีแล้วโดนหักคะแนนยับ!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 11,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ท้าทาย",
+    "question": "คลื่นน้ำในบริเวณน้ำตื้นมีอัตราเร็ว $12\\text{ m/s}$ เคลื่อนที่เข้าสู่บริเวณน้ำลึกที่มีอัตราเร็ว $20\\text{ m/s}$ มุมวิกฤต (Critical Angle) ของการสะท้อนกลับหมดมีค่าเท่าใด และคลื่นต้องเคลื่อนที่จากบริเวณใดไปบริเวณใด?",
+    "choices": [
+      "A. $\\arcsin(0.6)$, ต้องเคลื่อนที่จากน้ำตื้นไปน้ำลึก",
+      "B. $\\arcsin(0.6)$, ต้องเคลื่อนที่จากน้ำลึกไปน้ำตื้น",
+      "C. $\\arcsin(0.8)$, ต้องเคลื่อนที่จากน้ำตื้นไปน้ำลึก",
+      "D. ไม่เกิดมุมวิกฤตในคลื่นน้ำ เกิดได้เฉพาะคลื่นแสงเท่านั้น"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>เงื่อนไขการสะท้อนกลับหมด:</b> คลื่นต้องวิ่งจาก 'ที่ช้าไปที่เร็ว' (มุมเบนออกจากเส้นปกติ) และ $\\sin\\theta_c = \\frac{v_{น้อย}}{v_{มาก}} = \\frac{12}{20} = 0.6$ น้ำตื้นช้ากว่าน้ำลึก ดังนั้นต้องจากน้ำตื้นไปน้ำลึก! ตอบ A ทันที!",
+    "fullSolution": "<b>หลักการฟิสิกส์เรื่องมุมวิกฤต:</b><br>1. การสะท้อนกลับหมด (Total Internal Reflection) เกิดขึ้นเมื่อคลื่นเคลื่อนที่จากตัวกลางที่มีอัตราเร็วน้อย ไปยังตัวกลางที่มีอัตราเร็วมาก (มุมหักเหจะเบนออกจากเส้นแนวฉาก $\\theta_2 > \\theta_1$ จนถึง $90^\\circ$)<br>2. สำหรับคลื่นน้ำ: $v_{ตื้น} < v_{ลึก}$ ดังนั้นคลื่นต้องเคลื่อนที่จาก <b>น้ำตื้นไปสู่น้ำลึก</b> เท่านั้น!<br>3. หาค่ามุมวิกฤต $\\theta_c$ เมื่อ $\\theta_2 = 90^\\circ$:<br>$\\frac{\\sin\\theta_c}{\\sin 90^\\circ} = \\frac{v_1}{v_2} = \\frac{v_{ตื้น}}{v_{ลึก}}$<br>$\\sin\\theta_c = \\frac{12}{20} = 0.6 \\implies \\theta_c = \\arcsin(0.6) \\approx 37^\\circ$",
+    "trap": "ข้อสอบชอบถามว่า 'จากน้ำลึกไปน้ำตื้นหรือน้ำตื้นไปน้ำลึก' เด็กชอบจำคลื่นแสงที่วิ่งจาก 'ดรรชนีหักเหน้อยไปมาก' สับสนกับความเร็ว! จำให้ขึ้นใจ: จะสะท้อนกลับหมดได้ มุมต้องกางออกเรื่อยๆ จึงต้องเริ่มจาก 'ความเร็วน้อย ($v$ ช้า)' ไป 'ความเร็วมาก ($v$ เร็ว)'!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 12,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ยาก",
+    "question": "แหล่งกำเนิดคลื่นอาพันธ์ $S_1$ และ $S_2$ วางห่างกัน $14\\text{ cm}$ ให้คลื่นที่มีความยาวคลื่น $\\lambda = 4\\text{ cm}$ และ 'มีเฟสตรงกัน' ระหว่างแหล่งกำเนิดทั้งสองจะเกิดแนวปฏิบัพ (Antinode) และแนวบัพ (Node) รวมทั้งหมดกี่แนว?",
+    "choices": [
+      "A. ปฏิบัพ 7 แนว, บัพ 6 แนว",
+      "B. ปฏิบัพ 7 แนว, บัพ 8 แนว",
+      "C. ปฏิบัพ 6 แนว, บัพ 6 แนว",
+      "D. ปฏิบัพ 3 แนว, บัพ 4 แนว"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>สูตรลัดนับเส้นแนวแทรกสอด:</b><br>หาค่า $N_{max} = \\frac{d}{\\lambda} = \\frac{14}{4} = 3.5$<br>- แนวปฏิบัพ (เสริม): $n = 0, 1, 2, 3$ จำนวนแนวทั้งหมด = $2(3) + 1 = 7$ แนว<br>- แนวบัพ (หักล้าง): $n - 0.5 \\le 3.5 \\implies n = 1, 2, 3$ จำนวนแนว = $2(3) = 6$ แนว<br>ตอบทันที A! (ปฏิบัพ 7, บัพ 6)",
+    "fullSolution": "<b>ขั้นตอนคำนวณการแทรกสอดอย่างละเอียด:</b><br>1. แหล่งกำเนิดอาพันธ์เฟสตรงกัน: แนวกลางเป็นปฏิบัพ $A_0$<br>2. แนวปฏิบัพ (Antinode): $d\\sin\\theta = n\\lambda$<br>แนวสุดท้ายเกิดขึ้นที่มุม $\\theta < 90^\\circ$ (ไม่นับบนเส้นต่อเชื่อมระหว่างแหล่งกำเนิด):<br>$n < \\frac{d}{\\lambda} = \\frac{14}{4} = 3.5 \\implies n = 0, 1, 2, 3$<br>มีแนวกลาง $A_0$ 1 แนว และด้านซ้าย-ขวา ข้างละ 3 แนว ($A_1, A_2, A_3$) รวม $= 2(3) + 1 = 7$ แนว<br>3. แนวบัพ (Node): $d\\sin\\theta = (n - 0.5)\\lambda$<br>$(n - 0.5) < \\frac{d}{\\lambda} = 3.5 \\implies n < 4.0 \\implies n = 1, 2, 3$<br>มีด้านซ้าย-ขวา ข้างละ 3 แนว รวมเป็น $2 \\times 3 = 6$ แนว",
+    "trap": "ระวังหลงลืมแนวกลาง $A_0$! และถ้า $\\frac{d}{\\lambda}$ หารลงตัว เช่น $3.0$ พอดี แนวที่ $n=3$ จะอยู่ที่ $\\sin\\theta = 1$ ($90^\\circ$) ซึ่งอยู่บนแนวเชื่อมต่อแหล่งกำเนิด ไม่นับเป็นแนวแทรกสอดในระนาบ!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 13,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ท้าทาย",
+    "question": "ถ้าแหล่งกำเนิดคลื่น $S_1$ และ $S_2$ ในข้อก่อนหน้า เปลี่ยนเป็น 'มีเฟสตรงข้ามกัน $180^\\circ$' แนวกลางของลวดลายการแทรกสอดจะเป็นแนวใด และมีจำนวนแนวปฏิบัพและบัพรวมเป็นเท่าใด?",
+    "choices": [
+      "A. แนวกลางเป็น $A_0$, ปฏิบัพ 7 แนว, บัพ 6 แนว",
+      "B. แนวกลางเป็น $N_0$, ปฏิบัพ 6 แนว, บัพ 7 แนว",
+      "C. แนวกลางเป็น $N_0$, ปฏิบัพ 6 แนว, บัพ 8 แนว",
+      "D. เกิดการหักล้างกันหมดจนไม่เกิดลวดลายการแทรกสอด"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>ทริคเฟสตรงข้าม สลับร่าง!:</b> เมื่อเฟสตรงข้ามกัน $180^\\circ$ สูตรสลับกันทันที!<br>แนวกลางกลายเป็น 'บัพกลาง ($N_0$)'<br>จำนวนแนวจะสลับกัน: ปฏิบัพเหลือ $2 \\times 3 = 6$ แนว และ บัพกลายเป็น $2(3) + 1 = 7$ แนว ตอบ B ทันที!",
+    "fullSolution": "<b>ทฤษฎีการแทรกสอดเมื่อแหล่งกำเนิดเฟสตรงข้ามกัน:</b><br>1. ที่กึ่งกลางระหว่าง $S_1$ และ $S_2$ ระยะทาง $S_1P = S_2P \\implies \\Delta d = 0$<br>แต่คลื่นที่ออกจากแหล่งกำเนิดมีเฟสเริ่มต้นต่างกัน $\\pi\\text{ rad}$ ($180^\\circ$) ยอดคลื่นจาก $S_1$ จึงมาเจอกับท้องคลื่นจาก $S_2$ พอดีเสมอ ส่งผลให้เกิดการแทรกสอดแบบหักล้าง เรียกว่า <b>แนวบัพกลาง ($N_0$)</b><br>2. สูตรการแทรกสอดจะสลับกันทั้งหมด:<br>- แนวบัพ (Node): $d\\sin\\theta = n\\lambda \\implies n < 3.5 \\implies n = 0, 1, 2, 3$ รวมมี $2(3) + 1 = 7$ แนว<br>- แนวปฏิบัพ (Antinode): $d\\sin\\theta = (n - 0.5)\\lambda \\implies n = 1, 2, 3$ รวมมี $2 \\times 3 = 6$ แนว",
+    "trap": "ข้อสอบระดับคัดเลือก (สอวน./A-Level) นิยมหยิบเคสเฟสตรงข้ามมาออกเพื่อคัดคน เพราะคนส่วนใหญ่จะท่องแต่สูตรเฟสตรงกัน เมื่อเห็น $S_1, S_2$ ก็จะเขียน $A_0$ ตรงกลางทันที!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 14,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ยาก",
+    "question": "จุด $P$ อยู่ห่างจากแหล่งกำเนิดอาพันธ์ $S_1$ และ $S_2$ เป็นระยะ $25\\text{ cm}$ และ $19\\text{ cm}$ ตามลำดับ ถ้าความเร็วคลื่นเท่ากับ $1.2\\text{ m/s}$ และความถี่คลื่นเท่ากับ $40\\text{ Hz}$ (แหล่งกำเนิดสั่นเฟสตรงกัน) จุด $P$ อยู่บนแนวใด?",
+    "choices": [
+      "A. แนวปฏิบัพที่ 2 ($A_2$)",
+      "B. แนวบัพที่ 2 ($N_2$)",
+      "C. แนวปฏิบัพที่ 3 ($A_3$)",
+      "D. แนวบัพที่ 3 ($N_3$)"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>คำนวณในใจ 3 สเตป:</b><br>1) $\\lambda = \\frac{v}{f} = \\frac{120\\text{ cm/s}}{40\\text{ s}^{-1}} = 3\\text{ cm}$<br>2) ผลต่างระยะทาง $|S_1P - S_2P| = |25 - 19| = 6\\text{ cm}$<br>3) เอา $6 \\div \\lambda = 6 \\div 3 = 2$ ลงตัวเป๊ะ! เลขจำนวนเต็ม = ปฏิบัพที่ 2 ($A_2$) ตอบ A!",
+    "fullSolution": "<b>แสดงวิธีทำ:</b><br>1. หาความยาวคลื่น $\\lambda$:<br>$\\lambda = \\frac{v}{f} = \\frac{1.2\\text{ m/s}}{40\\text{ Hz}} = 0.03\\text{ m} = 3\\text{ cm}$<br>2. หาผลต่างของระยะทาง (Path Difference):<br>$\\Delta d = |S_1P - S_2P| = |25\\text{ cm} - 19\\text{ cm}| = 6\\text{ cm}$<br>3. เปรียบเทียบกับเงื่อนไขการแทรกสอด (เฟสตรงกัน):<br>$\\frac{|S_1P - S_2P|}{\\lambda} = \\frac{6\\text{ cm}}{3\\text{ cm}} = 2$<br>ตรงกับสมการ $|S_1P - S_2P| = n\\lambda$ โดยที่ $n = 2$ ดังนั้น จุด $P$ จึงอยู่บนแนวปฏิบัพที่ 2 ($A_2$)",
+    "trap": "ระวังหน่วย! $v = 1.2\\text{ m/s}$ แต่ระยะทางให้มาเป็น $\\text{cm}$ ต้องแปลงให้เป็นหน่วยเดียวกันก่อนหารเสมอ!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 15,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ปานกลาง",
+    "question": "คลื่นน้ำเคลื่อนที่ผ่านช่องเปิดเดี่ยว (Single slit) กว้าง $a$ คลื่นจะแสดงสมบัติการ 'เลี้ยวเบน' ได้เด่นชัดที่สุดและหน้าคลื่นแผ่โค้งเป็นวงกลมสมบูรณ์ เมื่อเงื่อนไขของความกว้างช่อง $a$ เทียบกับความยาวคลื่น $\\lambda$ เป็นไปตามข้อใด?",
+    "choices": [
+      "A. $a \\gg \\lambda$ (ช่องกว้างกว่าความยาวคลื่นมากๆ)",
+      "B. $a \\le \\lambda$ (ช่องแคบกว่าหรือมีขนาดใกล้เคียงความยาวคลื่น)",
+      "C. $a = 10\\lambda$",
+      "D. การเลี้ยวเบนไม่ขึ้นกับความกว้างช่อง ขึ้นอยู่กับแอมพลิจูดเท่านั้น"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>หลักเกณฑ์จำง่าย:</b> 'ยิ่งแคบยิ่งโค้ง ยิ่งกว้างยิ่งตรง' เมื่อ $a \\le \\lambda$ ช่องจะประพฤติตัวเสมือนเป็นแหล่งกำเนิดจุดเดียว (ตามหลักฮอยเกนส์) คลื่นจึงแผ่ออกเป็นรูปวงกลมเลี้ยวเบนดีที่สุด กาข้อ B!",
+    "fullSolution": "<b>คำอธิบายตามหลักการของฮอยเกนส์:</b><br>1. ทุกๆ จุดบนหน้าคลื่นสามารถถือเป็นแหล่งกำเนิดคลื่นรูปวงกลมใหม่ (Secondary wavelets)<br>2. เมื่อคลื่นผ่านช่องแคบเดี่ยวที่มีความกว้าง $a \\le \\lambda$ ช่องจะทำหน้าที่เสมือนเป็นจุดกำเนิดคลื่นเดี่ยว คลื่นที่แผ่ออกไปด้านหลังสิ่งกีดขวางจึงโค้งเป็นวงกลมสมบูรณ์และไม่มีแนวบัพ (หักล้าง)<br>3. หากช่องกว้างกว่าความยาวคลื่น ($a > \\lambda$) คลื่นจะเลี้ยวเบนตรงขอบ ส่วนตรงกลางจะแผ่เป็นเส้นตรงไปข้างหน้า และเกิดการแทรกสอดหักล้างเป็นแนวบัพตามสมการ $a\\sin\\theta = n\\lambda$",
+    "trap": "เด็กมักคิดว่า 'ช่องยิ่งกว้าง คลื่นยิ่งผ่านได้เยอะ ก็น่าจะเลี้ยวเบนได้ดี' ซึ่งตรงกันข้ามกับความเป็นจริงของฟิสิกส์คลื่น!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 16,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ปานกลาง",
+    "question": "คลื่นนิ่ง (Standing Wave) เกิดจากปรากฏการณ์ใดของคลื่น และมีลักษณะการถ่ายโอนพลังงานอย่างไร?",
+    "choices": [
+      "A. การเลี้ยวเบนของคลื่นสองขบวน และมีการถ่ายโอนพลังงานไปข้างหน้าอย่างรวดเร็ว",
+      "B. การแทรกสอดของคลื่นสองขบวนที่เหมือนกันทุกประการแต่เคลื่อนที่สวนทางกัน โดยไม่มีการถ่ายโอนพลังงานสุทธิไปข้างหน้า",
+      "C. การหักเหกลับไปกลับมาในตัวกลางสองชนิดที่มีความหนาแน่นต่างกัน",
+      "D. การสั่นพ้องของอนุภาคตัวกลางที่มีความถี่ธรรมชาติไม่เท่ากัน"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>นิยามหัวใจคลื่นนิ่ง:</b> 'คลื่น 2 ขบวน ฝาแฝด สวนทาง ซ้อนทับ พลังงานถูกกักขัง ไม่แผ่ไปข้างหน้า' ตัด A, C, D ทันที กา B!",
+    "fullSolution": "<b>ทฤษฎีคลื่นนิ่ง:</b><br>1. คลื่นนิ่งเกิดจากการซ้อนทับ (Superposition / Interference) ของคลื่นสองขบวนที่มีความถี่ แอมพลิจูด และความยาวคลื่นเท่ากัน เคลื่อนที่สวนทางกันในตัวกลางเดียวกัน<br>2. ผลจากการแทรกสอดทำให้เกิดจุดที่ไม่สั่นเลยตลอดเวลา เรียกว่า <b>บัพ (Node)</b> และจุดที่สั่นด้วยแอมพลิจูดสูงสุด ($2A$) เรียกว่า <b>ปฏิบัพ (Antinode)</b><br>3. คลื่นนิ่งไม่มีการส่งผ่านพลังงานไปยังทิศทางใดทิศทางหนึ่ง พลังงานกลจะถูกกักขังและเปลี่ยนรูปสลับไปมาระหว่างพลังงานจลน์และพลังงานศักย์ยืดหยุ่นระหว่างจุดบัพ",
+    "trap": "ข้อสอบชอบถามว่า 'คลื่นนิ่งมีการถ่ายโอนพลังงานไปตามทิศทางของคลื่นหรือไม่' คำตอบคือไม่มีการถ่ายโอนพลังงานสุทธิ (Net energy transfer = 0)!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 17,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ยาก",
+    "question": "ในคลื่นนิ่ง ระยะห่างระหว่างตำแหน่ง 'บัพ' (Node) ถึงตำแหน่ง 'ปฏิบัพ' (Antinode) ที่อยู่ติดกัน มีค่าเท่าใดในเทอมของความยาวคลื่น $\\lambda$?",
+    "choices": [
+      "A. $\\lambda$",
+      "B. $\\frac{\\lambda}{2}$",
+      "C. $\\frac{\\lambda}{4}$",
+      "D. $\\frac{\\lambda}{8}$"
+    ],
+    "answer": 2,
+    "speedTrick": "💡 <b>จำจังหวะเพลง:</b><br>Node ถึง Node ติดกัน = $\\frac{\\lambda}{2}$<br>Antinode ถึง Antinode ติดกัน = $\\frac{\\lambda}{2}$<br>Node ถึง Antinode ติดกัน = 'ครึ่งหนึ่งของครึ่งลูป' = $\\frac{\\lambda}{4}$ กา C ทันที!",
+    "fullSolution": "<b>ความสัมพันธ์ของระยะทางบนคลื่นนิ่ง:</b><br>- ลูปคลื่น 1 ลูป (Loop) คือระยะระหว่าง Node ถึง Node ติดกัน มีความยาวเท่ากับ $\\frac{\\lambda}{2}$<br>- ที่กึ่งกลางลูปคือตำแหน่ง Antinode ดังนั้นระยะทางจาก Node ไปยัง Antinode ที่อยู่ติดกัน จึงเป็นระยะทางเพียงครึ่งหนึ่งของลูป:<br>$\\text{ระยะห่าง} = \\frac{1}{2} \\times \\left(\\frac{\\lambda}{2}\\right) = \\frac{\\lambda}{4}$",
+    "trap": "ระวังอ่านโจทย์ไม่ละเอียด! ถ้าโจทย์ถาม 'Node ถึง Node ติดกัน' ตอบ $\\lambda/2$ แต่ข้อนี้ถาม 'Node ถึง Antinode ติดกัน' ต้องตอบ $\\lambda/4$!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 18,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ยาก",
+    "question": "เส้นเชือกยาว $1.2\\text{ m}$ ตรึงแน่นที่ปลายทั้งสองข้าง เมื่อถูกกระตุ้นให้สั่นเกิดคลื่นนิ่งที่มี 'ปฏิบัพ 4 ตำแหน่ง' ถ้าอัตราเร็วของคลื่นในเส้นเชือกเท่ากับ $24\\text{ m/s}$ ความถี่ของการสั่นนี้มีค่าเท่าใด?",
+    "choices": [
+      "A. $20\\text{ Hz}$",
+      "B. $40\\text{ Hz}$",
+      "C. $60\\text{ Hz}$",
+      "D. $80\\text{ Hz}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>คิดเลขในใจ 5 วิ:</b> ปลายตรึง 2 ข้าง ปฏิบัพ 4 ตำแหน่ง = เกิด 4 ลูป ($n=4$)!<br>ความยาวเชือก $L = 4(\\frac{\\lambda}{2}) = 2\\lambda = 1.2\\text{ m} \\implies \\lambda = 0.6\\text{ m}$<br>$f = \\frac{v}{\\lambda} = \\frac{24}{0.6} = 40\\text{ Hz}$ กา B ชัวร์ร้อยเปอร์เซ็นต์!",
+    "fullSolution": "<b>แสดงวิธีทำสมการคลื่นนิ่งปลายตรึงสองข้าง:</b><br>1. เชือกปลายตรึงสองข้าง ปลายทั้งสองข้างต้องเป็นจุดบัพ (Node)<br>จำนวนปฏิบัพ (Antinode) = จำนวนลูป ($n$) = 4 ลูป (Harmonic ที่ 4)<br>2. ความสัมพันธ์ระหว่างความยาวเชือกกับความยาวคลื่น:<br>$L = n \\left(\\frac{\\lambda}{2}\\right)$<br>$1.2 = 4 \\left(\\frac{\\lambda}{2}\\right) = 2\\lambda \\implies \\lambda = 0.6\\text{ m}$<br>3. คำนวณหาความถี่จาก $v = f\\lambda$:<br>$f = \\frac{v}{\\lambda} = \\frac{24\\text{ m/s}}{0.6\\text{ m}} = 40\\text{ Hz}$",
+    "trap": "บางคนจำสูตรจำนวน Node สับสน: ปลายตรึงสองข้าง ถ้ามี 4 Antinode จะมี 5 Node! ถ้านับจำนวน Node แล้วเอาไปแทนเป็น $n=5$ จะคิดความถี่ผิดทันที!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 19,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ท้าทาย",
+    "question": "เชือกเส้นหนึ่งขึงตึงปลายข้างหนึ่งไว้กับผนัง ส่วนปลายอีกข้างหนึ่งต่อกับเครื่องสั่นที่มีความถี่คงที่ $f$ พบว่าเกิดคลื่นนิ่ง 3 ลูป หากต้องการให้เกิดคลื่นนิ่ง 6 ลูป โดยความถี่ของเครื่องสั่นและความยาวเชือกคงเดิม จะต้องปรับ 'แรงตึงเชือก' ($T$) เป็นกี่เท่าของค่าเดิม?",
+    "choices": [
+      "A. 4 เท่าของค่าเดิม",
+      "B. 2 เท่าของค่าเดิม",
+      "C. $\\frac{1}{2}$ เท่าของค่าเดิม",
+      "D. $\\frac{1}{4}$ เท่าของค่าเดิม"
+    ],
+    "answer": 3,
+    "speedTrick": "💡 <b>ทริคสมناسبทางฟิสิกส์:</b><br>$L = n\\frac{\\lambda}{2} = n\\frac{v}{2f} = n\\frac{\\sqrt{T/\\mu}}{2f}$<br>เมื่อ $L, f, \\mu$ คงที่ $\\implies n\\sqrt{T} = \\text{คงที่}$<br>ลูปเพิ่มจาก 3 เป็น 6 ($n$ เป็น 2 เท่า) $\\implies \\sqrt{T}$ ต้องลดเหลือ $\\frac{1}{2}$<br>ยกกำลังสอง: $T$ ต้องกลายเป็น $\\left(\\frac{1}{2}\\right)^2 = \\frac{1}{4}$ เท่า ตอบ D!",
+    "fullSolution": "<b>การวิเคราะห์สัดส่วนตัวแปร:</b><br>1. สมการคลื่นนิ่ง: $f = \\frac{n}{2L}v = \\frac{n}{2L}\\sqrt{\\frac{T}{\\mu}}$<br>2. จัดรูปหาแรงตึงเชือก $T$:<br>$\\sqrt{T} = \\frac{2Lf\\sqrt{\\mu}}{n} \\implies T \\propto \\frac{1}{n^2}$<br>3. เปรียบเทียบสองกรณี:<br>$\\frac{T_2}{T_1} = \\left(\\frac{n_1}{n_2}\\right)^2 = \\left(\\frac{3}{6}\\right)^2 = \\left(\\frac{1}{2}\\right)^2 = \\frac{1}{4}$ เท่า",
+    "trap": "โจทย์แนววิเคราะห์สัดส่วนที่ออกสอบบ่อยมาก! นักเรียนมักลืมใส่สแควร์รูทที่แรงตึงเชือก $v = \\sqrt{T/\\mu}$ แล้วตอบ $\\frac{1}{2}$ เท่า ซึ่งผิด!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 20,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ท้าทาย",
+    "question": "การทดลองคลื่นนิ่งในเส้นเชือกปลายข้างหนึ่งตรึงแน่น อีกข้างหนึ่งเป็นปลายอิสระ (คล้องห่วงเบามากกับแท่งลื่น) ความยาวคลื่นที่ยาวที่สุดที่สามารถเกิดคลื่นนิ่งในเชือกยาว $L$ นี้ได้ (Fundamental Mode) มีค่าเท่าใด?",
+    "choices": [
+      "A. $\\frac{L}{2}$",
+      "B. $L$",
+      "C. $2L$",
+      "D. $4L$"
+    ],
+    "answer": 3,
+    "speedTrick": "💡 <b>ภาพในหัว 2 วิ:</b> ปลายข้างหนึ่งตรึง (Node) ปลายอีกข้างอิสระ (Antinode) สภาพนี้คือ '1 ใน 4 ของคลื่น' (เพียงครึ่งลูป)! ดังนั้น $L = \\frac{\\lambda}{4} \\implies \\lambda = 4L$ ตอบ D ทันที!",
+    "fullSolution": "<b>วิเคราะห์เงื่อนไขขอบเขต (Boundary Conditions):</b><br>1. ปลายตรึงแน่น บังคับให้การกระจัดเป็น 0 เสมอ $\\implies$ เกิดเป็นตำแหน่ง <b>Node</b><br>2. ปลายอิสระ เคลื่อนที่ได้อย่างอิสระ แอมพลิจูดสูงสุด $\\implies$ เกิดเป็นตำแหน่ง <b>Antinode</b><br>3. โหมดการสั่นพื้นฐาน (Fundamental Mode) ที่มีความยาวคลื่นมากที่สุด จะมี Node ที่ปลายข้างหนึ่ง และ Antinode ที่ปลายอีกข้างหนึ่งโดยไม่มี Node หรือ Antinode อื่นคั่นกลาง<br>ระยะระหว่าง Node ถึง Antinode ติดกัน คือ $\\frac{\\lambda}{4}$<br>ดังนั้น $L = \\frac{\\lambda}{4} \\implies \\lambda = 4L$",
+    "trap": "ระวัง! ถ้าปลายตรึง 2 ข้าง $\\lambda = 2L$ แต่ข้อนี้ 'ปลายตรึงข้างหนึ่ง ปลายอิสระข้างหนึ่ง' จะเหมือนท่อลมปลายปิดด้านเดียว ต้องเป็น $\\lambda = 4L$!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 21,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ยากมาก",
+    "question": "คลื่นน้ำมีความถี่ $12\\text{ Hz}$ แผ่ออกไป มีระยะห่างระหว่างสันคลื่นที่ 1 ถึงสันคลื่นที่ 5 เท่ากับ $40\\text{ cm}$ ถ้าอนุภาคหนึ่งของน้ำกำลังเคลื่อนที่ผ่านจุดสมดุลขึ้นไปสู่ยอดคลื่น จะต้องใช้เวลาสั้นที่สุดเท่าใดจึงจะเคลื่อนที่ไปถึงตำแหน่งที่การกระจัดเท่ากับครึ่งหนึ่งของแอมพลิจูด ($y = +\\frac{A}{2}$)?",
+    "choices": [
+      "A. $\\frac{1}{48}\\text{ s}$",
+      "B. $\\frac{1}{72}\\text{ s}$",
+      "C. $\\frac{1}{144}\\text{ s}$",
+      "D. $\\frac{1}{288}\\text{ s}$"
+    ],
+    "answer": 2,
+    "speedTrick": "💡 <b>วงกลม 1 หน่วย SHM:</b><br>จากจุดสมดุล ($y=0, \\phi=0^\\circ$) ไป $y=\\frac{A}{2}$ ($\\\\sin\\theta = \\frac{1}{2} \\implies \\phi = 30^\\circ$ หรือ $\\frac{\\pi}{6}$ rad)<br>มุม $30^\\circ$ คิดเป็นสัดส่วน $\\frac{30^\\circ}{360^\\circ} = \\frac{1}{12}$ ของ 1 คาบ ($T$)!<br>คาบ $T = \\frac{1}{12}\\text{ s} \\implies t = \\frac{1}{12} \\times \\frac{1}{12} = \\frac{1}{144}\\text{ s}$ กา C ทันที!",
+    "fullSolution": "<b>ขั้นตอนการคำนวณ:</b><br>1. คำนวณคาบ $T$: $T = \\frac{1}{f} = \\frac{1}{12}\\text{ s}$<br>2. อนุภาคตัวกลางสั่นแบบ SHM ตามสมการ: $y = A\\sin(\\omega t)$ เมื่อเริ่มต้นที่สมดุลขึ้นข้างบน<br>เมื่อ $y = \\frac{A}{2}$:<br>$\\frac{A}{2} = A\\sin(\\omega t) \\implies \\sin(\\omega t) = \\frac{1}{2}$<br>มุมเฟสที่สั้นที่สุดคือ $\\omega t = \\frac{\\pi}{6}$ rad ($30^\\circ$)<br>แทน $\\omega = \\frac{2\\pi}{T}$:<br>$\\left(\\frac{2\\pi}{T}\\right) t = \\frac{\\pi}{6} \\implies t = \\frac{T}{12}$<br>3. แทนค่า $T = \\frac{1}{12}\\text{ s}$:<br>$t = \\frac{1/12}{12} = \\frac{1}{144}\\text{ s}$",
+    "trap": "ข้อสอบหลอกเรื่องระยะสันคลื่นที่ 1 ถึง 5! สันที่ 1 ถึง 5 มีเพียง '4 ช่วงคลื่น ($4\\lambda$)' ไม่ใช่ 5 ช่วงคลื่น! และที่สำคัญจาก $y=0$ ไป $y=A/2$ ใช้เวลา $T/12$ ไม่ใช่ $T/8$ เพราะอัตราเร็ว SHM ไม่คงที่!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 22,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ยากมาก",
+    "question": "คลื่นผิวน้ำเคลื่อนที่ผ่านรอยต่อระหว่างบริเวณน้ำลึกและน้ำตื้น โดยหน้าคลื่นตกกระทบทำมุม $30^\\circ$ กับผิวรอยต่อ ถ้าความเร็วของคลื่นในน้ำลึกเป็น $\\sqrt{2}$ เท่าของความเร็วในน้ำตื้น หน้าคลื่นหักเหในน้ำตื้นจะทำมุมกับผิวรอยต่อกี่องศา?",
+    "choices": [
+      "A. $20.7^\\circ$",
+      "B. $45.0^\\circ$",
+      "C. $60.0^\\circ$",
+      "D. $75.0^\\circ$"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>มุมหน้าคลื่นทำกับรอยต่อ = $\\theta$ ในกฎสเนลล์ทันที!</b><br>$\\frac{\\sin\\theta_1}{\\sin\\theta_2} = \\frac{v_1}{v_2} = \\sqrt{2}$<br>$\\sin\\theta_2 = \\frac{\\sin 30^\\circ}{\\sqrt{2}} = \\frac{1/2}{\\sqrt{2}} = \\frac{1}{2\\sqrt{2}} \\approx 0.354$<br>เพราะ $\\sin 30^\\circ = 0.5$ ดังนั้น $\\theta_2$ ต้องน้อยกว่า $30^\\circ$ ช้อยส์เดียวที่น้อยกว่า $30^\\circ$ คือข้อ A กาได้ทันทีโดยไม่ต้องเปิดตารางตรีโกณ!",
+    "fullSolution": "<b>กฎของสเนลล์กับมุมหน้าคลื่น:</b><br>1. 'มุมที่หน้าคลื่นทำกับรอยต่อ' จะมีค่าเท่ากับ 'มุมที่รังสีคลื่นทำกับเส้นแนวฉาก' เสมอทางเรขาคณิต (มุมที่แขนตั้งฉากกัน)<br>ดังนั้น $\\theta_{deep} = 30^\\circ$<br>2. เข้าสมการสเนลล์: $\\frac{\\sin\\theta_{deep}}{\\sin\\theta_{shallow}} = \\frac{v_{deep}}{v_{shallow}} = \\sqrt{2}$<br>$\\sin\\theta_{shallow} = \\frac{\\sin 30^\\circ}{\\sqrt{2}} = \\frac{0.5}{1.414} \\approx 0.3535$<br>$\\theta_{shallow} = \\arcsin(0.3535) \\approx 20.7^\\circ$",
+    "trap": "ตัดช้อยส์ด้วยฟิสิกส์พื้นฐาน: น้ำลึกไปน้ำตื้น $v$ ลดลง มุมต้อง 'เล็กลง' เสมอ (เบนเข้าหาเส้นปกติ)! ดังนั้นมุมใหม่ต้องน้อยกว่า $30^\\circ$ แน่นอน ตัด B, C, D ทิ้งได้หมดเกลี้ยง!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 23,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ท้าทาย",
+    "question": "แหล่งกำเนิดคลื่นอาพันธ์สองจุด $S_1$ และ $S_2$ ห่างกัน $10\\text{ cm}$ ให้คลื่นความยาวคลื่น $\\lambda = 3\\text{ cm}$ เฟสตรงกัน จุด $Q$ อยู่บน 'เส้นตรงที่ต่อเชื่อมระหว่าง $S_1$ และ $S_2$' แต่อยู่นอกช่วง $S_1S_2$ (เช่น อยู่ทางขวาของ $S_2$) จุด $Q$ จะเกิดการแทรกสอดแบบใด?",
+    "choices": [
+      "A. เกิดการแทรกสอดแบบหักล้างอย่างสมบูรณ์ (บัพ) ตลอดแนว",
+      "B. เกิดการแทรกสอดแบบเสริมอย่างสมบูรณ์ (ปฏิบัพ) ตลอดแนว",
+      "C. สั่นด้วยแอมพลิจูดคงที่เท่ากับ $A$ เท่ากันทุกจุดบนแนวนี้",
+      "D. แอมพลิจูดเปลี่ยนไปเรื่อยๆ ตามระยะทางที่จุด Q ห่างจาก $S_2$"
+    ],
+    "answer": 2,
+    "speedTrick": "💡 <b>ทริคเด็ดข้อสอบ สอวน.:</b> สำหรับจุด Q บนเส้นต่อแนว $S_1S_2$ นอกช่วง ผลต่างระยะทาง $|S_1Q - S_2Q| = d = 10\\text{ cm}$ คงที่เสมอ ไม่ว่า Q จะอยู่ห่างแค่ไหน! $\\Delta d = 10 = 3\\frac{1}{3}\\lambda \\implies \\Delta\\phi = 120^\\circ$ แอมพลิจูดลัพธ์ $A_{net} = 2A\\cos(60^\\circ) = A$ คงที่เท่าเดิมทุกจุด! กา C ทันที!",
+    "fullSolution": "<b>การวิเคราะห์ทางคณิตศาสตร์และฟิสิกส์:</b><br>1. พิจารณาจุด Q ใดๆ ที่อยู่บนแนวเส้นตรงเดียวกันที่ต่อขยายออกไปนอกช่วง $S_1S_2$ (เช่น ทางขวาของ $S_2$):<br>ระยะทาง $S_1Q = d + S_2Q$<br>ผลต่างของระยะทาง: $|S_1Q - S_2Q| = (d + S_2Q) - S_2Q = d = 10\\text{ cm}$ คงที่เสมอสำหรับทุกจุด Q!<br>2. เปรียบเทียบกับความยาวคลื่น $\\lambda = 3\\text{ cm}$:<br>$\\Delta d = 10\\text{ cm} = 3\\lambda + \\frac{1}{3}\\lambda$<br>ความต่างเฟส: $\\Delta\\phi = \\frac{2\\pi}{\\lambda}\\Delta d = \\frac{2\\pi}{3}(10) = 120^\\circ$<br>3. แอมพลิจูดรวม: $A_{net} = 2A\\cos(60^\\circ) = A$ คงที่เท่าเดิมทุกจุด",
+    "trap": "จุดลวงระดับตำนาน! หลายคนคิดว่าพอ Q ขยับออกไปไกลขึ้น ผลต่างระยะทางจะเปลี่ยน แต่แท้จริงแล้วผลต่างบนเส้นต่อขยายนี้เท่ากับระยะห่าง $d$ คงที่ตลอดแนว!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 24,
+    "cat": "theory",
+    "catName": "1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น",
+    "difficulty": "ปานกลาง",
+    "question": "เมื่อคลื่นผิวน้ำเคลื่อนที่จากบริเวณน้ำลึกเข้าสู่น้ำตื้น ปริมาณใดต่อไปนี้ของคลื่นที่มีค่า 'คงเดิมไม่เปลี่ยนแปลง'?",
+    "choices": [
+      "A. ความยาวคลื่น ($\\lambda$)",
+      "B. อัตราเร็วของคลื่น ($v$)",
+      "C. ความถี่ของคลื่น ($f$)",
+      "D. ทิศทางการเคลื่อนที่ของคลื่นเสมอ"
+    ],
+    "answer": 2,
+    "speedTrick": "💡 <b>หัวใจคลื่น:</b> 'เปลี่ยนตัวกลาง ความถี่ $f$ ซื่อสัตย์ที่สุด ไม่เคยเปลี่ยน!' จำคำนี้ไว้เข้าห้องสอบ กา C ทันที!",
+    "fullSolution": "<b>หลักการฟิสิกส์:</b><br>เมื่อคลื่นเคลื่อนที่ข้ามตัวกลาง ความถี่ ($f$) ขึ้นอยู่กับแหล่งกำเนิดเท่านั้น จึงไม่เปลี่ยนแปลง<br>ส่วนอัตราเร็ว ($v$) ขึ้นกับสมบัติของตัวกลาง (น้ำลึก $v$ มาก, น้ำตื้น $v$ น้อย) และเมื่อ $v$ เปลี่ยน ความยาวคลื่น ($\\lambda$) จะเปลี่ยนตามสมการ $v = f\\lambda$",
+    "trap": "ข้อสอบจำง่ายแต่คนชอบเผลอคิดว่าความเร็วคงที่ หรือสับสนว่าความถี่จะลดลงตามความลึกน้ำ!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ ทฤษฎีพื้นฐาน & ชนิดของคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 25,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ยาก",
+    "question": "คลื่นกลในลวดสปริงแผ่ไปด้วยอัตราเร็ว $15\\text{ m/s}$ ถ้าระยะห่างระหว่างส่วนอัดกับส่วนขยายที่อยู่ติดกันเท่ากับ $30\\text{ cm}$ คลื่นนี้มีความถี่เท่าใด?",
+    "choices": [
+      "A. $25\\text{ Hz}$",
+      "B. $50\\text{ Hz}$",
+      "C. $75\\text{ Hz}$",
+      "D. $100\\text{ Hz}$"
+    ],
+    "answer": 0,
+    "speedTrick": "💡 <b>สูตรดักคำ:</b> 'ส่วนอัดถึงส่วนขยายติดกัน' คือ 'ครึ่งความยาวคลื่น' ($\\frac{\\lambda}{2}$) ไม่ใช่เต็ม $\\lambda$!<br>$\\frac{\\lambda}{2} = 30\\text{ cm} \\implies \\lambda = 60\\text{ cm} = 0.6\\text{ m}$<br>$f = \\frac{v}{\\lambda} = \\frac{15}{0.6} = 25\\text{ Hz}$ กา A ทันที!",
+    "fullSolution": "<b>วิธีทำละเอียด:</b><br>1. สำหรับคลื่นตามยาว:<br>- ส่วนอัดถึงส่วนอัดถัดไป = $\\lambda$<br>- ส่วนอัดถึงส่วนขยายถัดไป = $\\frac{\\lambda}{2}$<br>โจทย์กำหนดระยะอัดถึงขยายติดกัน $= 30\\text{ cm} = 0.3\\text{ m}$<br>ดังนั้น $\\lambda = 2 \\times 0.3\\text{ m} = 0.6\\text{ m}$<br>2. หาความถี่จาก $v = f\\lambda$:<br>$f = \\frac{v}{\\lambda} = \\frac{15\\text{ m/s}}{0.6\\text{ m}} = 25\\text{ Hz}$",
+    "trap": "หลุมพรางคลาสสิก! ถ้าเผลอเอา $30\\text{ cm}$ เป็น $\\lambda$ จะได้ $f = 15/0.3 = 50\\text{ Hz}$ ซึ่งเป็นช้อยส์ลวง B ที่คนเลือกเยอะที่สุด!",
+    "eliminate": [
+      1,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก B และ C ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 26,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ยากมาก",
+    "question": "แหล่งกำเนิดอาพันธ์ $S_1$ และ $S_2$ ห่างกัน $d = 3\\lambda$ สั่นให้คลื่นมีเฟสตรงกัน จงหาจำนวนแนวบัพ (Node lines) ทั้งหมดที่เกิดขึ้นในลวดลายการแทรกสอด",
+    "choices": [
+      "A. 4 แนว",
+      "B. 6 แนว",
+      "C. 7 แนว",
+      "D. 8 แนว"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>สูตรลัดนับแนวบัพ (เฟสตรงกัน):</b><br>เงื่อนไขแนวบัพ: $(n - 0.5) < \\frac{d}{\\lambda}$<br>$(n - 0.5) < 3 \\implies n < 3.5 \\implies n = 1, 2, 3$<br>มี 3 ลำดับ ซ้ายและขวา รวมเป็น $2 \\times 3 = 6$ แนว ตอบ B ทันที!",
+    "fullSolution": "<b>การพิสูจน์จำนวนแนวบัพ:</b><br>1. สมการแนวบัพสำหรับแหล่งกำเนิดเฟสตรงกัน: $d\\sin\\theta = (n - 0.5)\\lambda$<br>2. ค่า $\\sin\\theta$ ต้องมีค่าน้อยกว่า 1 (สำหรับเส้นแนวในระนาบ):<br>$(n - 0.5) < \\frac{d}{\\lambda} = \\frac{3\\lambda}{\\lambda} = 3$<br>$n < 3.5$<br>เนื่องจาก $n$ เป็นจำนวนเต็มบวก $n = 1, 2, 3$<br>3. แต่ละค่าของ $n$ จะมีแนวสมมาตรทั้ง 2 ด้าน (ซ้ายและขวาของแนวกลาง)<br>ดังนั้นจำนวนแนวบัพทั้งหมดคือ $2 \\times 3 = 6$ แนว",
+    "trap": "บางคนจำสูตรสลับกับปฏิบัพแล้วไปบวกแนวกลาง! จำไว้ว่า 'เฟสตรงกัน แนวบัพไม่มีแนวกลาง ($N_0$)' มีแต่ $A_0$ ดังนั้นแนวบัพจะเป็นจำนวนคู่เสมอ!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 27,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ยาก",
+    "question": "เชือกเส้นหนึ่งตรึงแน่นสองข้าง ยาว $90\\text{ cm}$ กำลังสั่นด้วยความถี่มูลฐาน (Fundamental frequency) $f_1 = 20\\text{ Hz}$ จงหาความถี่ของโอเวอร์โทนที่ 2 (Second overtone) ของเชือกเส้นนี้",
+    "choices": [
+      "A. $40\\text{ Hz}$",
+      "B. $60\\text{ Hz}$",
+      "C. $80\\text{ Hz}$",
+      "D. $100\\text{ Hz}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>ลำดับฮาร์มอนิกปลายตรึงสองข้าง:</b><br>- ความถี่มูลฐาน = Harmonic 1 ($f_1$)<br>- Overtone 1 = Harmonic 2 ($f_2 = 2f_1$)<br>- Overtone 2 = Harmonic 3 ($f_3 = 3f_1$)!<br>ดังนั้น $f = 3 \\times 20 = 60\\text{ Hz}$ กา B ภายใน 3 วินาที!",
+    "fullSolution": "<b>การนับความถี่และโอเวอร์โทน:</b><br>1. สำหรับเชือกปลายตรึงสองข้าง ฮาร์มอนิกเป็นจำนวนเต็มทุกค่า: $f_n = n f_1$ ($n = 1, 2, 3, ...$)<br>2. นิยามของโอเวอร์โทน (Overtone): คือความถี่ที่สูงกว่าความถี่มูลฐานตามลำดับ<br>- โอเวอร์โทนที่ 1 คือฮาร์มอนิกที่ 2 ($n = 2$)<br>- โอเวอร์โทนที่ 2 คือฮาร์มอนิกที่ 3 ($n = 3$)<br>3. คำนวณ: $f = 3 f_1 = 3 \\times 20\\text{ Hz} = 60\\text{ Hz}$",
+    "trap": "กับดักคำศัพท์ที่เด็ก ม.5 ตกบ่อยที่สุดในประเทศ! 'โอเวอร์โทนที่ 2' ไม่ใช่ $2f_1$ แต่คือ $3f_1$! โอเวอร์โทนเริ่มนับ 1 ที่ฮาร์มอนิกถัดไปเสมอ!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 28,
+    "cat": "theory",
+    "catName": "1. ทฤษฎีพื้นฐาน & ชนิดของคลื่น",
+    "difficulty": "ยาก",
+    "question": "คลื่นดลคลื่นหนึ่งเคลื่อนที่ในเส้นเชือกเบาเข้าสู่เส้นเชือกหนัก (ความหนาแน่นมวลต่อความยาวเพิ่มขึ้น) ปรากฏการณ์ที่เกิดขึ้นที่รอยต่อคือข้อใด?",
+    "choices": [
+      "A. คลื่นสะท้อนเฟสตรงข้าม ($180^\\circ$), คลื่นส่งผ่านเฟสตรงข้าม ($180^\\circ$)",
+      "B. คลื่นสะท้อนเฟสตรงข้าม ($180^\\circ$), คลื่นส่งผ่านเฟสเดิม ($0^\\circ$)",
+      "C. คลื่นสะท้อนเฟสเดิม ($0^\\circ$), คลื่นส่งผ่านเฟสเดิม ($0^\\circ$)",
+      "D. คลื่นสะท้อนเฟสเดิม ($0^\\circ$), คลื่นส่งผ่านเฟสตรงข้าม ($180^\\circ$)"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>หลักทองคำคลื่นต่อเชือก:</b><br>1) คลื่นส่งผ่าน (ทะลุไปตัวกลางใหม่) 'เฟสไม่เคยเปลี่ยน (เฟสเดิม $0^\\circ$)' เสมอ! ตัด A และ D ทันที<br>2) เชือกเบาไปเชือกหนัก: เสมือนชน 'กำแพงตรึงแน่น' $\\implies$ คลื่นสะท้อนจึง 'กลับเฟส $180^\\circ$' ตอบ B ทันที!",
+    "fullSolution": "<b>การสะท้อนและการส่งผ่านคลื่นที่รอยต่อเชือก:</b><br>1. เชือกเบา $\\to$ เชือกหนัก (ความหนาแน่นน้อยไปมาก): รอยต่อเคลื่อนไหวได้ยาก มีความเฉื่อยสูง จึงประพฤติตัวเสมือนเป็นจุดตรึงแน่น (Fixed boundary) ส่งผลให้คลื่นสะท้อนมีเฟสเปลี่ยนไป $180^\\circ$<br>2. คลื่นที่ส่งผ่าน (Transmitted wave) เข้าไปในเชือกเส้นที่สอง ไม่ว่าจะจากเบาไปหนักหรือหนักไปเบา จะต้องมีการกระจัดในทิศเดียวกับคลื่นตกกระทบเสมอ จึงมีเฟสเดิม ($0^\\circ$)",
+    "trap": "ข้อสอบจำง่ายแต่คนพลาดเยอะ: คลื่นส่งผ่าน (ทะลุไป) ไม่เคยเปลี่ยนเฟส! มีเพียงคลื่นสะท้อนเท่านั้นที่อาจกลับเฟส (ถ้าไปชนตัวกลางที่แน่นกว่า/ช้ากว่า)!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ ทฤษฎีพื้นฐาน & ชนิดของคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 29,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ยากมาก",
+    "question": "คลื่นระนาบตกกระทบตั้งฉากกับช่องแคบคู่ (Double Slit) ที่มีระยะห่างระหว่างช่อง $d = 0.2\\text{ mm}$ ฉากรับอยู่ห่างออกไป $L = 1.0\\text{ m}$ ถ้าระยะห่างระหว่างแถบสว่าง (Antinode) ที่อยู่ติดกันบนฉากเท่ากับ $3.0\\text{ mm}$ ความยาวคลื่นนี้มีค่าเท่าใด?",
+    "choices": [
+      "A. $400\\text{ nm}$",
+      "B. $500\\text{ nm}$",
+      "C. $600\\text{ nm}$",
+      "D. $750\\text{ nm}$"
+    ],
+    "answer": 2,
+    "speedTrick": "💡 <b>สูตรลัดแถบแทรกสอดติดกัน:</b> $\\Delta x = \\frac{\\lambda L}{d} \\implies \\lambda = \\frac{d \\Delta x}{L}$<br>แทนค่า: $\\lambda = \\frac{(0.2 \\times 10^{-3})(3.0 \\times 10^{-3})}{1.0} = 0.6 \\times 10^{-6}\\text{ m} = 600\\text{ nm}$ ตอบ C ใน 5 วินาที!",
+    "fullSolution": "<b>แสดงวิธีทำคำนวณแทรกสอดช่องคู่:</b><br>1. ระยะห่างระหว่างแนวสว่างติดกัน (Fringe separation):<br>$\\Delta x = x_{n+1} - x_n = \\frac{\\lambda L}{d}$<br>2. จัดรูปหาความยาวคลื่น $\\lambda$:<br>$\\lambda = \\frac{d \\cdot \\Delta x}{L}$<br>3. ระวังการแปลงหน่วย SI อย่างเคร่งครัด:<br>- $d = 0.2\\text{ mm} = 0.2 \\times 10^{-3}\\text{ m}$<br>- $\\Delta x = 3.0\\text{ mm} = 3.0 \\times 10^{-3}\\text{ m}$<br>- $L = 1.0\\text{ m}$<br>$\\lambda = \\frac{(2 \\times 10^{-4}\\text{ m})(3 \\times 10^{-3}\\text{ m})}{1.0\\text{ m}} = 6 \\times 10^{-7}\\text{ m} = 600\\text{ nm}$",
+    "trap": "ข้อนี้วัดความแม่นยำเรื่องเลขยกกำลังและหน่วยมิลลิเมตร/นาโนเมตร! ถ้าแปลง $0.2\\text{ mm}$ เป็นเมตรผิด จะตอบช้อยส์หลอกทันที!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  },
+  {
+    "id": 30,
+    "cat": "calc",
+    "catName": "2. องค์ประกอบ & คำนวณความเร็วคลื่น",
+    "difficulty": "ปานกลาง",
+    "question": "คลื่นขบวนหนึ่งเคลื่อนที่ในตัวกลาง $A$ ด้วยความเร็ว $400\\text{ m/s}$ และมีความยาวคลื่น $0.8\\text{ m}$ เมื่อเคลื่อนที่เข้าสู่ตัวกลาง $B$ ความเร็วคลื่นเปลี่ยนเป็น $600\\text{ m/s}$ คลื่นในตัวกลาง $B$ จะมีความยาวคลื่นกี่เมตร?",
+    "choices": [
+      "A. $0.53\\text{ m}$",
+      "B. $1.00\\text{ m}$",
+      "C. $1.20\\text{ m}$",
+      "D. $1.60\\text{ m}$"
+    ],
+    "answer": 2,
+    "speedTrick": "💡 <b>สัดส่วนตรง $v \\propto \\lambda$:</b> ความเร็วเพิ่มขึ้นเป็น $\\frac{600}{400} = 1.5$ เท่า ความยาวคลื่นต้องขยาย $1.5$ เท่าด้วย: $\\lambda_B = 1.5 \\times 0.8 = 1.2\\text{ m}$ กา C ทันที!",
+    "fullSolution": "<b>การเปรียบเทียบตัวแปร:</b><br>เนื่องจากความถี่ $f$ คงที่เสมอเมื่อเปลี่ยนตัวกลาง:<br>$f = \\frac{v_A}{\\lambda_A} = \\frac{v_B}{\\lambda_B}$<br>$\\lambda_B = \\lambda_A \\times \\left(\\frac{v_B}{v_A}\\right) = 0.8\\text{ m} \\times \\left(\\frac{600\\text{ m/s}}{400\\text{ m/s}}\\right) = 0.8 \\times 1.5 = 1.20\\text{ m}$",
+    "trap": "อย่าเสียเวลาตั้งหารยาวหลายขั้นตอน แค่สังเกตอัตราส่วนความเร็ว $600/400 = 3/2$ เอา $3/2$ คูณ $\\lambda$ เดิมได้คำตอบเลย!",
+    "eliminate": [
+      0,
+      1
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ B ทิ้งได้ทันที! พิจารณาหลักการของ องค์ประกอบ & คำนวณความเร็วคลื่น อย่างรอบคอบ"
+  },
+  {
+    "id": 31,
+    "cat": "standing",
+    "catName": "4. คลื่นนิ่ง & การสั่นพ้อง",
+    "difficulty": "ยาก",
+    "question": "ในการทดลองคลื่นนิ่งบนเส้นลวดโลหะเส้นหนึ่ง วัดระยะห่างระหว่างจุดบัพ (Node) ที่ 1 ถึงจุดบัพที่ 4 ได้เท่ากับ $45\\text{ cm}$ ความยาวคลื่นที่เกิดขึ้นในการทดลองนี้มีค่าเท่าใด?",
+    "choices": [
+      "A. $15\\text{ cm}$",
+      "B. $30\\text{ cm}$",
+      "C. $45\\text{ cm}$",
+      "D. $60\\text{ cm}$"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>นับลูปคลื่น:</b> จุดบัพที่ 1 ถึงบัพที่ 4 มีทั้งหมด $4 - 1 = 3$ ลูป (แต่ละลูปยาว $\\frac{\\lambda}{2}$)!<br>$3 \\left(\\frac{\\lambda}{2}\\right) = 45\\text{ cm} \\implies \\frac{\\lambda}{2} = 15 \\implies \\lambda = 30\\text{ cm}$ กา B ทันที!",
+    "fullSolution": "<b>การแจกแจงระยะทางจุดบัพ:</b><br>1. ระยะห่างระหว่าง Node ถึง Node ที่อยู่ติดกันเท่ากับ $\\frac{\\lambda}{2}$<br>2. จาก Node ที่ 1 ถึง Node ที่ 4 จะมีช่วงห่างเท่ากับ $(4 - 1) = 3$ ช่วง:<br>$3 \\times \\left(\\frac{\\lambda}{2}\\right) = 45\\text{ cm}$<br>$\\frac{3\\lambda}{2} = 45 \\implies \\lambda = \\frac{45 \\times 2}{3} = 30\\text{ cm}$",
+    "trap": "ระวังคิดว่า 'บัพที่ 4' คือมี 4 ช่วง! จุด 4 จุดมีช่องว่างระหว่างจุดเพียง 3 ช่องเท่านั้น (หลักรั้วต้นไม้)!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ คลื่นนิ่ง & การสั่นพ้อง อย่างรอบคอบ"
+  },
+  {
+    "id": 32,
+    "cat": "behavior",
+    "catName": "3. พฤติกรรมของคลื่นทั้ง 4",
+    "difficulty": "ท้าทาย",
+    "question": "หลักการของฮอยเกนส์ (Huygens' Principle) กล่าวถึงพฤติกรรมการแผ่ของหน้าคลื่นไว้อย่างไร และนำมาใช้อธิบายปรากฏการณ์ใดได้ชัดเจนที่สุด?",
+    "choices": [
+      "A. อธิบายการสูญเสียพลังงานของคลื่น โดยคลื่นจะชะลอความเร็วลงเมื่อชนสิ่งกีดขวาง",
+      "B. ทุกจุดบนหน้าคลื่นถือเป็นแหล่งกำเนิดคลื่นรูปวงกลมใหม่ นำมาใช้อธิบายการเลี้ยวเบนของคลื่นผ่านขอบและช่องแคบ",
+      "C. หน้าคลื่นจะสะท้อนด้วยมุมที่โตกว่ามุมตกกระทบเสมอเมื่อผ่านตัวกลางใหม่",
+      "D. คลื่นอนุภาคจะดูดกลืนแสงและปลดปล่อยโฟตอนออกมาเป็นจังหวะ"
+    ],
+    "answer": 1,
+    "speedTrick": "💡 <b>คีย์เวิร์ดฮอยเกนส์:</b> 'ทุกจุดบนหน้าคลื่น = แหล่งกำเนิดใหม่ (Wavelets)' ใช้พิสูจน์การสะท้อน การหักเห และการเลี้ยวเบน! ตอบ B โดยตรง!",
+    "fullSolution": "<b>หลักการของคริสเตียน ฮอยเกนส์ (Christiaan Huygens):</b><br>1. ทุกๆ จุดบนหน้าคลื่นหลัก (Primary wavefront) สามารถทำหน้าที่เป็นแหล่งกำเนิดคลื่นย่อยแบบทรงกลม (Secondary wavelets) ซึ่งแผ่ออกไปด้วยอัตราเร็วเท่ากับคลื่นเดิม<br>2. หน้าคลื่นใหม่ ณ เวลาถัดไป จะเป็นผิวสัมผัสร่วม (Envelope) ของคลื่นย่อยเหล่านั้น<br>3. หลักการนี้นอกจากจะพิสูจน์กฎการสะท้อนและการหักเหได้แล้ว ยังเป็นหัวใจสำคัญที่อธิบายการ 'เลี้ยวเบน' (Diffraction) เมื่อคลื่นเดินทางผ่านขอบสิ่งกีดขวางหรือช่องแคบได้อย่างสมบูรณ์",
+    "trap": "บางคนจำสับสนกับทฤษฎีควอนตัมโฟตอนของไอน์สไตน์ หรือคิดว่าฮอยเกนส์อธิบายแค่การสะท้อนเพียงอย่างเดียว!",
+    "eliminate": [
+      0,
+      2
+    ],
+    "hintText": "💡 <b>เทคนิคตัดช้อยส์:</b> ตัดตัวเลือก A และ C ทิ้งได้ทันที! พิจารณาหลักการของ พฤติกรรมของคลื่นทั้ง 4 อย่างรอบคอบ"
+  }
+];
+    const flashcards = [
+  {
+    "id": 1,
+    "cat": "physics",
+    "title": "คลื่นกล (Mechanical Wave)",
+    "front": "นิยามและหัวใจสำคัญของ 'คลื่นกล' คืออะไร?",
+    "back": "คลื่นที่ต้อง <b>อาศัยตัวกลาง</b> ในการถ่ายโอนพลังงานและโมเมนตัม โดยที่ <u>อนุภาคของตัวกลางไม่ได้เคลื่อนที่ไปพร้อมกับคลื่น</u> แต่เพียงสั่นแบบ SHM รอบตำแหน่งสมดุลเท่านั้น (เช่น คลื่นน้ำ, คลื่นเชือก, คลื่นเสียง)"
+  },
+  {
+    "id": 2,
+    "cat": "physics",
+    "title": "คลื่นตามขวาง vs คลื่นตามยาว",
+    "front": "เกณฑ์ในการจำแนกคลื่นตามขวางและคลื่นตามยาวคืออะไร?",
+    "back": "ใช้ <b>ทิศการสั่นของอนุภาคตัวกลางเทียบกับทิศคลื่น</b><br>• <b>คลื่นตามขวาง:</b> สั่นตั้งฉากกับทิศคลื่น (เชือก, ผิวน้ำ)<br>• <b>คลื่นตามยาว:</b> สั่นขนานกับทิศคลื่น เกิดส่วนอัดและขยาย (เสียง, สปริงอัด-ขยาย)"
+  },
+  {
+    "id": 3,
+    "cat": "physics",
+    "title": "อัตราเร็วของคลื่น ($v$)",
+    "front": "อัตราเร็วของคลื่นขึ้นอยู่กับสิ่งใด และไม่ขึ้นกับสิ่งใด?",
+    "back": "🚨 <b>กฎเหล็ก:</b> $v$ ขึ้นอยู่กับ <b>สมบัติของตัวกลางเท่านั้น</b> (แรงตึงเชือก, มวลต่อความยาว, ความลึกน้ำ, อุณหภูมิอากาศ)<br><b>ไม่ขึ้นกับ:</b> ความถี่ ($f$) หรือแอมพลิจูด ($A$) ของแหล่งกำเนิด!"
+  },
+  {
+    "id": 4,
+    "cat": "physics",
+    "title": "ความถี่ของคลื่น ($f$)",
+    "front": "เมื่อคลื่นเคลื่อนที่เปลี่ยนตัวกลาง ปริมาณใดคงที่เสมอ?",
+    "back": "<b>ความถี่ ($f$)</b> คงที่เสมอ! เพราะถูกกำหนดโดย <b>แหล่งกำเนิดคลื่น</b> เพียงผู้เดียว ตัวกลางใหม่จะทำให้ $v$ และ $\\lambda$ เปลี่ยนตามสมการ $v = f\\lambda$ แต่ $f$ คงเดิม"
+  },
+  {
+    "id": 5,
+    "cat": "physics",
+    "title": "ความต่างเฟส ($\\Delta\\phi$)",
+    "front": "สูตรคำนวณความต่างเฟส และเงื่อนไขเฟสตรงกัน/เฟสตรงข้าม",
+    "back": "สูตร: $\\Delta\\phi = \\frac{2\\pi}{\\lambda}\\Delta x = \\frac{360^\\circ}{\\lambda}\\Delta x$<br>• <b>เฟสตรงกัน:</b> $\\Delta x = n\\lambda$ ($\\Delta\\phi = 2n\\pi = 360^\\circ, 720^\\circ$)<br>• <b>เฟสตรงข้าม:</b> $\\Delta x = (n - 0.5)\\lambda$ ($\\Delta\\phi = (2n-1)\\pi = 180^\\circ, 540^\\circ$)"
+  },
+  {
+    "id": 6,
+    "cat": "physics",
+    "title": "การสะท้อน: ปลายตรึง vs ปลายอิสระ",
+    "front": "คลื่นในเชือกสะท้อนที่ปลายตรึงแน่นและปลายอิสระ เฟสจะเปลี่ยนอย่างไร?",
+    "back": "• <b>ปลายตรึงแน่น (Fixed End):</b> สู้กลับ! สะท้อนกลับเฟสเปลี่ยนไป $180^\\circ$ (สันคลื่นเป็นท้องคลื่น)<br>• <b>ปลายอิสระ (Free End):</b> ยอมตาม! สะท้อนกลับเฟสเดิม $0^\\circ$ (สันคลื่นเป็นสันคลื่นเหมือนเดิม)"
+  },
+  {
+    "id": 7,
+    "cat": "physics",
+    "title": "กฎของสเนลล์ (Snell's Law)",
+    "front": "สมการกฎของสเนลล์ และข้อควรระวังเรื่องมุม $\\theta$",
+    "back": "สมการ: $\\frac{\\sin\\theta_1}{\\sin\\theta_2} = \\frac{v_1}{v_2} = \\frac{\\lambda_1}{\\lambda_2}$ ($f_1 = f_2$)<br>⚠️ <b>มุม $\\theta$:</b> ต้องวัดกับ <u>เส้นแนวฉาก (Normal line)</u> หรือ <u>หน้าคลื่นทำกับผิวรอยต่อ</u> เท่านั้น!"
+  },
+  {
+    "id": 8,
+    "cat": "physics",
+    "title": "คลื่นน้ำ: น้ำลึก vs น้ำตื้น",
+    "front": "คาถาจำความสัมพันธ์ระหว่างบริเวณน้ำลึกและน้ำตื้น",
+    "back": "🌊 <b>คาถาน้ำลึกน้ำตื้น:</b><br>• <b>น้ำลึก:</b> $v$ มาก, $\\lambda$ มาก, มุม $\\theta$ กว้าง<br>• <b>น้ำตื้น:</b> $v$ น้อย, $\\lambda$ น้อย, มุม $\\theta$ แคบ (เบนเข้าหาเส้นปกติ)<br>และ $\\frac{v_{ลึก}}{v_{ตื้น}} = \\frac{\\lambda_{ลึก}}{\\lambda_{ตื้น}} = \\frac{\\sin\\theta_{ลึก}}{\\sin\\theta_{ตื้น}}$"
+  },
+  {
+    "id": 9,
+    "cat": "physics",
+    "title": "มุมวิกฤต & การสะท้อนกลับหมด",
+    "front": "เงื่อนไขการเกิดการสะท้อนกลับหมดของคลื่นน้ำ",
+    "back": "1. คลื่นต้องเคลื่อนที่จาก <b>ความเร็วน้อย ไปหาความเร็วมาก</b> (น้ำตื้น $\\to$ น้ำลึก)<br>2. มุมตกกระทบโตกว่ามุมวิกฤต ($\\theta_1 > \\theta_c$)<br>3. สูตร: $\\sin\\theta_c = \\frac{v_{น้อย}}{v_{มาก}} = \\frac{v_{ตื้น}}{v_{ลึก}}$"
+  },
+  {
+    "id": 10,
+    "cat": "physics",
+    "title": "แทรกสอด: แหล่งกำเนิดเฟสตรงกัน",
+    "front": "สูตรแนวปฏิบัพ (Antinode) และแนวบัพ (Node) เมื่อเฟสตรงกัน",
+    "back": "• <b>ปฏิบัพ (A เสริม):</b> $|S_1P - S_2P| = d\\sin\\theta = n\\lambda$ ($n = 0, 1, 2, ...$ มี $A_0$ กลาง)<br>• <b>บัพ (N หักล้าง):</b> $|S_1P - S_2P| = d\\sin\\theta = (n - 0.5)\\lambda$ ($n = 1, 2, 3, ...$ ไม่มี $N_0$)"
+  },
+  {
+    "id": 11,
+    "cat": "physics",
+    "title": "แทรกสอด: แหล่งกำเนิดเฟสตรงข้าม ($180^\\circ$)",
+    "front": "เกิดอะไรขึ้นเมื่อแหล่งกำเนิดคลื่นอาพันธ์มีเฟสตรงข้ามกัน?",
+    "back": "🚨 <b>สูตรสลับร่างทันที!</b><br>• แนวกลางกลายเป็น <b>แนวบัพกลาง ($N_0$)</b><br>• <b>บัพ (N):</b> $|S_1P - S_2P| = d\\sin\\theta = n\\lambda$ ($n = 0, 1, 2, ...$)<br>• <b>ปฏิบัพ (A):</b> $|S_1P - S_2P| = d\\sin\\theta = (n - 0.5)\\lambda$ ($n = 1, 2, 3, ...$)"
+  },
+  {
+    "id": 12,
+    "cat": "physics",
+    "title": "หลักการของฮอยเกนส์ (Huygens)",
+    "front": "หลักการของฮอยเกนส์กล่าวไว้อย่างไร?",
+    "back": "<b>ทุกๆ จุดบนหน้าคลื่น ถือเป็นแหล่งกำเนิดคลื่นรูปวงกลมใหม่ (Secondary wavelets)</b> แผ่ออกไปด้วยอัตราเร็วเท่าเดิม หน้าคลื่นใหม่จะเป็นผิวสัมผัสร่วม (Envelope) ของคลื่นย่อยเหล่านั้น ใช้อธิบายการสะท้อน หักเห และเลี้ยวเบน"
+  },
+  {
+    "id": 13,
+    "cat": "physics",
+    "title": "การเลี้ยวเบนสลิตเดี่ยว (Diffraction)",
+    "front": "เงื่อนไขความกว้างช่อง $d$ ที่ทำให้คลื่นเลี้ยวเบนได้ดีที่สุด",
+    "back": "• เมื่อ <b>$d \\le \\lambda$:</b> เลี้ยวเบนได้ดีที่สุด หน้าคลื่นแผ่โค้งเป็นวงกลมสมบูรณ์หลังช่องแคบ<br>• เมื่อ <b>$d > \\lambda$:</b> เลี้ยวเบนปนแทรกสอด เกิดแนวบัพหักล้างตามสูตร $d\\sin\\theta = n\\lambda$ ($n = 1, 2, ...$)"
+  },
+  {
+    "id": 14,
+    "cat": "physics",
+    "title": "คลื่นนิ่ง (Standing Wave)",
+    "front": "เงื่อนไขการเกิดคลื่นนิ่ง และการถ่ายโอนพลังงาน",
+    "back": "เกิดจากการแทรกสอดของคลื่น 2 ขบวนที่มี <b>ความถี่ แอมพลิจูด และความยาวคลื่นเท่ากัน เคลื่อนที่สวนทางกัน</b><br>• จุดไม่สั่น = <b>บัพ (Node)</b> | จุดสั่นกว้างสุด ($2A$) = <b>ปฏิบัพ (Antinode)</b><br>• <u>ไม่มีการถ่ายโอนพลังงานสุทธิไปข้างหน้า</u>"
+  },
+  {
+    "id": 15,
+    "cat": "physics",
+    "title": "ระยะห่างบนคลื่นนิ่ง",
+    "front": "ระยะห่าง Node ถึง Node, Antinode ถึง Antinode, และ Node ถึง Antinode",
+    "back": "• <b>Node ถึง Node ติดกัน:</b> $\\frac{\\lambda}{2}$ (ยาว 1 Loop)<br>• <b>Antinode ถึง Antinode ติดกัน:</b> $\\frac{\\lambda}{2}$<br>• <b>Node ถึง Antinode ติดกัน:</b> $\\frac{\\lambda}{4}$ (ครึ่ง Loop)"
+  },
+  {
+    "id": 16,
+    "cat": "physics",
+    "title": "ฮาร์มอนิก vs โอเวอร์โทน",
+    "front": "ความแตกต่างระหว่าง Harmonic และ Overtone ในเชือกตรึง 2 ข้าง",
+    "back": "เชือกปลายตรึง 2 ข้าง ($f_n = n f_1$):<br>• $f_1$: ความถี่มูลฐาน = Harmonic 1<br>• $f_2 = 2f_1$: Harmonic 2 = <b>โอเวอร์โทนที่ 1 (1st Overtone)</b><br>• $f_3 = 3f_1$: Harmonic 3 = <b>โอเวอร์โทนที่ 2 (2nd Overtone)</b><br>⚠️ <i>โอเวอร์โทนนับ 1 ที่ฮาร์มอนิกถัดไปเสมอ!</i>"
+  },
+  {
+    "id": 17,
+    "cat": "bio",
+    "title": "ปฏิกิริยาแสง (Light Reaction)",
+    "front": "Non-cyclic vs Cyclic electron transfer ได้สารใดบ้าง?",
+    "back": "• <b>Non-cyclic:</b> ได้ครบ 3 อย่าง! <b>ATP + NADPH + $O_2$</b> (เกิด Photolysis น้ำแตกตัวที่ PSII)<br>• <b>Cyclic:</b> วิ่งวนลูปที่ PSI ได้เฉพาะ <b>ATP อย่างเดียว</b> ไม่มี $O_2$ และไม่มี NADPH!"
+  },
+  {
+    "id": 18,
+    "cat": "bio",
+    "title": "วัฏจักรคัลวิน: คาถา Car-Re-Re",
+    "front": "3 ขั้นตอนหลักของ Calvin Cycle มีอะไรบ้าง และเกิดที่ใด?",
+    "back": "เกิดที่ <b>สโตรมา (Stroma)</b> ของคลอโรพลาสต์:<br>1. <b>Carboxylation:</b> ตรึง $CO_2$ กับ RuBP (5C) โดย Rubisco ได้ PGA (3C)<br>2. <b>Reduction:</b> ใช้ ATP และ NADPH เปลี่ยน PGA เป็นน้ำตาล G3P<br>3. <b>Regeneration:</b> ใช้ ATP สร้าง RuBP กลับคืนมารอบใหม่"
+  },
+  {
+    "id": 19,
+    "cat": "bio",
+    "title": "เปรียบเทียบพืช $C_3$, $C_4$, CAM",
+    "front": "ความแตกต่างของการตรึง $CO_2$ ในพืช $C_3$, $C_4$, CAM",
+    "back": "• <b>$C_3$ (ข้าว, ถั่ว):</b> ตรึง 1 ครั้งโดย Rubisco ที่ Mesophyll<br>• <b>$C_4$ (ข้าวโพด, อ้อย):</b> ตรึง 2 <b>'สถานที่'</b> (Mesophyll ด้วย PEP carboxylase $\\to$ Bundle Sheath ด้วย Rubisco)<br>• <b>CAM (สับปะรด, กระบองเพชร):</b> ตรึง 2 <b>'เวลา'</b> (กลางคืนเปิดปากใบตรึงเป็นกรดมาลิก $\\to$ กลางวันปิดปากใบส่ง $CO_2$ เข้า Calvin cycle)"
+  },
+  {
+    "id": 20,
+    "cat": "bio",
+    "title": "โฟโตเรสไพเรชัน (Photorespiration)",
+    "front": "โฟโตเรสไพเรชันคืออะไร เกิดขึ้นเมื่อใด?",
+    "back": "การที่เอนไซม์ <b>Rubisco หันไปจับกับ $O_2$ แทน $CO_2$</b> เกิดเมื่ออากาศร้อน แห้งแล้ง พืชปิดปากใบ ทำให้ $CO_2$ ในใบลดต่ำและ $O_2$ สูงขึ้น พืชจึงสูญเสียพลังงานโดยไม่ได้น้ำตาล พืช $C_4$ และ CAM จึงมีกลไกพิเศษมาแก้จุดนี้"
+  }
+];
+
+    let currentQIndex = 0;
+    let filteredQuestions = [...questions];
+    let userAnswers = new Array(questions.length).fill(null);
+    let selectedChoice = null;
+    let examMode = 'instant'; // 'instant' or 'simulation'
+    let timerDuration = 60;
+    let timeLeft = 60;
+    let timerInterval = null;
+    let streak = 0;
+    let score = 0;
+    let soundEnabled = true;
+
+    // Flashcard State
+    let currentFcIndex = 0;
+    let filteredFlashcards = [...flashcards];
+    let isFlipped = false;
+
+    // KaTeX Helper
+    function renderAllMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    // Web Audio Synthesizer
+    let audioCtx = null;
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+    function playSound(type) {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        const now = audioCtx.currentTime;
+
+        if (type === 'correct') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(523.25, now);
+          osc.frequency.exponentialRampToValueAtTime(659.25, now + 0.1);
+          osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.2);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+          osc.start(now);
+          osc.stop(now + 0.35);
+        } else if (type === 'wrong') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(164.81, now);
+          osc.frequency.linearRampToValueAtTime(130.81, now + 0.25);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+          osc.start(now);
+          osc.stop(now + 0.3);
+        } else if (type === 'tick') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(800, now);
+          gain.gain.setValueAtTime(0.04, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+          osc.start(now);
+          osc.stop(now + 0.04);
+        } else if (type === 'hint') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+          gain.gain.setValueAtTime(0.1, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+          osc.start(now);
+          osc.stop(now + 0.2);
+        }
+      } catch(e) {
+        console.warn('Audio error:', e);
+      }
+    }
+
+    function toggleAudio() {
+      soundEnabled = !soundEnabled;
+      document.getElementById('audio-icon').innerText = soundEnabled ? '🔊' : '🔇';
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        document.getElementById('theme-icon').innerText = '☀️';
+      } else {
+        html.classList.add('dark');
+        document.getElementById('theme-icon').innerText = '🌙';
+      }
+    }
+
+    function toggleMobileMenu() {
+      const m = document.getElementById('mobile-menu');
+      m.classList.toggle('hidden');
+    }
+
+    function switchTab(tabId) {
+      const tabs = ['arena', 'lab', 'canvas', 'flashcards', 'cheatsheet', 'bio'];
+      tabs.forEach(t => {
+        const sec = document.getElementById('section-' + t);
+        const btn = document.getElementById('nav-' + t);
+        if (t === tabId) {
+          sec.classList.remove('hidden');
+          if (btn) {
+            btn.className = "nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border border-emerald-500/40 shadow-sm";
+          }
+        } else {
+          sec.classList.add('hidden');
+          if (btn) {
+            btn.className = "nav-btn px-3 py-2 rounded-xl transition flex items-center gap-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800";
+          }
+        }
+      });
+
+      if (tabId === 'lab') startActiveLabCanvas();
+      if (tabId === 'canvas') initSketchCanvas();
+      if (tabId === 'flashcards') loadFlashcard(currentFcIndex);
+
+      setTimeout(renderAllMath, 40);
+    }
+
+    // EXAM ENGINE
+    function setExamMode(mode) {
+      examMode = mode;
+      const instBtn = document.getElementById('mode-instant-btn');
+      const simBtn = document.getElementById('mode-sim-btn');
+      const instSubmit = document.getElementById('btn-instant-submit');
+      const simSubmit = document.getElementById('btn-submit-exam');
+
+      if (mode === 'instant') {
+        instBtn.className = "px-3 py-1.5 rounded-lg transition bg-emerald-500 text-white font-semibold shadow-sm";
+        simBtn.className = "px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-emerald-500";
+        instSubmit.classList.remove('hidden');
+        simSubmit.classList.add('hidden');
+      } else {
+        simBtn.className = "px-3 py-1.5 rounded-lg transition bg-emerald-500 text-white font-semibold shadow-sm";
+        instBtn.className = "px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-emerald-500";
+        instSubmit.classList.add('hidden');
+        simSubmit.classList.remove('hidden');
+      }
+
+      loadQuestion(currentQIndex);
+    }
+
+    function setTimerDuration(seconds) {
+      timerDuration = seconds;
+      [60, 30, 0].forEach(s => {
+        const b = document.getElementById('timer-' + s + '-btn');
+        if (s === seconds) {
+          b.className = "px-2.5 py-1 rounded-lg transition bg-teal-500 text-white font-bold";
+        } else {
+          b.className = "px-2.5 py-1 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white";
+        }
+      });
+      resetTimerForCurrentQ();
+    }
+
+    function changeTopicFilter(cat) {
+      if (cat === 'all') {
+        filteredQuestions = [...questions];
+      } else {
+        filteredQuestions = questions.filter(q => q.cat === cat);
+      }
+      currentQIndex = 0;
+      loadQuestion(0);
+      buildQuestionMatrix();
+    }
+
+    function resetTimerForCurrentQ() {
+      clearInterval(timerInterval);
+      const timerBox = document.getElementById('timer-box');
+      const timerDisp = document.getElementById('timer-display');
+
+      if (timerDuration === 0) {
+        timerDisp.innerText = 'NO TIMER';
+        timerBox.classList.remove('border-rose-500', 'animate-pulse', 'bg-rose-50', 'dark:bg-rose-950/50');
+        return;
+      }
+
+      timeLeft = timerDuration;
+      updateTimerDisplay();
+
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+
+        if (timeLeft <= 30 && timeLeft > 0) {
+          timerBox.classList.add('border-rose-500', 'animate-pulse', 'bg-rose-50', 'dark:bg-rose-950/50');
+          if (timeLeft <= 10) playSound('tick');
+        } else {
+          timerBox.classList.remove('border-rose-500', 'animate-pulse', 'bg-rose-50', 'dark:bg-rose-950/50');
+        }
+
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          handleTimeOut();
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const m = Math.floor(timeLeft / 60);
+      const s = timeLeft % 60;
+      document.getElementById('timer-display').innerText = 
+        String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+    }
+
+    function handleTimeOut() {
+      playSound('wrong');
+      const q = filteredQuestions[currentQIndex];
+      const actualId = q.id - 1;
+      if (userAnswers[actualId] === null) {
+        userAnswers[actualId] = -1;
+        streak = 0;
+        updateStats();
+        if (examMode === 'instant') {
+          revealSolution(q, -1);
+        }
+        buildQuestionMatrix();
+      }
+    }
+
+    function loadQuestion(index) {
+      if (index < 0 || index >= filteredQuestions.length) return;
+      currentQIndex = index;
+      const q = filteredQuestions[currentQIndex];
+      const actualId = q.id - 1;
+      selectedChoice = userAnswers[actualId];
+
+      document.getElementById('hint-box').classList.add('hidden');
+
+      document.getElementById('q-index-badge').innerText = 'ข้อที่ ' + (currentQIndex + 1) + ' / ' + filteredQuestions.length;
+      document.getElementById('q-cat-badge').innerText = q.catName;
+      document.getElementById('q-diff-badge').innerText = 'ระดับ ' + q.difficulty;
+      document.getElementById('question-text').innerHTML = q.question;
+
+      const pct = ((currentQIndex + 1) / filteredQuestions.length) * 100;
+      document.getElementById('q-progress-bar').style.width = pct + '%';
+
+      const container = document.getElementById('choices-container');
+      container.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D'];
+
+      q.choices.forEach((choice, idx) => {
+        const btn = document.createElement('button');
+        btn.id = 'choice-btn-' + idx;
+        btn.onclick = () => onChoiceClicked(idx);
+        btn.className = "w-full p-4 rounded-xl text-left text-sm sm:text-base font-sarabun transition border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/70 hover:bg-gray-50 dark:hover:bg-gray-800 flex items-start gap-3 group shadow-sm";
+        
+        if (selectedChoice === idx) {
+          btn.className += " border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40";
+        }
+
+        btn.innerHTML = `
+          <span class="w-7 h-7 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition">
+            ${letters[idx]}
+          </span>
+          <span class="pt-0.5 text-gray-800 dark:text-gray-200 leading-relaxed">${choice}</span>
+        `;
+        container.appendChild(btn);
+      });
+
+      if (userAnswers[actualId] !== null) {
+        if (examMode === 'instant') {
+          clearInterval(timerInterval);
+          revealSolution(q, userAnswers[actualId]);
+        } else {
+          document.getElementById('solution-section').classList.add('hidden');
+        }
+      } else {
+        document.getElementById('solution-section').classList.add('hidden');
+        resetTimerForCurrentQ();
+      }
+
+      buildQuestionMatrix();
+      setTimeout(renderAllMath, 20);
+    }
+
+    function onChoiceClicked(choiceIdx) {
+      const q = filteredQuestions[currentQIndex];
+      const actualId = q.id - 1;
+
+      if (examMode === 'instant' && userAnswers[actualId] !== null) return;
+      selectedChoice = choiceIdx;
+
+      q.choices.forEach((_, idx) => {
+        const btn = document.getElementById('choice-btn-' + idx);
+        if (btn) {
+          if (idx === choiceIdx) {
+            btn.className = "w-full p-4 rounded-xl text-left text-sm sm:text-base font-sarabun transition border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 flex items-start gap-3 shadow-md";
+          } else {
+            btn.className = "w-full p-4 rounded-xl text-left text-sm sm:text-base font-sarabun transition border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/70 hover:bg-gray-50 dark:hover:bg-gray-800 flex items-start gap-3 group shadow-sm";
+          }
+        }
+      });
+
+      if (examMode === 'simulation') {
+        userAnswers[actualId] = choiceIdx;
+        updateStats();
+        buildQuestionMatrix();
+      }
+    }
+
+    function submitInstantAnswer() {
+      if (selectedChoice === null) {
+        alert('กรุณาเลือกคำตอบก่อนกดยืนยันครับ');
+        return;
+      }
+
+      const q = filteredQuestions[currentQIndex];
+      const actualId = q.id - 1;
+      if (userAnswers[actualId] !== null) return;
+
+      clearInterval(timerInterval);
+      userAnswers[actualId] = selectedChoice;
+
+      if (selectedChoice === q.answer) {
+        streak++;
+        score++;
+        playSound('correct');
+      } else {
+        streak = 0;
+        playSound('wrong');
+      }
+
+      updateStats();
+      revealSolution(q, selectedChoice);
+      buildQuestionMatrix();
+    }
+
+    function revealSolution(q, chosenIdx) {
+      const solutionSection = document.getElementById('solution-section');
+      solutionSection.classList.remove('hidden');
+
+      q.choices.forEach((_, idx) => {
+        const btn = document.getElementById('choice-btn-' + idx);
+        if (!btn) return;
+        btn.disabled = true;
+
+        if (idx === q.answer) {
+          btn.className = "w-full p-4 rounded-xl text-left text-sm sm:text-base font-sarabun border-2 border-emerald-500 bg-emerald-100 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-200 flex items-start gap-3 shadow-md";
+        } else if (idx === chosenIdx) {
+          btn.className = "w-full p-4 rounded-xl text-left text-sm sm:text-base font-sarabun border-2 border-rose-500 bg-rose-100 dark:bg-rose-950/60 text-rose-900 dark:text-rose-200 flex items-start gap-3 shadow-md";
+        } else {
+          btn.className = "w-full p-4 rounded-xl text-left text-sm sm:text-base font-sarabun border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950/40 text-gray-400 opacity-60 flex items-start gap-3";
+        }
+      });
+
+      document.getElementById('trap-text').innerHTML = q.trap;
+      document.getElementById('speed-trick-text').innerHTML = q.speedTrick;
+      document.getElementById('full-solution-text').innerHTML = q.fullSolution;
+
+      setTimeout(renderAllMath, 20);
+    }
+
+    function useHint() {
+      const q = filteredQuestions[currentQIndex];
+      playSound('hint');
+
+      const hintBox = document.getElementById('hint-box');
+      document.getElementById('hint-content').innerHTML = q.hintText;
+      hintBox.classList.remove('hidden');
+
+      if (q.eliminate) {
+        q.eliminate.forEach(idx => {
+          const btn = document.getElementById('choice-btn-' + idx);
+          if (btn) {
+            btn.classList.add('opacity-40', 'line-through', 'grayscale');
+            btn.disabled = true;
+          }
+        });
+      }
+      setTimeout(renderAllMath, 20);
+    }
+
+    function toggleFullSolution() {
+      const content = document.getElementById('full-solution-content');
+      const icon = document.getElementById('full-sol-icon');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+      setTimeout(renderAllMath, 20);
+    }
+
+    function nextQuestion() {
+      if (currentQIndex < filteredQuestions.length - 1) {
+        loadQuestion(currentQIndex + 1);
+      } else {
+        if (examMode === 'simulation') {
+          submitSimulationExam();
+        } else {
+          alert('คุณทำครบทุกข้อแล้วในหมวดนี้!');
+        }
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQIndex > 0) {
+        loadQuestion(currentQIndex - 1);
+      }
+    }
+
+    function updateStats() {
+      document.getElementById('streak-counter').innerText = streak;
+      document.getElementById('score-counter').innerText = score;
+      const answeredCount = userAnswers.filter(a => a !== null).length;
+      document.getElementById('total-answered-counter').innerText = answeredCount;
+    }
+
+    function buildQuestionMatrix() {
+      const container = document.getElementById('question-matrix');
+      container.innerHTML = '';
+
+      filteredQuestions.forEach((q, idx) => {
+        const actualId = q.id - 1;
+        const btn = document.createElement('button');
+        btn.onclick = () => loadQuestion(idx);
+        btn.innerText = idx + 1;
+
+        let baseClass = "w-full aspect-square rounded-lg font-mono text-xs font-bold transition flex items-center justify-center ";
+        if (idx === currentQIndex) {
+          baseClass += "border-2 border-cyan-400 font-extrabold shadow-sm ";
+        }
+
+        if (userAnswers[actualId] === null) {
+          baseClass += "bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-emerald-50";
+        } else if (examMode === 'simulation') {
+          baseClass += "bg-teal-500 text-white shadow-sm";
+        } else {
+          if (userAnswers[actualId] === q.answer) {
+            baseClass += "bg-emerald-500 text-white shadow-sm";
+          } else {
+            baseClass += "bg-rose-500 text-white shadow-sm";
+          }
+        }
+
+        btn.className = baseClass;
+        container.appendChild(btn);
+      });
+    }
+
+    function resetExam() {
+      if (confirm('คุณต้องการรีเซ็ตคำตอบและคะแนนทั้งหมดเพื่อเริ่มใหม่ใช่หรือไม่?')) {
+        userAnswers = new Array(questions.length).fill(null);
+        streak = 0;
+        score = 0;
+        updateStats();
+        loadQuestion(0);
+        buildQuestionMatrix();
+      }
+    }
+
+    function submitSimulationExam() {
+      clearInterval(timerInterval);
+
+      score = 0;
+      questions.forEach((q, idx) => {
+        if (userAnswers[idx] === q.answer) {
+          score++;
+        }
+      });
+
+      showExamReport();
+      examMode = 'instant';
+      document.getElementById('mode-instant-btn').className = "px-3 py-1.5 rounded-lg transition bg-emerald-500 text-white font-semibold shadow-sm";
+      document.getElementById('mode-sim-btn').className = "px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-emerald-500";
+      document.getElementById('btn-instant-submit').classList.remove('hidden');
+      document.getElementById('btn-submit-exam').classList.add('hidden');
+      buildQuestionMatrix();
+      loadQuestion(currentQIndex);
+    }
+
+    function showExamReport() {
+      const modal = document.getElementById('report-modal');
+      modal.classList.remove('hidden');
+
+      const total = questions.length;
+      const pct = Math.round((score / total) * 100);
+
+      document.getElementById('report-date').innerText = new Date().toLocaleString('th-TH');
+      document.getElementById('report-score').innerText = score + ' / ' + total;
+      document.getElementById('report-percent').innerText = pct + '%';
+
+      let grade = '';
+      if (pct >= 85) grade = '🌟 ยอดเยี่ยม (เกรด 4 / เต็มร้อย!)';
+      else if (pct >= 70) grade = '👍 ดีมาก (ผ่านเกณฑ์มาตรฐาน)';
+      else if (pct >= 50) grade = '⚡ พอใช้ (ต้องทบทวนจุดลวงเพิ่มเติม)';
+      else grade = '🚨 ต้องติวด่วน (อ่านสรุปและฝึกใหม่)';
+      document.getElementById('report-grade').innerText = grade;
+
+      const cats = [
+        { key: 'theory', name: '1. ทฤษฎีพื้นฐาน & ชนิดคลื่น' },
+        { key: 'calc', name: '2. องค์ประกอบ & คำนวณความเร็ว' },
+        { key: 'behavior', name: '3. พฤติกรรมคลื่น 4 ชนิด' },
+        { key: 'standing', name: '4. คลื่นนิ่ง & ฮาร์มอนิก' }
+      ];
+
+      const breakdownDiv = document.getElementById('report-breakdown');
+      breakdownDiv.innerHTML = '';
+
+      cats.forEach(c => {
+        const catQuestions = questions.filter(q => q.cat === c.key);
+        const catCorrect = catQuestions.filter(q => userAnswers[q.id - 1] === q.answer).length;
+        const catPct = Math.round((catCorrect / catQuestions.length) * 100);
+
+        const row = document.createElement('div');
+        row.className = "p-2.5 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 flex items-center justify-between";
+        row.innerHTML = `
+          <span>${c.name} (${catQuestions.length} ข้อ)</span>
+          <div class="flex items-center gap-2 font-mono">
+            <span class="${catPct >= 75 ? 'text-emerald-500' : (catPct >= 50 ? 'text-amber-500' : 'text-rose-500')} font-bold">
+              ${catCorrect}/${catQuestions.length} (${catPct}%)
+            </span>
+          </div>
+        `;
+        breakdownDiv.appendChild(row);
+      });
+    }
+
+    function closeReportModal() {
+      document.getElementById('report-modal').classList.add('hidden');
+    }
+
+    // FLASHCARD ENGINE
+    function filterFlashcards(cat) {
+      if (cat === 'all') {
+        filteredFlashcards = [...flashcards];
+      } else {
+        filteredFlashcards = flashcards.filter(f => f.cat === cat);
+      }
+      currentFcIndex = 0;
+      loadFlashcard(0);
+
+      ['all', 'phys', 'bio'].forEach(c => {
+        const btn = document.getElementById('fc-filter-' + c);
+        if ((cat === 'all' && c === 'all') || (cat === 'physics' && c === 'phys') || (cat === 'bio' && c === 'bio')) {
+          btn.className = "px-3 py-1.5 rounded-lg bg-emerald-500 text-white font-semibold";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-lg text-gray-600 dark:text-gray-400";
+        }
+      });
+    }
+
+    function loadFlashcard(index) {
+      if (index < 0 || index >= filteredFlashcards.length) return;
+      currentFcIndex = index;
+      const card = filteredFlashcards[currentFcIndex];
+
+      isFlipped = false;
+      document.getElementById('flashcard-inner').classList.remove('rotate-y-180');
+
+      document.getElementById('fc-cat-badge').innerText = (card.cat === 'physics') ? 'PHYSICS' : 'BIOLOGY';
+      document.getElementById('fc-counter').innerText = 'ใบที่ ' + (currentFcIndex + 1) + ' / ' + filteredFlashcards.length;
+      document.getElementById('fc-title').innerText = card.title;
+      document.getElementById('fc-front-text').innerHTML = card.front;
+      document.getElementById('fc-back-text').innerHTML = card.back;
+
+      setTimeout(renderAllMath, 20);
+    }
+
+    function flipCurrentCard() {
+      isFlipped = !isFlipped;
+      const inner = document.getElementById('flashcard-inner');
+      if (isFlipped) {
+        inner.classList.add('rotate-y-180');
+      } else {
+        inner.classList.remove('rotate-y-180');
+      }
+      setTimeout(renderAllMath, 20);
+    }
+
+    function nextFlashcard() {
+      if (currentFcIndex < filteredFlashcards.length - 1) {
+        loadFlashcard(currentFcIndex + 1);
+      } else {
+        loadFlashcard(0);
+      }
+    }
+
+    function prevFlashcard() {
+      if (currentFcIndex > 0) {
+        loadFlashcard(currentFcIndex - 1);
+      } else {
+        loadFlashcard(filteredFlashcards.length - 1);
+      }
+    }
+
+    function shuffleFlashcards() {
+      for (let i = filteredFlashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [filteredFlashcards[i], filteredFlashcards[j]] = [filteredFlashcards[j], filteredFlashcards[i]];
+      }
+      currentFcIndex = 0;
+      loadFlashcard(0);
+    }
+
+    // SHORT NOTE CANVAS
+    let sketchCtx = null;
+    let isDrawing = false;
+    let drawTool = 'pen';
+    let drawColor = '#10b981';
+
+    function initSketchCanvas() {
+      const canvas = document.getElementById('sketch-canvas');
+      if (!canvas) return;
+      sketchCtx = canvas.getContext('2d');
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        if (e.touches && e.touches[0]) {
+          return {
+            x: (e.touches[0].clientX - rect.left) * scaleX,
+            y: (e.touches[0].clientY - rect.top) * scaleY
+          };
+        }
+        return {
+          x: (e.clientX - rect.left) * scaleX,
+          y: (e.clientY - rect.top) * scaleY
+        };
+      }
+
+      function startDraw(e) {
+        isDrawing = true;
+        const pos = getPos(e);
+        sketchCtx.beginPath();
+        sketchCtx.moveTo(pos.x, pos.y);
+      }
+
+      function moveDraw(e) {
+        if (!isDrawing) return;
+        const pos = getPos(e);
+
+        sketchCtx.lineCap = 'round';
+        sketchCtx.lineJoin = 'round';
+
+        if (drawTool === 'pen') {
+          sketchCtx.globalAlpha = 1.0;
+          sketchCtx.strokeStyle = drawColor;
+          sketchCtx.lineWidth = 3;
+        } else if (drawTool === 'highlighter') {
+          sketchCtx.globalAlpha = 0.35;
+          sketchCtx.strokeStyle = drawColor;
+          sketchCtx.lineWidth = 14;
+        } else if (drawTool === 'eraser') {
+          sketchCtx.globalAlpha = 1.0;
+          sketchCtx.strokeStyle = document.documentElement.classList.contains('dark') ? '#0b1120' : '#fffefb';
+          sketchCtx.lineWidth = 20;
+        }
+
+        sketchCtx.lineTo(pos.x, pos.y);
+        sketchCtx.stroke();
+        e.preventDefault();
+      }
+
+      function stopDraw() {
+        isDrawing = false;
+      }
+
+      canvas.onmousedown = startDraw;
+      canvas.onmousemove = moveDraw;
+      window.onmouseup = stopDraw;
+
+      canvas.ontouchstart = startDraw;
+      canvas.ontouchmove = moveDraw;
+      window.ontouchend = stopDraw;
+    }
+
+    function setDrawTool(tool) {
+      drawTool = tool;
+      ['pen', 'highlighter', 'eraser'].forEach(t => {
+        const btn = document.getElementById('tool-' + t);
+        if (t === tool) {
+          btn.className = "px-3 py-1.5 rounded-xl bg-emerald-500 text-white font-semibold shadow flex items-center gap-1.5";
+        } else {
+          btn.className = "px-3 py-1.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 flex items-center gap-1.5";
+        }
+      });
+    }
+
+    function setDrawColor(color) {
+      drawColor = color;
+      if (drawTool === 'eraser') setDrawTool('pen');
+    }
+
+    function clearDrawCanvas() {
+      const canvas = document.getElementById('sketch-canvas');
+      if (canvas && sketchCtx) {
+        sketchCtx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+
+    function downloadCanvasImage() {
+      const canvas = document.getElementById('sketch-canvas');
+      const link = document.createElement('a');
+      link.download = 'WaveMaster_ShortNote.png';
+      link.href = canvas.toDataURL();
+      link.click();
+    }
+
+    // VISUAL LAB ENGINES
+    let currentSubLab = 'trans-long';
+
+    function switchLabSubTab(subId) {
+      currentSubLab = subId;
+      const subTabs = ['trans-long', 'huygens', 'interference', 'standing', 'chloroplast-3d'];
+      subTabs.forEach((s, idx) => {
+        const div = document.getElementById('sublab-' + s);
+        const btn = document.getElementById('btn-sublab-' + (idx + 1));
+        if (s === subId) {
+          div.classList.remove('hidden');
+          if (btn) btn.className = "px-3 py-1.5 rounded-lg transition bg-emerald-500 text-white font-semibold";
+        } else {
+          div.classList.add('hidden');
+          if (btn) btn.className = "px-3 py-1.5 rounded-lg transition text-gray-600 dark:text-gray-400 hover:text-white";
+        }
+      });
+      startActiveLabCanvas();
+    }
+
+    function startActiveLabCanvas() {
+      if (currentSubLab === 'trans-long') initTransLongSim();
+      else if (currentSubLab === 'huygens') initHuygensSim();
+      else if (currentSubLab === 'interference') initInterferenceSim();
+      else if (currentSubLab === 'standing') initStandingSim();
+      else if (currentSubLab === 'chloroplast-3d') initChloroplast3D();
+    }
+
+    // Transverse vs Longitudinal Sim
+    let waveMode = 'transverse';
+    let transLongParams = { freq: 2.0, amp: 30, speed: 120 };
+    let animIdTransLong = null;
+
+    function setWaveType(type) {
+      waveMode = type;
+      document.getElementById('btn-wave-trans').className = (type === 'transverse') ? 
+        "px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 text-white" : "px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300";
+      document.getElementById('btn-wave-long').className = (type === 'longitudinal') ? 
+        "px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500 text-white" : "px-3 py-1.5 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300";
+    }
+
+    function updateTransLongParams() {
+      transLongParams.freq = parseFloat(document.getElementById('slider-freq').value);
+      transLongParams.amp = parseFloat(document.getElementById('slider-amp').value);
+      transLongParams.speed = parseFloat(document.getElementById('slider-speed').value);
+
+      document.getElementById('disp-freq').innerText = transLongParams.freq.toFixed(1) + ' Hz';
+      document.getElementById('disp-amp').innerText = transLongParams.amp.toFixed(0) + ' px';
+      document.getElementById('disp-speed').innerText = transLongParams.speed.toFixed(0) + ' px/s';
+
+      const lambda = transLongParams.speed / transLongParams.freq;
+      const vpMax = 2 * Math.PI * transLongParams.freq * (transLongParams.amp / 10);
+
+      document.getElementById('val-v-disp').innerText = (transLongParams.speed / 10).toFixed(1);
+      document.getElementById('val-lambda-disp').innerText = (lambda / 10).toFixed(1);
+      document.getElementById('val-vp-disp').innerText = vpMax.toFixed(2);
+    }
+
+    function initTransLongSim() {
+      if (animIdTransLong) cancelAnimationFrame(animIdTransLong);
+      const canvas = document.getElementById('canvas-trans-long');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let startTime = performance.now();
+
+      function draw() {
+        const t = (performance.now() - startTime) / 1000;
+        ctx.fillStyle = '#030712';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const centerY = canvas.height / 2;
+        const numParticles = 38;
+        const spacing = canvas.width / (numParticles + 1);
+        const k = (2 * Math.PI * transLongParams.freq) / transLongParams.speed;
+        const omega = 2 * Math.PI * transLongParams.freq;
+
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(0, centerY);
+        ctx.lineTo(canvas.width, centerY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        if (waveMode === 'transverse') {
+          ctx.strokeStyle = 'rgba(16, 185, 129, 0.35)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          for (let x = 0; x <= canvas.width; x += 5) {
+            const y = centerY + transLongParams.amp * Math.sin(k * x - omega * t);
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+
+        for (let i = 1; i <= numParticles; i++) {
+          const eqX = i * spacing;
+          let px = eqX;
+          let py = centerY;
+
+          const phase = k * eqX - omega * t;
+          const disp = transLongParams.amp * Math.sin(phase);
+
+          if (waveMode === 'transverse') {
+            py = centerY + disp;
+          } else {
+            px = eqX + disp;
+          }
+
+          const isSpecial = (i === 10);
+          ctx.beginPath();
+          ctx.arc(px, py, isSpecial ? 7 : 4, 0, Math.PI * 2);
+          if (isSpecial) {
+            ctx.fillStyle = '#f43f5e';
+            ctx.shadowColor = '#f43f5e';
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          } else {
+            ctx.fillStyle = '#34d399';
+            ctx.fill();
+          }
+        }
+
+        ctx.fillStyle = '#34d399';
+        ctx.font = '12px Chakra Petch';
+        ctx.fillText('ทิศทางการแผ่ของคลื่น (Wave Speed v) ➔➔', 30, 30);
+
+        animIdTransLong = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // Huygens Slit Diffraction Sim
+    let huygensParams = { slitD: 40, lambda: 50, showDots: true };
+    let animIdHuygens = null;
+
+    function toggleHuygensDots() {
+      huygensParams.showDots = !huygensParams.showDots;
+      document.getElementById('btn-toggle-dots').innerText = 
+        huygensParams.showDots ? '👁️ แสดงจุดกำเนิดฮอยเกนส์ (Wavelets)' : '🚫 ซ่อนจุดกำเนิดฮอยเกนส์';
+    }
+
+    function updateHuygensParams() {
+      huygensParams.slitD = parseFloat(document.getElementById('slider-slit-d').value);
+      huygensParams.lambda = parseFloat(document.getElementById('slider-slit-lambda').value);
+
+      document.getElementById('slider-slit-label').innerText = huygensParams.slitD + ' px';
+      document.getElementById('slider-lambda-label').innerText = huygensParams.lambda + ' px';
+      document.getElementById('disp-slit-val').innerText = huygensParams.slitD + ' px';
+      document.getElementById('disp-slit-lambda').innerText = huygensParams.lambda + ' px';
+
+      const statusEl = document.getElementById('disp-diffraction-status');
+      if (huygensParams.slitD <= huygensParams.lambda) {
+        statusEl.className = "font-bold text-emerald-400";
+        statusEl.innerText = "d <= λ เลี้ยวเบนดีเยี่ยม หน้าคลื่นโค้งเป็นวงกลมสมบูรณ์";
+      } else if (huygensParams.slitD <= 2 * huygensParams.lambda) {
+        statusEl.className = "font-bold text-amber-400";
+        statusEl.innerText = "d ≈ λ เลี้ยวเบนปานกลาง หน้าคลื่นโค้งตรงขอบ";
+      } else {
+        statusEl.className = "font-bold text-rose-400";
+        statusEl.innerText = "d > λ เลี้ยวเบนปนแทรกสอด (เกิดแนวบัพหักล้างชัดเจน)";
+      }
+    }
+
+    function initHuygensSim() {
+      if (animIdHuygens) cancelAnimationFrame(animIdHuygens);
+      const canvas = document.getElementById('canvas-huygens');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let startTime = performance.now();
+
+      function draw() {
+        const t = (performance.now() - startTime) / 1000;
+        ctx.fillStyle = '#030712';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const barrierX = 300;
+        const centerY = canvas.height / 2;
+        const halfD = huygensParams.slitD / 2;
+        const lambda = huygensParams.lambda;
+        const waveSpeed = 80;
+
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.7)';
+        ctx.lineWidth = 2.5;
+        const phaseOffset = (t * waveSpeed) % lambda;
+        for (let x = phaseOffset; x < barrierX; x += lambda) {
+          ctx.beginPath();
+          ctx.moveTo(x, 20);
+          ctx.lineTo(x, canvas.height - 20);
+          ctx.stroke();
+        }
+
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(barrierX - 8, 0, 16, centerY - halfD);
+        ctx.fillRect(barrierX - 8, centerY + halfD, 16, canvas.height - (centerY + halfD));
+
+        const numSources = Math.max(3, Math.round(huygensParams.slitD / 8));
+        const slitSources = [];
+        for (let i = 0; i < numSources; i++) {
+          slitSources.push((centerY - halfD) + (i + 0.5) * (huygensParams.slitD / numSources));
+        }
+
+        const maxR = canvas.width - barrierX;
+        for (let r = phaseOffset; r < maxR; r += lambda) {
+          if (r <= 0) continue;
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(barrierX, 0, canvas.width - barrierX, canvas.height);
+          ctx.clip();
+
+          if (huygensParams.slitD <= lambda) {
+            ctx.strokeStyle = 'rgba(16, 185, 129, 0.85)';
+            ctx.beginPath();
+            ctx.arc(barrierX, centerY, r, -Math.PI / 2, Math.PI / 2);
+            ctx.stroke();
+          } else {
+            if (huygensParams.showDots) {
+              ctx.strokeStyle = 'rgba(52, 211, 153, 0.2)';
+              slitSources.forEach(sy => {
+                ctx.beginPath();
+                ctx.arc(barrierX, sy, r, -Math.PI / 2, Math.PI / 2);
+                ctx.stroke();
+              });
+            }
+
+            ctx.strokeStyle = 'rgba(16, 185, 129, 0.85)';
+            ctx.beginPath();
+            ctx.moveTo(barrierX + r, centerY - halfD);
+            ctx.lineTo(barrierX + r, centerY + halfD);
+            ctx.arc(barrierX, centerY - halfD, r, 0, -Math.PI / 2, true);
+            ctx.moveTo(barrierX + r, centerY + halfD);
+            ctx.arc(barrierX, centerY + halfD, r, 0, Math.PI / 2, false);
+            ctx.stroke();
+          }
+          ctx.restore();
+        }
+
+        if (huygensParams.showDots) {
+          slitSources.forEach(sy => {
+            ctx.beginPath();
+            ctx.arc(barrierX, sy, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#f59e0b';
+            ctx.fill();
+          });
+        }
+
+        animIdHuygens = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // Interference Sim
+    let interfParams = { d: 160, lambda: 40, phase: 'inphase' };
+    let probePoint = null;
+    let animIdInterf = null;
+
+    function setInterferencePhase(phase) {
+      interfParams.phase = phase;
+      document.getElementById('btn-phase-in').className = (phase === 'inphase') ? 
+        "px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500 text-white" : "px-3 py-1 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300";
+      document.getElementById('btn-phase-out').className = (phase === 'outphase') ? 
+        "px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-500 text-white" : "px-3 py-1 rounded-lg text-xs font-semibold bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300";
+      if (probePoint) calculateProbeResult();
+    }
+
+    function updateInterferenceParams() {
+      interfParams.d = parseFloat(document.getElementById('slider-int-d').value);
+      interfParams.lambda = parseFloat(document.getElementById('slider-int-lambda').value);
+
+      document.getElementById('slider-int-d-label').innerText = interfParams.d + ' px';
+      document.getElementById('slider-int-lambda-label').innerText = interfParams.lambda + ' px';
+      document.getElementById('disp-int-d').innerText = interfParams.d;
+      document.getElementById('disp-int-lambda').innerText = interfParams.lambda;
+
+      if (probePoint) calculateProbeResult();
+    }
+
+    function handleInterferenceClick(e) {
+      const canvas = document.getElementById('canvas-interference');
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      probePoint = {
+        x: (e.clientX - rect.left) * scaleX,
+        y: (e.clientY - rect.top) * scaleY
+      };
+      calculateProbeResult();
+    }
+
+    function calculateProbeResult() {
+      if (!probePoint) return;
+      const canvas = document.getElementById('canvas-interference');
+      const centerY = canvas.height / 2;
+      const s1 = { x: 200, y: centerY - interfParams.d / 2 };
+      const s2 = { x: 200, y: centerY + interfParams.d / 2 };
+
+      const d1 = Math.hypot(probePoint.x - s1.x, probePoint.y - s1.y);
+      const d2 = Math.hypot(probePoint.x - s2.x, probePoint.y - s2.y);
+      const pathDiff = Math.abs(d1 - d2);
+      const nRatio = pathDiff / interfParams.lambda;
+
+      let classification = '';
+      const rounded = Math.round(nRatio);
+      const halfRounded = Math.round(nRatio - 0.5);
+
+      if (interfParams.phase === 'inphase') {
+        if (Math.abs(nRatio - rounded) < 0.12) {
+          classification = `<b class="text-emerald-400">แนวปฏิบัพ (Antinode A${rounded}) เสริมกันสูงสุด</b>`;
+        } else if (Math.abs((nRatio - 0.5) - halfRounded) < 0.12) {
+          classification = `<b class="text-rose-400">แนวบัพ (Node N${halfRounded + 1}) หักล้างสนิท</b>`;
+        } else {
+          classification = `<span class="text-gray-300">แอมพลิจูดปานกลาง</span>`;
+        }
+      } else {
+        if (Math.abs((nRatio - 0.5) - halfRounded) < 0.12) {
+          classification = `<b class="text-emerald-400">แนวปฏิบัพ (Antinode A${halfRounded + 1})</b>`;
+        } else if (Math.abs(nRatio - rounded) < 0.12) {
+          classification = `<b class="text-rose-400">แนวบัพ (Node N${rounded}) แนวกลาง N0 หักล้าง</b>`;
+        } else {
+          classification = `<span class="text-gray-300">แอมพลิจูดปานกลาง</span>`;
+        }
+      }
+
+      document.getElementById('probe-result').innerHTML = 
+        `📍 จุด P: S₁P = ${d1.toFixed(1)} px, S₂P = ${d2.toFixed(1)} px, |S₁P - S₂P| = ${pathDiff.toFixed(1)} px (${nRatio.toFixed(2)}λ) ➔ ${classification}`;
+    }
+
+    function initInterferenceSim() {
+      if (animIdInterf) cancelAnimationFrame(animIdInterf);
+      const canvas = document.getElementById('canvas-interference');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let startTime = performance.now();
+
+      function draw() {
+        const t = (performance.now() - startTime) / 1000;
+        ctx.fillStyle = '#030712';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const centerY = canvas.height / 2;
+        const s1 = { x: 200, y: centerY - interfParams.d / 2 };
+        const s2 = { x: 200, y: centerY + interfParams.d / 2 };
+        const lambda = interfParams.lambda;
+        const waveSpeed = 60;
+
+        const maxR = canvas.width;
+        const phaseOffset1 = (t * waveSpeed) % lambda;
+        const phaseOffset2 = (interfParams.phase === 'inphase') ? phaseOffset1 : (phaseOffset1 + lambda / 2) % lambda;
+
+        ctx.strokeStyle = 'rgba(52, 211, 153, 0.25)';
+        for (let r = phaseOffset1; r < maxR; r += lambda) {
+          ctx.beginPath();
+          ctx.arc(s1.x, s1.y, r, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
+        for (let r = phaseOffset2; r < maxR; r += lambda) {
+          ctx.beginPath();
+          ctx.arc(s2.x, s2.y, r, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        [s1, s2].forEach((s, idx) => {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, 6, 0, Math.PI * 2);
+          ctx.fillStyle = (idx === 0) ? '#34d399' : '#38bdf8';
+          ctx.fill();
+        });
+
+        if (probePoint) {
+          ctx.strokeStyle = '#34d399';
+          ctx.beginPath();
+          ctx.moveTo(s1.x, s1.y);
+          ctx.lineTo(probePoint.x, probePoint.y);
+          ctx.stroke();
+
+          ctx.strokeStyle = '#38bdf8';
+          ctx.beginPath();
+          ctx.moveTo(s2.x, s2.y);
+          ctx.lineTo(probePoint.x, probePoint.y);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.arc(probePoint.x, probePoint.y, 6, 0, Math.PI * 2);
+          ctx.fillStyle = '#f59e0b';
+          ctx.fill();
+        }
+
+        animIdInterf = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // Standing Wave Sim
+    let standingHarmonic = 3;
+    let animIdStanding = null;
+
+    function setStandingHarmonic(n) {
+      standingHarmonic = n;
+      for (let i = 1; i <= 5; i++) {
+        const b = document.getElementById('harm-' + i);
+        if (i === n) b.className = "px-2.5 py-1 rounded bg-emerald-500 text-white";
+        else b.className = "px-2.5 py-1 rounded text-gray-500";
+      }
+      document.getElementById('disp-harm-n').innerText = n;
+      document.getElementById('disp-nodes-count').innerText = n + 1;
+      document.getElementById('disp-antinodes-count').innerText = n;
+    }
+
+    function initStandingSim() {
+      if (animIdStanding) cancelAnimationFrame(animIdStanding);
+      const canvas = document.getElementById('canvas-standing');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let startTime = performance.now();
+
+      function draw() {
+        const t = (performance.now() - startTime) / 1000;
+        ctx.fillStyle = '#030712';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const centerY = canvas.height / 2;
+        const leftX = 80;
+        const rightX = canvas.width - 80;
+        const stringLength = rightX - leftX;
+
+        const n = standingHarmonic;
+        const lambda = (2 * stringLength) / n;
+        const k = (2 * Math.PI) / lambda;
+        const omega = 4.0;
+        const A = 45;
+
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(leftX, centerY);
+        ctx.lineTo(rightX, centerY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.strokeStyle = '#10b981';
+        ctx.shadowColor = '#10b981';
+        ctx.shadowBlur = 10;
+        ctx.lineWidth = 3.5;
+        ctx.beginPath();
+        for (let x = leftX; x <= rightX; x += 2) {
+          const dx = x - leftX;
+          const y = centerY + (2 * A * Math.sin(k * dx) * Math.cos(omega * t));
+          if (x === leftX) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        for (let i = 0; i <= n; i++) {
+          const nx = leftX + (i * stringLength) / n;
+          ctx.beginPath();
+          ctx.arc(nx, centerY, 5, 0, Math.PI * 2);
+          ctx.fillStyle = '#f43f5e';
+          ctx.fill();
+          ctx.fillStyle = '#fca5a5';
+          ctx.font = 'bold 11px Chakra Petch';
+          ctx.fillText(`N${i}`, nx - 7, centerY + 24);
+        }
+
+        for (let i = 0; i < n; i++) {
+          const ax = leftX + (i + 0.5) * (stringLength / n);
+          ctx.beginPath();
+          ctx.arc(ax, centerY, 4, 0, Math.PI * 2);
+          ctx.fillStyle = '#f59e0b';
+          ctx.fill();
+          ctx.fillStyle = '#fde68a';
+          ctx.font = 'bold 11px Chakra Petch';
+          ctx.fillText(`A${i + 1}`, ax - 7, centerY - 20);
+        }
+
+        animIdStanding = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // 3D Chloroplast Viewer Sim
+    let chloroAngleX = 0.35;
+    let chloroAngleY = 0.5;
+    let isDraggingChloro = false;
+    let lastMouseX = 0, lastMouseY = 0;
+    let animIdChloro = null;
+
+    function resetChloroplastRotation() {
+      chloroAngleX = 0.35;
+      chloroAngleY = 0.5;
+    }
+
+    function initChloroplast3D() {
+      if (animIdChloro) cancelAnimationFrame(animIdChloro);
+      const canvas = document.getElementById('canvas-3d-chloroplast');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      canvas.onmousedown = (e) => {
+        isDraggingChloro = true;
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+      };
+      window.onmousemove = (e) => {
+        if (!isDraggingChloro) return;
+        const dx = e.clientX - lastMouseX;
+        const dy = e.clientY - lastMouseY;
+        chloroAngleY += dx * 0.008;
+        chloroAngleX += dy * 0.008;
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+      };
+      window.onmouseup = () => { isDraggingChloro = false; };
+
+      canvas.ontouchstart = (e) => {
+        if (e.touches[0]) {
+          isDraggingChloro = true;
+          lastMouseX = e.touches[0].clientX;
+          lastMouseY = e.touches[0].clientY;
+        }
+      };
+      window.ontouchmove = (e) => {
+        if (!isDraggingChloro || !e.touches[0]) return;
+        const dx = e.touches[0].clientX - lastMouseX;
+        const dy = e.touches[0].clientY - lastMouseY;
+        chloroAngleY += dx * 0.008;
+        chloroAngleX += dy * 0.008;
+        lastMouseX = e.touches[0].clientX;
+        lastMouseY = e.touches[0].clientY;
+      };
+      window.ontouchend = () => { isDraggingChloro = false; };
+
+      function project(x, y, z) {
+        let cosY = Math.cos(chloroAngleY), sinY = Math.sin(chloroAngleY);
+        let x1 = x * cosY + z * sinY;
+        let z1 = -x * sinY + z * cosY;
+
+        let cosX = Math.cos(chloroAngleX), sinX = Math.sin(chloroAngleX);
+        let y2 = y * cosX - z1 * sinX;
+        let z2 = y * sinX + z1 * cosX;
+
+        const fov = 450;
+        const scale = fov / (fov + z2 + 300);
+        return {
+          x: canvas.width / 2 + x1 * scale,
+          y: canvas.height / 2 + y2 * scale,
+          z: z2,
+          scale: scale
+        };
+      }
+
+      function draw() {
+        ctx.fillStyle = '#020617';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        if (!isDraggingChloro) {
+          chloroAngleY += 0.004;
+        }
+
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.25)';
+        ctx.lineWidth = 1.5;
+
+        const a = 180, b = 90, c = 120;
+        for (let u = 0; u < Math.PI * 2; u += Math.PI / 6) {
+          ctx.beginPath();
+          for (let v = -Math.PI / 2; v <= Math.PI / 2; v += 0.1) {
+            let x = a * Math.cos(v) * Math.cos(u);
+            let y = b * Math.sin(v);
+            let z = c * Math.cos(v) * Math.sin(u);
+            let p = project(x, y, z);
+            if (v === -Math.PI / 2) ctx.moveTo(p.x, p.y);
+            else ctx.lineTo(p.x, p.y);
+          }
+          ctx.stroke();
+        }
+
+        ctx.fillStyle = 'rgba(52, 211, 153, 0.4)';
+        for (let i = 0; i < 20; i++) {
+          let rx = Math.sin(i * 13) * 110;
+          let ry = Math.cos(i * 17) * 45;
+          let rz = Math.sin(i * 23) * 70;
+          let p = project(rx, ry, rz);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, 2 * p.scale, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        const granaLocations = [
+          { x: -70, z: -30, height: 6 },
+          { x: 0, z: -10, height: 8 },
+          { x: 70, z: 20, height: 7 },
+          { x: -30, z: 40, height: 5 },
+          { x: 50, z: -40, height: 6 }
+        ];
+
+        const sortedGrana = granaLocations.map(g => {
+          let p = project(g.x, 0, g.z);
+          return { ...g, depth: p.z };
+        }).sort((a, b) => b.depth - a.depth);
+
+        sortedGrana.forEach(g => {
+          for (let h = -g.height / 2; h < g.height / 2; h++) {
+            let dy = h * 8;
+            let p = project(g.x, dy, g.z);
+
+            ctx.beginPath();
+            ctx.ellipse(p.x, p.y, 22 * p.scale, 8 * p.scale, chloroAngleY, 0, Math.PI * 2);
+            ctx.fillStyle = '#059669';
+            ctx.fill();
+            ctx.strokeStyle = '#34d399';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        });
+
+        ctx.fillStyle = '#6ee7b7';
+        ctx.font = 'bold 12px Chakra Petch';
+        ctx.fillText('3D Chloroplast (Thylakoid Stacks & Stroma)', 20, 30);
+
+        animIdChloro = requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', (e) => {
+      const key = e.key;
+      if (['1', '2', '3', '4'].includes(key)) {
+        onChoiceClicked(parseInt(key) - 1);
+      } else if (['a', 'A'].includes(key)) {
+        onChoiceClicked(0);
+      } else if (['b', 'B'].includes(key)) {
+        onChoiceClicked(1);
+      } else if (['c', 'C'].includes(key)) {
+        onChoiceClicked(2);
+      } else if (['d', 'D'].includes(key)) {
+        onChoiceClicked(3);
+      } else if (key === 'Enter') {
+        if (examMode === 'instant') submitInstantAnswer();
+      } else if (key === 'ArrowRight') {
+        nextQuestion();
+      } else if (key === 'ArrowLeft') {
+        prevQuestion();
+      } else if (key === ' ') {
+        // Spacebar flips flashcard if flashcard tab is visible
+        const fcTab = document.getElementById('section-flashcards');
+        if (fcTab && !fcTab.classList.contains('hidden')) {
+          flipCurrentCard();
+          e.preventDefault();
+        }
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadQuestion(0);
+      buildQuestionMatrix();
+      filterFlashcards('all');
+      renderAllMath();
+    });
+  </script>
+</body>
+</html>
