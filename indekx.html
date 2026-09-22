@@ -1,0 +1,2881 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Study OS - ติวสอบฟิสิกส์ ม.5 ปลายภาค (เต็ม 100%)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #090D16;
+      --bg-surface: #0F172A;
+      --bg-card: #131E36;
+      --bg-card-hover: #1A2847;
+      --border-subtle: #1E293B;
+      --border-accent: #334155;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-sub: #64748B;
+      --cyan: #06B6D4;
+      --cyan-glow: rgba(6, 182, 212, 0.25);
+      --blue: #3B82F6;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --amber: #F59E0B;
+      --purple: #8B5CF6;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --font-main: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-base);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-accent);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--cyan);
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header.top-nav {
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #000;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      background: linear-gradient(to right, #FFFFFF, #CBD5E1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(10, 15, 26, 0.6);
+      padding: 0.3rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      overflow-x: auto;
+    }
+
+    .nav-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.5rem 0.9rem;
+      font-size: 0.88rem;
+      font-weight: 500;
+      font-family: inherit;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-tab-btn:hover {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-tab-btn.active {
+      background: var(--bg-card);
+      color: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
+      font-weight: 600;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    main.main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    .tab-section {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+    .tab-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .card:hover {
+      border-color: var(--border-accent);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #FFFFFF;
+    }
+
+    .card-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(6, 182, 212, 0.12);
+      color: var(--cyan);
+      border: 1px solid rgba(6, 182, 212, 0.25);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 1024px) {
+      .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--cyan);
+    }
+    .metric-val {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: #FFFFFF;
+      margin: 0.25rem 0;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .metric-sub {
+      font-size: 0.78rem;
+      color: var(--cyan);
+      font-weight: 500;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .schedule-table th, .schedule-table td {
+      padding: 0.85rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .schedule-table th {
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(15, 23, 42, 0.4);
+    }
+    .schedule-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .status-ready {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-pending {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .urgency-high {
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #000;
+      box-shadow: 0 2px 10px rgba(6, 182, 212, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(6, 182, 212, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-accent);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+    .btn-sm {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-chip:hover {
+      border-color: var(--cyan);
+      color: var(--text-main);
+    }
+    .filter-chip.active {
+      background: rgba(6, 182, 212, 0.15);
+      border-color: var(--cyan);
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .q-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      transition: border-color 0.2s;
+    }
+    .q-card:hover {
+      border-color: var(--border-accent);
+    }
+    .q-card.answered-correct {
+      border-color: rgba(16, 185, 129, 0.5);
+    }
+    .q-card.answered-wrong {
+      border-color: rgba(244, 63, 94, 0.5);
+    }
+
+    .q-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .q-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .opt-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.15rem;
+      text-align: left;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      line-height: 1.5;
+    }
+    .opt-btn:hover:not(:disabled) {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      transform: translateX(4px);
+    }
+    .opt-btn.correct {
+      background: rgba(16, 185, 129, 0.15) !important;
+      border-color: var(--emerald) !important;
+      color: #34D399 !important;
+      font-weight: 600;
+    }
+    .opt-btn.wrong {
+      background: rgba(244, 63, 94, 0.15) !important;
+      border-color: var(--rose) !important;
+      color: #FB7185 !important;
+    }
+    .opt-btn:disabled {
+      cursor: default;
+    }
+
+    .diagnostic-panel {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .diag-section {
+      margin-bottom: 0.75rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .diag-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .diag-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      margin-right: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tag-concept { background: rgba(244, 63, 94, 0.2); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.4); }
+    .tag-calc { background: rgba(245, 158, 11, 0.2); color: var(--amber); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .tag-read { background: rgba(59, 130, 246, 0.2); color: var(--blue); border: 1px solid rgba(59, 130, 246, 0.4); }
+    .tag-shortcut { background: rgba(16, 185, 129, 0.2); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.4); }
+    .tag-rubric { background: rgba(139, 92, 246, 0.2); color: var(--purple); border: 1px solid rgba(139, 92, 246, 0.4); }
+
+    .canvas-container {
+      background: #060911;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+    }
+    canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+    }
+    .canvas-controls {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.85rem;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .theory-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    .theory-table th, .theory-table td {
+      border: 1px solid var(--border-subtle);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    .theory-table th {
+      background: var(--bg-card);
+      color: var(--cyan);
+      font-weight: 600;
+    }
+    .theory-table tr:nth-child(even) {
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .formula-badge {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.1);
+      color: #38BDF8;
+      font-family: var(--font-mono);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-size: 0.88rem;
+    }
+
+    .trap-box {
+      background: rgba(244, 63, 94, 0.08);
+      border-left: 4px solid var(--rose);
+      padding: 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+    }
+    .tip-box {
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 4px solid var(--emerald);
+      padding: 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+    }
+
+    .subj-input {
+      width: 100%;
+      min-height: 90px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--text-main);
+      padding: 0.85rem;
+      font-family: inherit;
+      font-size: 0.92rem;
+      margin-bottom: 0.75rem;
+      resize: vertical;
+    }
+    .subj-input:focus {
+      outline: none;
+      border-color: var(--cyan);
+    }
+
+    .sim-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-accent);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      position: sticky;
+      top: 4.5rem;
+      z-index: 90;
+      backdrop-filter: blur(10px);
+    }
+    .timer-display {
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--rose);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      background: var(--bg-surface);
+    }
+    .accordion-header {
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.98rem;
+      user-select: none;
+    }
+    .accordion-header:hover {
+      background: var(--bg-card-hover);
+    }
+    .accordion-body {
+      padding: 1.25rem;
+      display: none;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+    }
+    .accordion-body.open {
+      display: block;
+    }
+
+    .wp-bar-track {
+      background: var(--bg-card);
+      border-radius: 999px;
+      height: 8px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 0.4rem;
+    }
+    .wp-bar-fill {
+      height: 100%;
+      background: var(--emerald);
+      border-radius: 999px;
+      transition: width 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <header class="top-nav">
+    <div class="nav-inner">
+      <a href="#" class="brand-logo" onclick="switchTab('dashboard')">
+        <span class="brand-badge">STUDY OS v5.0</span>
+        <span class="brand-title">PHYSICS 100% EXAM ENGINE</span>
+      </a>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab-btn active" onclick="switchTab('dashboard')">
+          <span>📊</span> Dashboard & ตารางสอบ
+        </button>
+        <button class="nav-tab-btn" onclick="switchTab('learning')">
+          <span>📖</span> ห้องเรียนเนื้อหาละเอียด
+        </button>
+        <button class="nav-tab-btn" onclick="switchTab('instant-practice')">
+          <span>🎯</span> ตะลุยโจทย์: เฉลยทันที
+        </button>
+        <button class="nav-tab-btn" onclick="switchTab('simulator')">
+          <span>📝</span> Exam Simulator (จับเวลา)
+        </button>
+        <button class="nav-tab-btn" onclick="switchTab('cram-mode')">
+          <span>⚡</span> Exam Mode (15 นาทีก่อนสอบ)
+        </button>
+        <button class="nav-tab-btn" onclick="switchTab('weak-points')">
+          <span>📉</span> Weak Point Analytics
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <!-- TAB 1: DASHBOARD -->
+    <section id="tab-dashboard" class="tab-section active">
+      <div class="card" style="background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(59,130,246,0.05)); border-color: rgba(6,182,212,0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h1 style="font-size: 1.6rem; font-weight: 700; color: #FFF; margin-bottom: 0.25rem;">
+              เป้าหมายสูงสุด: ฟิสิกส์ ม.5 ปลายภาค “คะแนนเต็ม 100% เท่านั้น”
+            </h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">
+              ระบบวิเคราะห์ข้อมูลแนวข้อสอบจริงของครู (20 ข้อ) + ข้อสอบประยุกต์ดักทาง A-Level/สอวน. (15 ข้อ) รวม 35 ข้อ พร้อมเจาะลึกมโนทัศน์และเทคนิคตัดชอยส์
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem;">
+            <button class="btn btn-primary" onclick="switchTab('instant-practice')">
+              <span>🚀</span> เริ่มฝึกโจทย์ทีละข้อ
+            </button>
+            <button class="btn btn-outline" onclick="switchTab('cram-mode')">
+              <span>⚡</span> เปิด Exam Mode
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-4" style="margin-bottom: 1.5rem;">
+        <div class="metric-card">
+          <div class="metric-label">ข้อสอบในระบบทั้งหมด</div>
+          <div class="metric-val" id="metric-total-q">35</div>
+          <div class="metric-sub">ครู 20 ข้อ + ประยุกต์ดักทาง 15 ข้อ</div>
+        </div>
+        <div class="metric-card" style="border-left-color: var(--emerald);">
+          <div class="metric-label">ทำไปแล้ว</div>
+          <div class="metric-val" id="metric-answered">0</div>
+          <div class="metric-sub" id="metric-answered-sub">0% ของทั้งหมด</div>
+        </div>
+        <div class="metric-card" style="border-left-color: var(--amber);">
+          <div class="metric-label">ความแม่นยำรวม (Accuracy)</div>
+          <div class="metric-val" id="metric-accuracy">0%</div>
+          <div class="metric-sub">เป้าหมาย: 100% เต็ม</div>
+        </div>
+        <div class="metric-card" style="border-left-color: var(--rose);">
+          <div class="metric-label">วิชาสอบที่ใกล้ที่สุด (วันพุธ)</div>
+          <div class="metric-val" style="font-size: 1.25rem; font-family: inherit; color: var(--rose); margin: 0.5rem 0;">
+            ฟิสิกส์ ม.5
+          </div>
+          <div class="metric-sub urgency-high">ความเร่งด่วน: สูงสุด (Priority 1)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>📅</span> ตารางสอบปลายภาค ม.5 (Master Exam Schedule)
+          </div>
+          <span class="card-badge">ยึดเป็นแกนกลางระบบ</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+          ตารางสอบอย่างเป็นทางการใช้จัดลำดับความเร่งด่วนของการเตรียมตัวและพัฒนาเนื้อหารายวิชา
+        </p>
+
+        <div style="overflow-x: auto;">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>วันสอบ</th>
+                <th>วิชา</th>
+                <th>ขอบเขตเนื้อหา</th>
+                <th>สถานะในระบบ</th>
+                <th>ความเร่งด่วน</th>
+                <th>การดำเนินการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background: rgba(6, 182, 212, 0.05);">
+                <td style="font-weight: 600; color: var(--cyan);">วันพุธ</td>
+                <td style="font-weight: 700; color: #FFF;">ฟิสิกส์</td>
+                <td>คลื่นกล (สะท้อน หักเห เลี้ยวเบน แทรกสอด) + แสงเชิงคลื่น (สลิตคู่ สลิตเดี่ยว เกรตติง ทวิภาวะ)</td>
+                <td><span class="status-tag status-ready">● พร้อมสอบ 100%</span></td>
+                <td class="urgency-high">สูงมาก (ด่วนสุด)</td>
+                <td>
+                  <button class="btn btn-primary btn-sm" onclick="switchTab('learning')">เข้าสู่ห้องเรียน</button>
+                </td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">วันพุธ</td>
+                <td>คณิตศาสตร์</td>
+                <td>รอรับข้อมูลแนวข้อสอบเพิ่มเติมจากผู้ใช้</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td class="urgency-high">สูง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">วันพุธ</td>
+                <td>ประวัติศาสตร์</td>
+                <td>เมโสโปเตเมีย, ดินแดนพระจันทร์เสี้ยว, กฎหมายฮัมมูราบี, ซิกกูแรต</td>
+                <td><span class="status-tag status-pending">รอข้อมูลเจาะลึก</span></td>
+                <td class="urgency-high">สูง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">วันพุธ</td>
+                <td>ภาษาไทย</td>
+                <td>วรรณคดีและหลักภาษา (รอรับข้อมูลแนวข้อสอบ)</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปานกลาง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">วันพุธ</td>
+                <td>ต่อต้านการทุจริต</td>
+                <td>รอรับข้อมูลแนวข้อสอบ</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปานกลาง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">วันพุธ</td>
+                <td>แนะแนวอาชีพ</td>
+                <td>รอรับข้อมูลแนวข้อสอบ</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปกติ</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td style="font-weight: 700;">เคมี</td>
+                <td>อัตราการเกิดปฏิกิริยาเคมี, สมดุลเคมี (รอรับแนวข้อสอบ)</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td class="urgency-high">สูง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td style="font-weight: 700;">ชีววิทยา</td>
+                <td>การสังเคราะห์ด้วยแสง, การสืบพันธุ์พืช (รอรับแนวข้อสอบ)</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td class="urgency-high">สูง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td>คณิตศาสตร์</td>
+                <td>รอรับข้อมูลแนวข้อสอบ</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>สูง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td>ภาษาอังกฤษ 3</td>
+                <td>Reading & Grammar (รอรับข้อมูลแนวข้อสอบ)</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปานกลาง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td>สังคมศึกษา 3</td>
+                <td>รอรับข้อมูลแนวข้อสอบ</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปานกลาง</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td>ภาษาจีน</td>
+                <td>คำศัพท์และไวยากรณ์ (รอรับข้อมูลแนวข้อสอบ)</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปกติ</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--purple);">วันศุกร์</td>
+                <td>บัญชีเงินสด</td>
+                <td>รอรับข้อมูลแนวข้อสอบ</td>
+                <td><span class="status-tag status-pending">รอข้อมูล</span></td>
+                <td>ปกติ</td>
+                <td><button class="btn btn-outline btn-sm" disabled>รอเนื้อหา</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: DETAILED LEARNING HUB -->
+    <section id="tab-learning" class="tab-section">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>📖</span> คลังความรู้เจาะลึก 100%: ฟิสิกส์ คลื่นกล & แสงเชิงคลื่น
+          </div>
+          <span class="card-badge">ตรงตามแนวข้อสอบ ม.5</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          ครอบคลุมทุกมโนทัศน์สำคัญ สูตรคำนวณ ข้อควรระวัง เทคนิคช่วยจำ และภาพจำลอง Interactive Simulation
+        </p>
+
+        <!-- Chapter 1: Reflection -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>1. การสะท้อนของคลื่น (Reflection) & ผิวโค้งพาราโบลา</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body open">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">1.1 กฎการสะท้อน (Laws of Reflection)</h4>
+            <p>1. รังสีตกกระทบ เส้นปกติ (Normal line) และรังสีสะท้อน ต้องอยู่ในระนาบเดียวกัน</p>
+            <p>2. มุมตกกระทบ เท่ากับ มุมสะท้อนเสมอ (&theta;<sub>i</sub> = &theta;<sub>r</sub>) โดยวัดเทียบกับ <strong>เส้นปกติที่ตั้งฉากกับผิวสะท้อน</strong> เท่านั้น</p>
+            
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">1.2 ผิวสะท้อนรูปพาราโบลา (Parabolic Reflector) - จุดออกสอบบ่อย!</h4>
+            <div class="tip-box">
+              <strong>⭐ จำเป็นคู่ตรงข้าม:</strong><br>
+              • <strong>กรณีที่ 1 (จุดกำเนิดอยู่ที่จุดโฟกัส F):</strong> คลื่นสะท้อนจะเป็น <strong>"คลื่นหน้าตรง" (Plane wave)</strong> ขนานกับแกนมุขสำคัญ (เหมือนไฟหน้ารถยนต์หรือสปอตไลต์)<br>
+              • <strong>กรณีที่ 2 (ส่งคลื่นหน้าตรงเข้าไปกระทบ):</strong> คลื่นสะท้อนจะเป็น <strong>"คลื่นวงกลมที่ลู่เข้าไปรวมกันที่จุดโฟกัส F"</strong> จากนั้นจะแผ่ขยายออกเป็นวงกลมต่อไป (เหมือนจานรับสัญญาณดาวเทียม)
+            </div>
+
+            <div class="canvas-container">
+              <h5 style="color: #FFF; margin-bottom: 0.5rem;">ภาพจำลอง Interactive: การสะท้อนบนผิวโค้งพาราโบลา</h5>
+              <canvas id="canvasParabola" width="550" height="260"></canvas>
+              <div class="canvas-controls">
+                <button class="btn btn-outline btn-sm" onclick="toggleParabolaMode()">
+                  🔄 สลับโหมด: <span id="parabolaModeText">จุดกำเนิดที่โฟกัส (ส่งคลื่นหน้าตรงออก)</span>
+                </button>
+              </div>
+            </div>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">1.3 การสะท้อนของคลื่นในเส้นเชือก</h4>
+            <table class="theory-table">
+              <tr>
+                <th>กรณี</th>
+                <th>คลื่นสะท้อน</th>
+                <th>คลื่นส่งผ่าน (ทะลุไป)</th>
+              </tr>
+              <tr>
+                <td><strong>ปลายตรึงแน่น (Fixed end)</strong></td>
+                <td>กลับเฟส 180° (สันคลื่นสะท้อนเป็นท้องคลื่น)</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>ปลายอิสระ (Free end)</strong></td>
+                <td>เฟสเดิม (สันคลื่นสะท้อนเป็นสันคลื่น)</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><strong>เชือกเล็ก &rarr; เชือกใหญ่</strong></td>
+                <td>กลับเฟส 180° (รอยต่อเสมือนปลายตรึง)</td>
+                <td><strong>เฟสเดิมเสมอ!</strong> (สันคลื่นเป็นสันคลื่น)</td>
+              </tr>
+              <tr>
+                <td><strong>เชือกใหญ่ &rarr; เชือกเล็ก</strong></td>
+                <td>เฟสเดิม (รอยต่อเสมือนปลายอิสระ)</td>
+                <td><strong>เฟสเดิมเสมอ!</strong> (สันคลื่นเป็นสันคลื่น)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Chapter 2: Refraction -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>2. การหักเหของคลื่นน้ำ (Refraction) & กฎของสเนลล์</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">2.1 กฎของสเนลล์ (Snell's Law)</h4>
+            <p>สมการหลักของการหักเห:</p>
+            <div style="margin: 0.5rem 0;">
+              <span class="formula-badge">sin(&theta;<sub>1</sub>) / sin(&theta;<sub>2</sub>) = v<sub>1</sub> / v<sub>2</sub> = &lambda;<sub>1</sub> / &lambda;<sub>2</sub> = n<sub>2</sub> / n<sub>1</sub></span>
+            </div>
+            
+            <div class="trap-box">
+              <strong>⚠️ ระวังจุดตกม้าตายอันดับ 1:</strong><br>
+              <strong>ความถี่ (f) คงที่เสมอ!</strong> ความถี่ขึ้นอยู่กับแหล่งกำเนิดเดิมเท่านั้น เมื่อคลื่นเคลื่อนที่เปลี่ยนตัวกลาง ความถี่จะไม่เปลี่ยนแปลงเด็ดขาด!
+            </div>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">2.2 ตารางเปรียบเทียบ น้ำลึก vs น้ำตื้น</h4>
+            <table class="theory-table">
+              <tr>
+                <th>ปริมาณ</th>
+                <th>บริเวณน้ำลึก (Deep Water)</th>
+                <th>บริเวณน้ำตื้น (Shallow Water)</th>
+              </tr>
+              <tr>
+                <td><strong>อัตราเร็ว (v)</strong></td>
+                <td><strong style="color: var(--emerald);">มาก (เร็ว)</strong></td>
+                <td><strong style="color: var(--rose);">น้อย (ช้า)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>ความยาวคลื่น (&lambda;)</strong></td>
+                <td><strong style="color: var(--emerald);">ยาว (หน้าคลื่นห่างกัน)</strong></td>
+                <td><strong style="color: var(--rose);">สั้น (หน้าคลื่นชิดกัน)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>มุม (&theta;)</strong></td>
+                <td><strong>มุมโต (กว้าง)</strong></td>
+                <td><strong>มุมแคบ</strong></td>
+              </tr>
+              <tr>
+                <td><strong>ความถี่ (f)</strong></td>
+                <td>คงที่</td>
+                <td>คงที่</td>
+              </tr>
+              <tr>
+                <td><strong>ทิศทางการเคลื่อนที่</strong></td>
+                <td>น้ำตื้น &rarr; น้ำลึก: <strong>เบนออกจากเส้นปกติ</strong></td>
+                <td>น้ำลึก &rarr; น้ำตื้น: <strong>เบนเข้าหาเส้นปกติ</strong></td>
+              </tr>
+            </table>
+
+            <div class="canvas-container">
+              <h5 style="color: #FFF; margin-bottom: 0.5rem;">ภาพจำลอง Interactive: การหักเหของคลื่นผิวน้ำ (ลึก &rarr; ตื้น)</h5>
+              <canvas id="canvasRefraction" width="550" height="240"></canvas>
+              <div class="canvas-controls">
+                <span>หน้าคลื่นในน้ำลึก (v มาก, &lambda; กว้าง) &rarr; น้ำตื้น (v น้อย, &lambda; แคบ, เบนเข้าหาเส้นปกติ)</span>
+              </div>
+            </div>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">2.3 มุมวิกฤตและการสะท้อนกลับหมด</h4>
+            <p>• จะเกิดขึ้นได้เมื่อคลื่นเคลื่อนที่จาก <strong>บริเวณช้า &rarr; เร็ว</strong> เท่านั้น (ในคลื่นน้ำคือ <strong>น้ำตื้น &rarr; น้ำลึก</strong>)</p>
+            <p>• มุมวิกฤต (&theta;<sub>c</sub>) คือมุมตกกระทบที่ทำให้มุมหักเหในน้ำลึกเป็น <strong>90°</strong> พอดี (sin(&theta;<sub>c</sub>) = v<sub>ตื้น</sub> / v<sub>ลึก</sub> = &lambda;<sub>ตื้น</sub> / &lambda;<sub>ลึก</sub>)</p>
+          </div>
+        </div>
+
+        <!-- Chapter 3: Diffraction -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>3. การเลี้ยวเบนของคลื่น (Diffraction) & หลักการฮอยเกนส์</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">3.1 หลักการของฮอยเกนส์ (Huygens' Principle)</h4>
+            <p>“ทุกๆ จุดบนหน้าคลื่นสามารถทำหน้าที่เป็นแหล่งกำเนิดคลื่นจุดใหม่ (Wavelet) ซึ่งจะแผ่คลื่นหน้าวงกลมออกไปในทุกทิศทางด้วยอัตราเร็วและความถี่เดิม”</p>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">3.2 เงื่อนไขขนาดช่องเปิด (d) กับความยาวคลื่น (&lambda;)</h4>
+            <table class="theory-table">
+              <tr>
+                <th>ขนาดช่องเปิด</th>
+                <th>พฤติกรรมการเลี้ยวเบน</th>
+                <th>ลวดลายคลื่นที่สังเกตได้</th>
+              </tr>
+              <tr>
+                <td><strong>d &le; &lambda; (ช่องแคบ)</strong></td>
+                <td><strong style="color: var(--emerald);">เลี้ยวเบนสมบูรณ์เด่นชัดมาก</strong></td>
+                <td>แผ่ออกเป็น <strong>หน้าคลื่นวงกลม</strong> รอบทิศทาง และ <strong>ไม่เกิดแนวบัพ/การแทรกสอด</strong></td>
+              </tr>
+              <tr>
+                <td><strong>d &gt; &lambda; (ช่องกว้าง)</strong></td>
+                <td>เลี้ยวเบนไม่สมบูรณ์</td>
+                <td>ตรงกลางยังคงเป็น <strong>หน้าคลื่นตรง</strong> โค้งมนเฉพาะบริเวณขอบ และ <strong>เกิดแนวบัพ/ปฏิบัพ</strong> หลังช่อง</td>
+              </tr>
+              <tr>
+                <td><strong>d &gt;&gt; &lambda; (ช่องกว้างมากๆ)</strong></td>
+                <td>แทบไม่เกิดการเลี้ยวเบน</td>
+                <td>คลื่นวิ่งเป็นลำตรงผ่านช่องเปิดไป ขอบโค้งมนเพียงเล็กน้อย</td>
+              </tr>
+            </table>
+
+            <div class="canvas-container">
+              <h5 style="color: #FFF; margin-bottom: 0.5rem;">ภาพจำลอง Interactive: ปรับขนาดช่องเปิดเทียบกับความยาวคลื่น</h5>
+              <canvas id="canvasDiffraction" width="550" height="220"></canvas>
+              <div class="canvas-controls">
+                <label>ขนาดช่องเปิด (d): </label>
+                <input type="range" id="diffractionSlider" min="1" max="5" value="1" oninput="updateDiffractionCanvas(this.value)" style="accent-color: var(--cyan);">
+                <span id="diffractionLabel" style="color: var(--cyan); font-weight: 600;">d &le; &lambda; (เลี้ยวเบนหน้าวงกลมสมบูรณ์)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 4: Water Wave Interference -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>4. การแทรกสอดของคลื่นน้ำ (Water Wave Interference)</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">4.1 แหล่งกำเนิดอาพันธ์ (Coherent Sources)</h4>
+            <p>คือแหล่งกำเนิดคลื่นสองแหล่งที่มี <strong>ความถี่เท่ากัน</strong> และมี <strong>ผลต่างเฟสคงที่</strong> (โดยปกติข้อสอบมักให้เฟสตรงกัน)</p>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">4.2 สูตรการแทรกสอด (เปรียบเทียบเฟสตรงกัน vs เฟสตรงข้ามกัน)</h4>
+            <table class="theory-table">
+              <tr>
+                <th>แนว</th>
+                <th>แหล่งกำเนิด "เฟสตรงกัน" (In Phase)</th>
+                <th>แหล่งกำเนิด "เฟสตรงข้ามกัน 180°" (Out of Phase)</th>
+              </tr>
+              <tr>
+                <td><strong>แนวกลาง</strong></td>
+                <td><strong style="color: var(--emerald);">แนวปฏิบัพกลาง (A<sub>0</sub>)</strong> เสริมกัน</td>
+                <td><strong style="color: var(--rose);">แนวบัพกลาง (N<sub>0</sub>)</strong> หักล้างกัน!</td>
+              </tr>
+              <tr>
+                <td><strong>แนวปฏิบัพ (Antinode / เสริมกัน)</strong></td>
+                <td><span class="formula-badge">|S<sub>1</sub>P - S<sub>2</sub>P| = d sin(&theta;) = n&lambda;</span><br>(n = 0, 1, 2, ...)</td>
+                <td><span class="formula-badge">|S<sub>1</sub>P - S<sub>2</sub>P| = d sin(&theta;) = (n - 0.5)&lambda;</span><br>(n = 1, 2, 3, ...)</td>
+              </tr>
+              <tr>
+                <td><strong>แนวบัพ (Node / หักล้างกัน)</strong></td>
+                <td><span class="formula-badge">|S<sub>1</sub>P - S<sub>2</sub>P| = d sin(&theta;) = (n - 0.5)&lambda;</span><br>(n = 1, 2, 3, ...)</td>
+                <td><span class="formula-badge">|S<sub>1</sub>P - S<sub>2</sub>P| = d sin(&theta;) = n&lambda;</span><br>(n = 0, 1, 2, ...)</td>
+              </tr>
+            </table>
+
+            <div class="tip-box">
+              <strong>💡 สูตรหาจำนวนแนวทั้งหมดระหว่างแหล่งกำเนิด (ระยะห่าง d):</strong><br>
+              • หา n<sub>max</sub> โดยแทน sin(90°) = 1:<br>
+              - แนวปฏิบัพ (เฟสตรงกัน): n &le; d / &lambda; &rarr; จำนวนแนวทั้งหมด = 2(n<sub>max</sub>) + 1<br>
+              - แนวบัพ (เฟสตรงกัน): (n - 0.5) &lt; d / &lambda; &rarr; จำนวนแนวทั้งหมด = 2 &times; n<sub>max</sub>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 5: Young's Double Slit -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>5. แสงเชิงคลื่น: สลิตคู่ของทอมัส ยัง (Young's Double-Slit)</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">5.1 หลักการและลวดลาย</h4>
+            <p>แสงสีเดียวผ่านสลิตคู่ S<sub>1</sub>, S<sub>2</sub> ซึ่งทำหน้าที่เป็นแหล่งกำเนิดอาพันธ์ คลื่นแสงเดินทางไปซ้อนทับกันบนฉาก เกิดลวดลายแถบสว่างและแถบมืดที่ <strong>มีระยะห่างเท่าๆ กันทุกแถบ</strong> (&Delta;y คงที่) และความสว่างค่อยๆ ลดลงอย่างช้าๆ</p>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">5.2 สูตรคำนวณสลิตคู่</h4>
+            <div class="grid-2">
+              <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--emerald);">แถบสว่าง (Bright Fringe / Antinode)</strong><br>
+                <div style="margin: 0.5rem 0;"><span class="formula-badge">d sin(&theta;) = n&lambda;</span> หรือ <span class="formula-badge">d (y<sub>n</sub> / L) = n&lambda;</span></div>
+                <small style="color: var(--text-muted);">n = 0 (แถบกลาง), n = 1, 2, 3, ...</small>
+              </div>
+              <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--rose);">แถบมืด (Dark Fringe / Node)</strong><br>
+                <div style="margin: 0.5rem 0;"><span class="formula-badge">d sin(&theta;) = (n - 0.5)&lambda;</span> หรือ <span class="formula-badge">d (y<sub>n</sub> / L) = (n - 0.5)&lambda;</span></div>
+                <small style="color: var(--text-muted);">n = 1 (มืดที่ 1), n = 2, 3, ...</small>
+              </div>
+            </div>
+
+            <div style="margin-top: 1rem; background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <strong style="color: var(--cyan);">สูตรระยะห่างระหว่างแถบสว่าง (หรือแถบมืด) ที่อยู่ติดกัน:</strong><br>
+              <div style="margin: 0.5rem 0;"><span class="formula-badge">&Delta;y = &lambda;L / d</span></div>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">
+                • ถ้า &lambda; มาก (แสงสีแดง) &rarr; &Delta;y มาก (แถบอยู่ห่างกัน)<br>
+                • ถ้า d แคบ &rarr; &Delta;y มาก (แถบขยายกว้าง)<br>
+                • ถ้า L มาก (ถอยฉากออกไป) &rarr; &Delta;y มาก (แถบกว้างขึ้น)<br>
+                • <strong>ถ้านำไปจุ่มในน้ำ (ดัชนีหักเห n):</strong> &lambda;' = &lambda;/n &rarr; &Delta;y' = &Delta;y / n (แถบชิดกันมากขึ้น)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 6: Single Slit -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>6. แสงเชิงคลื่น: สลิตเดี่ยว (Single-Slit Diffraction)</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">6.1 ข้อแตกต่างสำคัญระหว่างสลิตเดี่ยวกับสลิตคู่</h4>
+            <div class="trap-box">
+              <strong>⚠️ จุดที่ข้อสอบชอบหลอกเด็กที่สุดในประเทศไทย:</strong><br>
+              ในสลิตเดี่ยวกว้าง a สูตรหลักเป็นสูตรของ <strong>"แถบมืด (Dark Fringe)"</strong> ไม่ใช่แถบสว่าง!<br>
+              <div style="margin: 0.5rem 0;"><span class="formula-badge">a sin(&theta;) = n&lambda;</span> หรือ <span class="formula-badge">a (y<sub>n</sub> / L) = n&lambda;</span> (n = 1, 2, 3, ...)</div>
+              (ห้ามใช้ n=0 เพราะ n=0 คือจุดกึ่งกลางของแถบสว่างกลาง!)
+            </div>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">6.2 ความกว้างของแถบสว่างกลาง (Central Maximum)</h4>
+            <p>• ขอบของแถบสว่างกลางถูกขนาบด้วย <strong>แถบมืดที่ 1 ทั้งสองข้าง (n = &plusmn;1)</strong></p>
+            <p>• ระยะจากกึ่งกลางถึงแถบมืดที่ 1 คือ y<sub>1</sub> = &lambda;L / a</p>
+            <p>• ดังนั้น <strong>ความกว้างของแถบสว่างกลาง = 2y<sub>1</sub> = 2&lambda;L / a</strong> ซึ่ง <strong>กว้างเป็น 2 เท่า</strong> ของแถบสว่างข้างเคียงเสมอ!</p>
+            <p>• ความเข้มแสงของแถบสว่างกลางสูงมาก แถบสว่างข้างเคียงความเข้มแสงจะดรอปลงอย่างรวดเร็ว (เหลือเพียง ~4% ในแถบที่ 1)</p>
+          </div>
+        </div>
+
+        <!-- Chapter 7: Diffraction Grating -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>7. แสงเชิงคลื่น: เกรตติง (Diffraction Grating) & การแยกสเปกตรัม</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">7.1 สมบัติและสูตรการคำนวณ</h4>
+            <p>เกรตติงประกอบด้วยช่องขนานขนาดเล็กจำนวนมาก (เช่น 100 - 10,000 เส้น/cm) ลวดลายที่ได้จะมีความคมชัดสูงมาก แถบสว่างแคบเป็นเส้นเล็กๆ และแถบมืดมืดสนิท</p>
+            <div style="margin: 0.5rem 0;">
+              ระยะห่างระหว่างช่อง: <span class="formula-badge">d = 1 / N</span> โดย N คือจำนวนเส้นต่อหน่วยความยาว<br>
+              สูตรแถบสว่าง: <span class="formula-badge">d sin(&theta;) = n&lambda;</span> (n = 0, 1, 2, ...)
+            </div>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">7.2 การกระจายแสงสีขาว (เกรตติง vs ปริซึม)</h4>
+            <table class="theory-table">
+              <tr>
+                <th>มิติเปรียบเทียบ</th>
+                <th>เกรตติง (Diffraction Grating)</th>
+                <th>ปริซึมแก้ว (Prism)</th>
+              </tr>
+              <tr>
+                <td><strong>ปรากฏการณ์</strong></td>
+                <td>การเลี้ยวเบน + แทรกสอด</td>
+                <td>การหักเหของแสง (Refraction)</td>
+              </tr>
+              <tr>
+                <td><strong>แถบสว่างกลาง (n=0)</strong></td>
+                <td><strong style="color: #FFF;">เป็นสีขาว</strong> (ทุกสีเบน &theta; = 0° เท่ากัน)</td>
+                <td>ไม่มีแถบกลาง (แสงเบนไปทางฐานทั้งหมด)</td>
+              </tr>
+              <tr>
+                <td><strong>สีที่เบนออกจากแนวกลางมากสุด</strong></td>
+                <td><strong style="color: var(--rose);">แสงสีแดง (&lambda; มากสุด &approx; 700 nm)</strong></td>
+                <td><strong style="color: var(--purple);">แสงสีม่วง (f สูงสุด ดัชนีหักเห n สูงสุด)</strong></td>
+              </tr>
+              <tr>
+                <td><strong>สีที่เบนออกจากแนวกลางน้อยสุด</strong></td>
+                <td><strong style="color: var(--purple);">แสงสีม่วง (&lambda; สั้นสุด &approx; 400 nm)</strong></td>
+                <td><strong style="color: var(--rose);">แสงสีแดง (ดัชนีหักเห n น้อยสุด)</strong></td>
+              </tr>
+            </table>
+
+            <div class="canvas-container">
+              <h5 style="color: #FFF; margin-bottom: 0.5rem;">เปรียบเทียบลวดลายความเข้มแสง: สลิตคู่ vs สลิตเดี่ยว vs เกรตติง</h5>
+              <canvas id="canvasIntensity" width="550" height="200"></canvas>
+              <div class="canvas-controls">
+                <span>เกรตติงยอดแหลมคมชัด | สลิตคู่แถบกว้างเท่ากัน | สลิตเดี่ยวแถบกลางกว้าง 2 เท่า</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 8: Wave-Particle Duality -->
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            <span>8. ทวิภาวะคลื่น-อนุภาค (Wave-Particle Duality) & เทคนิคตอบอัตนัยเต็ม</span>
+            <span>▼</span>
+          </div>
+          <div class="accordion-body">
+            <h4 style="color: var(--cyan); margin-bottom: 0.5rem;">8.1 แสงเป็นคลื่นหรืออนุภาค?</h4>
+            <p>แสงมีพฤติกรรมเป็น <strong>ทวิภาวะ (Wave-Particle Duality)</strong> โดยแสดงสมบัติดังนี้:</p>
+            <div class="grid-2" style="margin: 0.75rem 0;">
+              <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--cyan);">สมบัติความเป็นคลื่น (Wave Properties)</strong>
+                <ul style="margin-left: 1.25rem; margin-top: 0.5rem; font-size: 0.88rem; color: var(--text-muted);">
+                  <li><strong>การแทรกสอด (Interference):</strong> สลิตคู่ของยัง แสงหักล้างกันจนมืดสนิทได้ (อนุภาคทำไม่ได้)</li>
+                  <li><strong>การเลี้ยวเบน (Diffraction):</strong> สลิตเดี่ยว แสงอ้อมขอบสิ่งกีดขวางไปตกในเงามืดได้</li>
+                  <li><strong>โพลาไรเซชัน (Polarization):</strong> แสงเป็นคลื่นตามขวาง กรองทิศทางการสั่นได้</li>
+                </ul>
+              </div>
+              <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                <strong style="color: var(--amber);">สมบัติความเป็นอนุภาค (Particle Properties)</strong>
+                <ul style="margin-left: 1.25rem; margin-top: 0.5rem; font-size: 0.88rem; color: var(--text-muted);">
+                  <li><strong>ปรากฏการณ์โฟโตอิเล็กทริก (Photoelectric Effect):</strong> แสงประพฤติตนเป็นก้อนพลังงาน (โฟตอน Photon) ชนอิเล็กตรอนหลุดทันที</li>
+                  <li><strong>ปรากฏการณ์คอมป์ตัน (Compton Scattering):</strong> โฟตอนชนอิเล็กตรอนแล้วถ่ายทอดโมเมนตัมเหมือนลูกบิลเลียด</li>
+                </ul>
+              </div>
+            </div>
+
+            <h4 style="color: var(--cyan); margin: 1rem 0 0.5rem 0;">8.2 โครงสร้างคำตอบข้อสอบอัตนัย 2-3 คะแนน (ตอบอย่างไรให้ได้คะแนนเต็ม)</h4>
+            <div class="tip-box">
+              <strong>📝 Checklist คีย์เวิร์ดที่ต้องเขียนลงในกระดาษคำตอบ:</strong><br>
+              1. <strong>เมื่อถามเรื่องสลิตคู่:</strong> ต้องมีคำว่า <em>"แหล่งกำเนิดอาพันธ์"</em>, <em>"ผลต่างทางเดิน (Path difference)"</em>, <em>"แทรกสอดแบบเสริมกันเกิดแถบสว่าง"</em>, และ <em>"แทรกสอดแบบหักล้างกันเกิดแถบมืด"</em><br>
+              2. <strong>เมื่อถามเรื่องเกรตติงแยกสี:</strong> ต้องมีคำว่า <em>"สมการ d sin(&theta;) = n&lambda;"</em>, <em>"มุมเบนแปรผันตรงกับความยาวคลื่น"</em>, และ <em>"แสงสีแดงมีความยาวคลื่นมากกว่าแสงสีน้ำเงินจึงเบนมากกว่า"</em><br>
+              3. <strong>เมื่อถามเรื่องแย้งอนุภาค:</strong> ต้องมีคำว่า <em>"อนุภาคไม่สามารถแทรกสอดหักล้างกันจนหายไปได้"</em> และ <em>"อนุภาคไม่สามารถเลี้ยวเบนอ้อมสิ่งกีดขวางได้"</em>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 3: INSTANT PRACTICE (ทำทีละข้อ เฉลยทันที) -->
+    <section id="tab-instant-practice" class="tab-section">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>🎯</span> โหมดตะลุยโจทย์: ทำทีละข้อ เฉลยและวิเคราะห์ทันที
+          </div>
+          <span class="card-badge">Instant Diagnostic Engine</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1rem;">
+          กดเลือกคำตอบเพื่อดูผลทันที ระบบจะวิเคราะห์สาเหตุของความผิดพลาด (Concept / Calculation / Reading) พร้อมแจกเทคนิค Shortcut สำหรับสอบจริง
+        </p>
+
+        <div class="filter-bar">
+          <button class="filter-chip active" onclick="filterQuestions('all', this)">ทั้งหมด (35 ข้อ)</button>
+          <button class="filter-chip" onclick="filterQuestions('teacher', this)">ข้อสอบของครู (20 ข้อ)</button>
+          <button class="filter-chip" onclick="filterQuestions('advanced', this)">ข้อสอบประยุกต์ดักทาง (15 ข้อ)</button>
+          <button class="filter-chip" onclick="filterQuestions('calc', this)">เฉพาะข้อคำนวณ</button>
+          <button class="filter-chip" onclick="filterQuestions('theory', this)">เฉพาะทฤษฎี & อัตนัย</button>
+          <button class="filter-chip" onclick="filterQuestions('wrong', this)">เฉพาะข้อที่ตอบผิด</button>
+        </div>
+
+        <div id="questions-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: EXAM SIMULATOR -->
+    <section id="tab-simulator" class="tab-section">
+      <div class="sim-bar">
+        <div>
+          <span style="font-weight: 700; color: #FFF; font-size: 1.1rem;">จำลองสอบปลายภาคฟิสิกส์ ม.5</span>
+          <span style="color: var(--text-muted); font-size: 0.82rem; margin-left: 0.5rem;" id="sim-q-counter">ตอบแล้ว 0 / 20 ข้อ</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <div class="timer-display" id="sim-timer">⏱️ 40:00</div>
+          <button class="btn btn-primary btn-sm" onclick="finishSimulation()">ส่งกระดาษคำตอบ</button>
+        </div>
+      </div>
+
+      <div class="card" id="sim-intro-card">
+        <h3 style="color: #FFF; margin-bottom: 0.5rem;">คำแนะนำก่อนเริ่มการสอบเสมือนจริง</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1rem;">
+          โหมดนี้จำลองสภาพแวดล้อมห้องสอบจริง: มีการจับเวลาถอยหลัง 40 นาที จะไม่มีการแสดงเฉลยระหว่างทำข้อสอบ เมื่อกดส่งกระดาษคำตอบ ระบบจะคำนวณคะแนนรวม ตัดเกรด และชี้จุดอ่อนให้อัตโนมัติ
+        </p>
+        <button class="btn btn-primary" onclick="startSimulation()">เริ่มทำข้อสอบจำลอง (20 ข้อ)</button>
+      </div>
+
+      <div id="sim-questions-container" style="display: none;">
+        <!-- Populated by JavaScript for simulator -->
+      </div>
+
+      <div id="sim-result-card" class="card" style="display: none;">
+        <!-- Populated on finish -->
+      </div>
+    </section>
+
+    <!-- TAB 5: EXAM MODE (15-MIN CRAM) -->
+    <section id="tab-cram-mode" class="tab-section">
+      <div class="card" style="border-color: rgba(245, 158, 11, 0.4); background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), var(--bg-surface));">
+        <div class="card-header">
+          <div class="card-title" style="color: var(--amber);">
+            <span>⚡</span> Exam Mode: แผ่นสรุปย่อ 15 นาทีก่อนเข้าห้องสอบ
+          </div>
+          <span class="card-badge" style="background: rgba(245, 158, 11, 0.15); color: var(--amber); border-color: rgba(245, 158, 11, 0.3);">
+            NO FLUFF • มีเฉพาะเนื้อหาออกสอบ
+          </span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          เปิดหน้านี้ทบทวนก่อนเดินเข้าห้องสอบ 15 นาที รวมทุกสูตร จุดหลอกที่เด็กเสียคะแนนบ่อย และคีย์เวิร์ดตัดชอยส์
+        </p>
+
+        <div class="grid-2">
+          <div class="card" style="background: var(--bg-card);">
+            <h4 style="color: var(--cyan); margin-bottom: 0.75rem;">📐 รวมทุกสูตรที่ต้องใช้</h4>
+            <div style="font-size: 0.88rem; line-height: 1.8;">
+              <p><strong>1. คลื่นทั่วไป:</strong> v = f&lambda; (f ไม่เปลี่ยนเมื่อเปลี่ยนตัวกลาง)</p>
+              <p><strong>2. การหักเห:</strong> sin(&theta;<sub>1</sub>) / sin(&theta;<sub>2</sub>) = v<sub>1</sub> / v<sub>2</sub> = &lambda;<sub>1</sub> / &lambda;<sub>2</sub> = n<sub>2</sub> / n<sub>1</sub></p>
+              <p><strong>3. แทรกสอดคลื่นน้ำ (เฟสตรงกัน):</strong><br>
+                • เสริม (A): |S<sub>1</sub>P - S<sub>2</sub>P| = d sin(&theta;) = n&lambda;<br>
+                • หักล้าง (N): |S<sub>1</sub>P - S<sub>2</sub>P| = d sin(&theta;) = (n - 0.5)&lambda;
+              </p>
+              <p><strong>4. สลิตคู่ (ยัง):</strong><br>
+                • แถบสว่าง: d sin(&theta;) = d(y / L) = n&lambda;<br>
+                • แถบมืด: d sin(&theta;) = d(y / L) = (n - 0.5)&lambda;<br>
+                • ระยะห่างแถบติดกัน: &Delta;y = &lambda;L / d (จุ่มน้ำ &Delta;y' = &Delta;y / n)
+              </p>
+              <p><strong>5. สลิตเดี่ยว:</strong><br>
+                • แถบมืด: a sin(&theta;) = a(y / L) = n&lambda; (n = 1, 2, 3...)<br>
+                • ความกว้างแถบสว่างกลาง: 2y<sub>1</sub> = 2&lambda;L / a (กว้าง 2 เท่า)
+              </p>
+              <p><strong>6. เกรตติง:</strong><br>
+                • d = 1 / N | แถบสว่าง: d sin(&theta;) = n&lambda;<br>
+                • มุมเดียวกันซ้อนทับ: n<sub>1</sub>&lambda;<sub>1</sub> = n<sub>2</sub>&lambda;<sub>2</sub>
+              </p>
+            </div>
+          </div>
+
+          <div class="card" style="background: var(--bg-card); border-color: rgba(244, 63, 94, 0.3);">
+            <h4 style="color: var(--rose); margin-bottom: 0.75rem;">⚠️ 10 จุดดักหลอกอันตรายที่สุดในข้อสอบ</h4>
+            <ol style="font-size: 0.85rem; line-height: 1.6; margin-left: 1.25rem; color: var(--text-muted);">
+              <li><strong style="color: #FFF;">ความถี่ f คงที่เสมอ</strong> เมื่อคลื่นเปลี่ยนตัวกลาง แม้ความเร็วและความยาวคลื่นจะเปลี่ยน</li>
+              <li><strong style="color: #FFF;">สลิตเดี่ยว a sin(&theta;) = n&lambda; คือแถบมืด!</strong> ไม่ใช่แถบสว่างเหมือนสลิตคู่</li>
+              <li><strong style="color: #FFF;">แหล่งกำเนิดเฟสตรงข้ามกัน</strong> แนวตรงกลางจะเป็น <strong>"แนวบัพ (N<sub>0</sub>)"</strong> ห้ามตอบปฏิบัพ</li>
+              <li><strong style="color: #FFF;">เกรตติง แสงสีแดงเบนมากกว่าสีม่วง</strong> แต่ในปริซึม แสงสีม่วงจะเบนมากกว่าสีแดง (ตรงข้ามกัน!)</li>
+              <li><strong style="color: #FFF;">แถบสว่างกลางของเกรตติง (n=0) เป็นสีขาว</strong> ไม่ได้แยกสีรุ้ง (แยกเฉพาะ n &ge; 1)</li>
+              <li><strong style="color: #FFF;">ขยายช่องสลิตเดี่ยว (a กว้างขึ้น)</strong> แถบสว่างกลางจะ <strong>"แคบลง"</strong> ไม่ใช่กว้างขึ้น!</li>
+              <li><strong style="color: #FFF;">เชือกเล็กชนเชือกใหญ่</strong> คลื่นสะท้อนกลับเฟส 180° แต่ <strong>คลื่นส่งผ่านเฟสเดิมเสมอ</strong></li>
+              <li><strong style="color: #FFF;">การสะท้อนกลับหมด</strong> เกิดได้เฉพาะเมื่อคลื่นวิ่งจาก <strong>ช้า &rarr; เร็ว</strong> (น้ำตื้น &rarr; น้ำลึก)</li>
+              <li><strong style="color: #FFF;">ระวังหน่วยเกรตติง:</strong> 600 เส้น/mm = 600 &times; 10<sup>3</sup> เส้น/m | 2,000 เส้น/cm = 2 &times; 10<sup>5</sup> เส้น/m</li>
+              <li><strong style="color: #FFF;">โพลาไรเซชัน</strong> เป็นหลักฐานเดียวที่ยืนยันว่าแสงเป็น <strong>"คลื่นตามขวาง"</strong> (แทรกสอด/เลี้ยวเบนบอกแค่ว่าเป็นคลื่น)</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="card" style="background: var(--bg-card); border-color: rgba(16, 185, 129, 0.3);">
+          <h4 style="color: var(--emerald); margin-bottom: 0.75rem;">⚡ กฎตัดชอยส์ภายใน 5 วินาที</h4>
+          <div class="grid-3" style="font-size: 0.85rem;">
+            <div style="background: rgba(15,23,42,0.6); padding: 0.85rem; border-radius: var(--radius-sm);">
+              <strong style="color: #FFF;">เจอชอยส์บอก "ความถี่เปลี่ยน"</strong><br>
+              <span style="color: var(--rose);">❌ ตัดทิ้งทันที 100%!</span> ความถี่เป็นสมบัติของแหล่งกำเนิด ไม่เปลี่ยนเด็ดขาด
+            </div>
+            <div style="background: rgba(15,23,42,0.6); padding: 0.85rem; border-radius: var(--radius-sm);">
+              <strong style="color: #FFF;">น้ำลึก &rarr; น้ำตื้น</strong><br>
+              <span style="color: var(--emerald);">✅ จำ: "ตื้น ช้า สั้น แคบ"</span> (v ลด, &lambda; สั้น, เบนเข้าหาเส้นปกติ)
+            </div>
+            <div style="background: rgba(15,23,42,0.6); padding: 0.85rem; border-radius: var(--radius-sm);">
+              <strong style="color: #FFF;">สลิตเดี่ยว vs สลิตคู่</strong><br>
+              <span style="color: var(--cyan);">✅ สลิตเดี่ยวแถบกลางกว้าง 2 เท่า</span> ถ้าชอยส์บอกกว้างเท่ากัน ตัดทิ้งทันที
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: WEAK POINTS -->
+    <section id="tab-weak-points" class="tab-section">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>📉</span> ระบบวิเคราะห์จุดอ่อนสะสม (Weak Point Diagnostics)
+          </div>
+          <span class="card-badge">Real-Time Sync</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">
+          ระบบจะบันทึกผลการทำข้อสอบของคุณแยกตาม 8 หัวข้อย่อย เพื่อชี้เป้าว่าหัวข้อใดพร้อม 100% และหัวข้อใดเป็นจุดเสี่ยงที่ต้องกลับไปอ่านทวนด่วน
+        </p>
+
+        <div class="grid-2" id="weak-point-categories">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: right;">
+          <button class="btn btn-outline btn-sm" onclick="resetProgress()">
+            🔄 รีเซ็ตสถิติทั้งหมด
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  const questionsDB = [
+  {
+    "id": 1,
+    "source": "teacher",
+    "category": "การสะท้อนของคลื่น",
+    "type": "choice",
+    "question": "เมื่อมีจุดกำเนิดคลื่นอยู่ที่จุดโฟกัสของผิวสะท้อนรูปพาราโบลา ให้คลื่นไปกระทบผิวสะท้อน คลื่นสะท้อนจะมีลักษณะอย่างไร?",
+    "options": [
+      "ก. เป็นคลื่นหน้าวงกลมแผ่ขยายออกไปทุกทิศทาง",
+      "ข. เป็นคลื่นหน้าตรง ขนานกับแกนมุขสำคัญ",
+      "ค. เป็นคลื่นที่รวมกันที่จุดศูนย์กลางความโค้ง",
+      "ง. เป็นคลื่นที่สะท้อนกลับมาตัดกันที่จุดโฟกัสเดิม"
+    ],
+    "correct": 1,
+    "explanation": "ตามสมบัติทางเรขาคณิตของพาราโบลาและกฎการสะท้อน รังสีคลื่นที่กระจายออกจากจุดโฟกัส (F) เมื่อตกกระทบผิวโค้งพาราโบลา มุมตกกระทบจะเท่ากับมุมสะท้อนส่งผลให้รังสีสะท้อนทุกเส้นขนานกับแกนมุขสำคัญ (Principal axis) หน้าคลื่นที่ตั้งฉากกับรังสีสะท้อนจึงกลายเป็น 'คลื่นหน้าตรง' (Plane wave) ขนานกัน",
+    "concept_error": "อย่าสับสนกับกรณีคลื่นหน้าตรงวิ่งเข้าหาพาราโบลา ถ้าคลื่นหน้าตรงวิ่งเข้า จะสะท้อนมารวมกันที่ 'จุดโฟกัส' แต่ถ้าจุดกำเนิดอยู่ที่จุดโฟกัส คลื่นสะท้อนจะกลายเป็น 'คลื่นหน้าตรง'",
+    "calculation_error": "ข้อนี้เป็นทฤษฎีเชิงเรขาคณิต ไม่มีการคำนวณตัวเลข",
+    "reading_error": "ดูตำแหน่งจุดกำเนิดให้ชัดเจน โจทย์ระบุว่า 'จุดกำเนิดอยู่ที่จุดโฟกัส' ไม่ใช่ส่งคลื่นหน้าตรงเข้ามา",
+    "shortcut": "จำคู่ตรงข้ามพาราโบลา: [โฟกัส -> หน้าตรง] และ [หน้าตรง -> รวมที่โฟกัส] (เหมือนจานดาวเทียมและไฟหน้ารถยนต์)"
+  },
+  {
+    "id": 2,
+    "source": "teacher",
+    "category": "การหักเหของคลื่น",
+    "type": "choice",
+    "question": "ในการทดลองเรื่องการหักเหของคลื่นน้ำ เมื่อคลื่นผิวน้ำเคลื่อนที่จากบริเวณน้ำลึกไปยังบริเวณน้ำตื้น ความยาวคลื่น อัตราเร็วของคลื่น และความถี่ของคลื่นผิวน้ำจะเป็นอย่างไร?",
+    "options": [
+      "ก. ความยาวคลื่นลดลง, อัตราเร็วลดลง, ความถี่ลดลง",
+      "ข. ความยาวคลื่นลดลง, อัตราเร็วลดลง, ความถี่คงที่",
+      "ค. ความยาวคลื่นเพิ่มขึ้น, อัตราเร็วเพิ่มขึ้น, ความถี่คงที่",
+      "ง. ความยาวคลื่นคงที่, อัตราเร็วลดลง, ความถี่เพิ่มขึ้น"
+    ],
+    "correct": 1,
+    "explanation": "1. ความถี่ (f) ขึ้นกับแหล่งกำเนิดคลื่นเท่านั้น เมื่อเคลื่อนที่ผ่านรอยต่อตัวกลาง ความถี่จึง 'คงที่'\n2. อัตราเร็วคลื่นน้ำขึ้นกับความลึก: บริเวณน้ำลึกเคลื่อนที่เร็วกว่าน้ำตื้น (v_ลึก > v_ตื้น) ดังนั้นเมื่อเข้าน้ำตื้น v จะ 'ลดลง'\n3. จากสมการ v = f * λ เมื่อ f คงที่ และ v ลดลง ความยาวคลื่น λ จึงต้อง 'ลดลง' ตาม",
+    "concept_error": "จุดผิดยอดฮิตคือคิดว่าความถี่เปลี่ยน! จำไว้ว่าความถี่คือจำนวนลูกคลื่นต่อวินาทีที่ส่งออกจากแหล่งกำเนิด เมื่อคลื่นเข้าสู่อีกตัวกลาง แหล่งกำเนิดไม่ได้เปลี่ยน ความถี่จึงไม่เปลี่ยนเด็ดขาด",
+    "calculation_error": "v แปรผันตรงกับ λ เมื่อ f คงที่ (v1/v2 = λ1/λ2)",
+    "reading_error": "ระวังทิศทางการเคลื่อนที่ โจทย์บอก 'ลึก -> ตื้น' ไม่ใช่ 'ตื้น -> ลึก'",
+    "shortcut": "ท่องสูตรติดปาก: 'ลึก: เร็ว ยาว กว้าง (v มาก, λ มาก, θ มาก) | ตื้น: ช้า สั้น แคบ (v น้อย, λ น้อย, θ น้อย) | f คงที่เสมอ!'"
+  },
+  {
+    "id": 3,
+    "source": "teacher",
+    "category": "การเลี้ยวเบนของคลื่น",
+    "type": "choice",
+    "question": "ถ้าความกว้างของช่องเปิด (d) มากกว่าความยาวคลื่น (λ) มากๆ (d >> λ) คลื่นที่ผ่านช่องเปิดจะมีลักษณะอย่างไร?",
+    "options": [
+      "ก. แผ่ออกเป็นหน้าคลื่นวงกลมอย่างสมบูรณ์",
+      "ข. ตรงกลางคงสภาพเป็นคลื่นหน้าตรง และโค้งมนเล็กน้อยเฉพาะบริเวณขอบ",
+      "ค. เกิดการแทรกสอดหักล้างกันจนคลื่นหายไปหมด",
+      "ง. สะท้อนกลับหมดไม่สามารถทะลุผ่านช่องเปิดได้"
+    ],
+    "correct": 1,
+    "explanation": "เมื่อช่องเปิดมีขนาดกว้างกว่าความยาวคลื่นมากๆ (d >> λ) คลื่นส่วนใหญ่บริเวณตรงกลางจะไม่ได้รับผลกระทบจากขอบสิ่งกีดขวาง จึงเดินทางผ่านไปเป็นแนวเส้นตรงคงสภาพหน้าคลื่นตรงไว้ จะมีเพียงคลื่นบริเวณใกล้ขอบช่องเปิดเท่านั้นที่เกิดการเลี้ยวเบนโค้งมนเล็กน้อย",
+    "concept_error": "การเลี้ยวเบนเด่นชัดเป็นหน้าคลื่นวงกลมรอบทิศทางจะเกิดเมื่อช่องเปิดแคบกว่าหรือใกล้เคียงกับความยาวคลื่น (d <= λ)",
+    "calculation_error": "ไม่มีการคำนวณ",
+    "reading_error": "สังเกตเครื่องหมาย 'กว้างกว่าความยาวคลื่นมาก' (d >> λ)",
+    "shortcut": "'ช่องแคบกว่าแลมบ์ดา แผ่วงกลมสวยงาม | ช่องกว้างกว่าแลมบ์ดา ตรงไปข้างหน้า โค้งแค่ขอบ'"
+  },
+  {
+    "id": 4,
+    "source": "teacher",
+    "category": "การหักเหและเลี้ยวเบน",
+    "type": "choice",
+    "question": "ปรากฏการณ์หักเหและการเลี้ยวเบนของคลื่นมีหลายอย่างที่เหมือนกัน มีแตกต่างกันอย่างหนึ่งคือข้อใด?",
+    "options": [
+      "ก. การเลี้ยวเบนจะให้พลังงานมากกว่าการหักเห",
+      "ข. การหักเหไม่เกี่ยวข้องกับความยาวคลื่น แต่การเลี้ยวเบนเกี่ยวข้องกับความยาวคลื่น",
+      "ค. การหักเหจะเกิดขึ้นต้องมีตัวกลางต่างชนิดกันแต่การเลี้ยวเบนจะไม่เกิดขึ้นถ้ามีตัวกลางต่างชนิดกัน",
+      "ง. การเลี้ยวเบนเกิดขึ้นได้ในตัวกลางเดียวกันแต่การหักเหจะเกิดขึ้นได้ต้องมีตัวกลางต่างกัน"
+    ],
+    "correct": 3,
+    "explanation": "การหักเห (Refraction) คือการที่คลื่นเคลื่อนที่ข้ามรอยต่อระหว่างตัวกลางสองตัวกลางที่มีสมบัติต่างกัน ทำให้อัตราเร็วเปลี่ยน ในขณะที่การเลี้ยวเบน (Diffraction) คือการที่คลื่นสามารถอ้อมสิ่งกีดขวางหรือขอบช่องแคบได้ โดยเกิดขึ้นในตัวกลางเดิมตัวกลางเดียวกัน",
+    "concept_error": "การเลี้ยวเบนไม่จำเป็นต้องเปลี่ยนตัวกลาง อัตราเร็วและความยาวคลื่นจึงคงที่ตลอด แต่การหักเหจำเป็นต้องเกิดระหว่าง 2 ตัวกลาง",
+    "calculation_error": "-",
+    "reading_error": "ดูชอยส์ ง. ให้ชัด: เลี้ยวเบน = ตัวกลางเดียวกัน, หักเห = ตัวกลางต่างกัน",
+    "shortcut": "หักเห = 2 ตัวกลาง (v เปลี่ยน) | เลี้ยวเบน = 1 ตัวกลาง อ้อมขอบ (v เท่าเดิม)"
+  },
+  {
+    "id": 5,
+    "source": "teacher",
+    "category": "การเลี้ยวเบนของคลื่น",
+    "type": "subjective",
+    "points": 2,
+    "question": "ในการทดลองถาดคลื่น นักเรียนให้คลื่นน้ำหน้าตรงเคลื่อนที่ผ่านช่องเปิด 2 ช่อง โดย ช่อง A กว้าง 2 cm ช่อง B กว้าง 10 cm คลื่นมีความยาวคลื่น 3 cm จงเปรียบเทียบการเลี้ยวเบนของคลื่นที่ผ่านช่อง A และช่อง B พร้อมอธิบายเหตุผลทางฟิสิกส์ (2 คะแนน)",
+    "model_answer": "1. ช่อง A (กว้าง 2 cm): เกิดการเลี้ยวเบนได้อย่างชัดเจนและสมบูรณ์ คลื่นที่ผ่านช่องเปิดจะแผ่ออกเป็น 'หน้าคลื่นวงกลม' กระจายออกไปได้ทุกทิศทางหลังช่องเปิด โดยไม่ปรากฏแนวบัพ (แนวหักล้าง)\n2. ช่อง B (กว้าง 10 cm): เกิดการเลี้ยวเบนได้ไม่ดี โดยบริเวณตรงกลางยังคงสภาพเป็น 'คลื่นหน้าตรง' และเกิดการเลี้ยวเบนโค้งเฉพาะบริเวณขอบของช่องเปิดเท่านั้น อีกทั้งยังเกิดการแทรกสอดปรากฏแนวบัพและปฏิบัพหลังช่องเปิด\n3. เหตุผลทางฟิสิกส์: ตามหลักการของฮอยเกนส์และเงื่อนไขการเลี้ยวเบน\n- สำหรับช่อง A ขนาดช่อง d = 2 cm มีขนาดเล็กกว่าความยาวคลื่น λ = 3 cm (d < λ) ทำให้ช่องเปิดประพฤติตนเสมือนเป็นจุดกำเนิดคลื่นจุดเดียว (Point source) แผ่หน้าคลื่นวงกลมได้สมบูรณ์\n- สำหรับช่อง B ขนาดช่อง d = 10 cm มีขนาดกว้างกว่าความยาวคลื่น λ = 3 cm (d > λ) ทำให้จุดต่างๆ บนหน้าคลื่นภายในช่องส่งคลื่นย่อยออกมาแทรกสอดกันเอง เกิดแนวบัพและทำให้คลื่นตรงกลางยังคงเป็นหน้าตรง",
+    "rubric": [
+      "ระบุลักษณะคลื่นช่อง A (แผ่เป็นหน้าคลื่นวงกลม เลี้ยวเบนสมบูรณ์) ได้ถูกต้อง (0.5 คะแนน)",
+      "ระบุลักษณะคลื่นช่อง B (ตรงกลางเป็นหน้าตรง โค้งเฉพาะขอบ เลี้ยวเบนไม่ดี) ได้ถูกต้อง (0.5 คะแนน)",
+      "อธิบายเปรียบเทียบเงื่อนไข d กับ λ ของช่อง A (d < λ) ได้ถูกต้อง (0.5 คะแนน)",
+      "อธิบายเปรียบเทียบเงื่อนไข d กับ λ ของช่อง B (d > λ หรือหลักฮอยเกนส์เกิดการแทรกสอด) ได้ถูกต้อง (0.5 คะแนน)"
+    ]
+  },
+  {
+    "id": 6,
+    "source": "teacher",
+    "category": "การหักเหและเลี้ยวเบน",
+    "type": "subjective",
+    "points": 2,
+    "question": "ในการทดลองหนึ่ง คลื่นน้ำหน้าตรงเคลื่อนที่ผ่านถาดคลื่นที่มีบริเวณน้ำลึกและน้ำตื้น และมีสิ่งกีดขวางที่มีช่องเปิดอยู่ด้วย นักเรียนสังเกตว่าหน้าคลื่นเปลี่ยนทิศทางเมื่อเข้าสู่น้ำตื้น ระยะห่างระหว่างหน้าคลื่นลดลง หลังผ่านช่องเปิด คลื่นแผ่กระจายออกด้านข้าง จงระบุและอธิบายปรากฏการณ์ที่เกิดขึ้นทั้ง 2 ปรากฏการณ์ พร้อมอธิบายการเปลี่ยนแปลงของอัตราเร็ว ความถี่ และความยาวคลื่น (2 คะแนน)",
+    "model_answer": "1. ปรากฏการณ์ที่ 1: การหักเหของคลื่น (Refraction)\n- สังเกตจาก: หน้าคลื่นเปลี่ยนทิศทางและระยะห่างระหว่างหน้าคลื่นลดลงเมื่อเข้าสู่น้ำตื้น\n- การเปลี่ยนแปลงปริมาณ: ความถี่ (f) คงที่, อัตราเร็ว (v) ลดลงเนื่องจากน้ำตื้นแรงต้านทานสูงกว่า, ความยาวคลื่น (λ) ลดลงตามสมการ v = fλ\n\n2. ปรากฏการณ์ที่ 2: การเลี้ยวเบนของคลื่น (Diffraction)\n- สังเกตจาก: หลังผ่านช่องเปิด คลื่นสามารถแผ่กระจายออกทางด้านข้างอ้อมสิ่งกีดขวางได้\n- การเปลี่ยนแปลงปริมาณ: ความถี่ (f) คงที่, อัตราเร็ว (v) คงที่, และความยาวคลื่น (λ) คงที่ เนื่องจากคลื่นยังคงเคลื่อนที่อยู่ในตัวกลางเดิม (บริเวณน้ำตื้นเดิม)",
+    "rubric": [
+      "ระบุปรากฏการณ์ 'การหักเห' พร้อมระบุ f คงที่, v ลดลง, λ ลดลง ครบถ้วน (1.0 คะแนน)",
+      "ระบุปรากฏการณ์ 'การเลี้ยวเบน' พร้อมระบุว่า f, v, λ คงที่ทั้งหมดเพราะอยู่ในตัวกลางเดิม (1.0 คะแนน)"
+    ]
+  },
+  {
+    "id": 7,
+    "source": "teacher",
+    "category": "การแทรกสอดของคลื่น",
+    "type": "choice",
+    "question": "แหล่งกำเนิดคลื่นสองแหล่ง S₁ และ S₂ สั่นพร้อมกันด้วยเฟสตรงกัน จุด P อยู่ห่างจาก S₁ 24 cm และ S₂ 36 cm ถ้าความยาวคลื่นเท่ากับ 4 cm จุด P จะอยู่บนแนวใด?",
+    "options": [
+      "ก. แนวบัพ เพราะผลต่างระยะทางเท่ากับ 2λ",
+      "ข. แนวบัพ เพราะผลต่างระยะทางเท่ากับ 3λ",
+      "ค. แนวปฏิบัพ เพราะผลต่างระยะทางเท่ากับ 2λ",
+      "ง. แนวปฏิบัพ เพราะผลต่างระยะทางเท่ากับ 3λ",
+      "จ. ไม่เกิดการแทรกสอด"
+    ],
+    "correct": 3,
+    "explanation": "1. หาผลต่างทางเดินคลื่น (Path difference: ΔS): ΔS = |S₁P - S₂P| = |24 - 36| = 12 cm\n2. เทียบกับความยาวคลื่น (λ = 4 cm): ΔS / λ = 12 / 4 = 3\n3. เนื่องจากได้จำนวนเต็ม n = 3 (ΔS = 3λ) และแหล่งกำเนิดสั่นด้วย 'เฟสตรงกัน'\nตามเงื่อนไข: ΔS = nλ จะเป็น 'แนวปฏิบัพ' (Antinode) ที่ n = 3 (แนวปฏิบัพที่ 3 หรือ A₃)",
+    "concept_error": "ระวังเรื่องเฟสตรงกัน: ถ้าเฟสตรงกัน ΔS = nλ คือปฏิบัพ (เสริม) แต่ถ้า ΔS = (n - 0.5)λ คือบัพ (หักล้าง)",
+    "calculation_error": "12 / 4 = 3 ระวังคิดเลขเร็วเกินจนตอบ 2λ",
+    "reading_error": "ตรวจดูว่าแหล่งกำเนิด 'เฟสตรงกัน' หรือ 'เฟสตรงข้ามกัน' ข้อนี้ระบุชัดว่าเฟสตรงกัน",
+    "shortcut": "|24 - 36| = 12 -> 12 / 4 = 3 ลงตัวเต็มๆ = ปฏิบัพ 3λ ตอบ ข้อ ง. ทันที"
+  },
+  {
+    "id": 8,
+    "source": "teacher",
+    "category": "การหักเหของคลื่น",
+    "type": "choice",
+    "question": "นักเรียนทำการทดลองในถาดคลื่นและสังเกตพบว่า คลื่นหน้าตรงเคลื่อนที่จากบริเวณ A ไปยังบริเวณ B แล้วหน้าคลื่นมีระยะห่างลดลง พร้อมทั้งทิศทางการเคลื่อนที่เบนเข้าหาเส้นปกติ ข้อใดอธิบายผลการทดลองได้ถูกต้องที่สุด?",
+    "options": [
+      "ก. บริเวณ B ลึกกว่า A ทำให้คลื่นเร็วขึ้น",
+      "ข. บริเวณ B ตื้นกว่า A ทำให้คลื่นช้าลง",
+      "ค. บริเวณ B ตื้นกว่า A ทำให้ความถี่ลดลง",
+      "ง. บริเวณ B ลึกกว่า A ทำให้ความถี่เพิ่มขึ้น",
+      "จ. ความลึกของน้ำไม่มีผลต่ออัตราเร็วของคลื่น"
+    ],
+    "correct": 1,
+    "explanation": "1. หน้าคลื่นมีระยะห่างลดลง หมายความว่า ความยาวคลื่นในบริเวณ B สั้นกว่าในบริเวณ A (λ_B < λ_A)\n2. ทิศทางเบนเข้าหาเส้นปกติ หมายความว่า มุมหักเหน้อยกว่ามุมตกกระทบ (θ_B < θ_A)\n3. จากกฎของสเนลล์: sin θ_A / sin θ_B = v_A / v_B = λ_A / λ_B แสดงว่า v_B < v_A (คลื่นเคลื่อนที่ช้าลงในบริเวณ B)\n4. คลื่นน้ำจะเคลื่อนที่ช้าลงเมื่ออยู่ในบริเวณน้ำตื้น ดังนั้น บริเวณ B จึงเป็นบริเวณน้ำตื้นกว่า A",
+    "concept_error": "ความถี่ไม่เปลี่ยน (ตัดชอยส์ ค. และ ง. ทิ้งได้ทันที)",
+    "calculation_error": "-",
+    "reading_error": "'เบนเข้าหาเส้นปกติ' แปลว่ามุมเล็กลง -> ความเร็วลดลง -> น้ำตื้น",
+    "shortcut": "เบนเข้าหาเส้นปกติ = มุมแคบ = น้ำตื้น = ช้าลง ตอบ ข."
+  },
+  {
+    "id": 9,
+    "source": "teacher",
+    "category": "สลิตคู่ (ยัง)",
+    "type": "choice",
+    "question": "สลิตคู่มีระยะห่างระหว่างสลิต 0.50 mm ใช้แสงความยาวคลื่น 500 nm และฉากอยู่ห่างจากสลิต 2.0 m ระยะห่างระหว่างแถบสว่างที่อยู่ติดกันเป็นเท่าใด?",
+    "options": [
+      "ก. 1.0 mm",
+      "ข. 2.0 mm",
+      "ค. 4.0 mm",
+      "ง. 0.5 mm"
+    ],
+    "correct": 1,
+    "explanation": "สูตรระยะห่างระหว่างแถบสว่างที่ติดกันของสลิตคู่:\nΔy = λL / d\nแทนค่า (แปลงทุกตัวแปรเป็นหน่วยเมตร):\n- λ = 500 nm = 500 x 10⁻⁹ m\n- L = 2.0 m\n- d = 0.50 mm = 0.50 x 10⁻³ m\n\nΔy = (500 x 10⁻⁹ x 2.0) / (0.50 x 10⁻³) = (1000 x 10⁻⁹) / (0.50 x 10⁻³) = 10⁻⁶ / (0.5 x 10⁻³) = 2.0 x 10⁻³ m = 2.0 mm",
+    "concept_error": "ระยะห่างระหว่างแถบสว่างติดกัน (Δy) เท่ากับระยะห่างระหว่างแถบมืดติดกันในสลิตคู่เสมอ",
+    "calculation_error": "ระวังเลขยกกำลัง: 500x10⁻⁹ x 2 / 0.5x10⁻³ = 1000/0.5 x 10⁻⁶ = 2000 x 10⁻⁶ m = 2 mm",
+    "reading_error": "เช็กหน่วยที่โจทย์ถาม: ถามเป็น mm ไม่ใช่ m",
+    "shortcut": "Δy = λL/d -> (500n x 2) / 0.5m = 1000n / 0.5m = 2 x 10⁻³ m = 2 mm"
+  },
+  {
+    "id": 10,
+    "source": "teacher",
+    "category": "เกรตติง",
+    "type": "subjective",
+    "points": 2,
+    "question": "เมื่อแสงสีขาวผ่านเกรตติง จะสามารถสังเกตเห็นสีต่าง ๆ แยกออกจากกัน เนื่องจากเหตุใด จงอธิบาย?",
+    "model_answer": "เนื่องจากแสงสีขาวเป็นแสงโพลีโครมาติก (ประกอบด้วยแสงหลายความยาวคลื่นตั้งแต่สีม่วง ~400 nm ถึงสีแดง ~700 nm)\nเมื่อแสงผ่านเกรตติงจะเกิดการเลี้ยวเบนและแทรกสอดตามสมการ d sin θ = nλ สำหรับแถบสว่างอันดับที่ n ≥ 1 จะได้ว่า sin θ = nλ / d\nเนื่องจากเกรตติงมีระยะระหว่างช่อง (d) คงที่ ดังนั้น มุมเบน θ จึงแปรผันตรงกับความยาวคลื่น (sin θ ∝ λ)\nเมื่อแสงแต่ละสีมีความยาวคลื่นไม่เท่ากัน แสงสีม่วง (λ สั้นสุด) จึงเบนออกจากแนวกลางน้อยที่สุด ส่วนแสงสีแดง (λ ยาวสุด) จะเบนออกจากแนวกลางมากที่สุด ทำให้แถบสว่างของแต่ละสีไปตกบนฉากที่มุมต่างกัน แยกเป็นแถบสีสเปกตรัมอย่างชัดเจน",
+    "rubric": [
+      "ระบุว่าแสงสีขาวประกอบด้วยหลายความยาวคลื่น (0.5 คะแนน)",
+      "อ้างอิงสมการเกรตติง d sin θ = nλ หรือ sin θ ∝ λ (0.5 คะแนน)",
+      "อธิบายว่าความยาวคลื่นต่างกันทำให้มุมเบนต่างกัน (ม่วงเบนน้อยสุด แดงเบนมากสุด) (1.0 คะแนน)"
+    ]
+  },
+  {
+    "id": 11,
+    "source": "teacher",
+    "category": "เกรตติง",
+    "type": "choice",
+    "question": "เกรตติงมี 600 เส้นต่อมิลลิเมตร ใช้แสงความยาวคลื่น 600 nm แถบสว่างอันดับที่ 1 จะเกิดที่มุมประมาณเท่าใด?",
+    "options": [
+      "ก. sin θ = 0.18 (ประมาณ 10°)",
+      "ข. sin θ = 0.36 (ประมาณ 21°)",
+      "ค. sin θ = 0.50 (ประมาณ 30°)",
+      "ง. sin θ = 0.72 (ประมาณ 46°)"
+    ],
+    "correct": 1,
+    "explanation": "1. หาระยะห่างระหว่างช่องเกรตติง (d):\nเกรตติง 600 เส้น/mm -> N = 600 x 10³ เส้น/m\nd = 1 / N = 1 / (600 x 10³ m⁻¹) หรือ d = (10⁻³ m) / 600\n2. จากสมการเกรตติง: d sin θ = nλ -> sin θ = nλ / d = nλN\n3. สำหรับอันดับที่ 1 (n = 1) และ λ = 600 nm = 600 x 10⁻⁹ m:\nsin θ = 1 x (600 x 10⁻⁹ m) x (600 x 10³ m⁻¹) = 360,000 x 10⁻⁶ = 0.36\nจะได้มุม θ = arcsin(0.36) ≈ 21.1°",
+    "concept_error": "d sin θ = nλ ต้องใช้ d เป็นเมตร หรือใช้ความสัมพันธ์ sin θ = nλN",
+    "calculation_error": "ระวังหน่วยเส้นต่อมิลลิเมตร ต้องคูณ 1000 เพื่อเป็นเส้นต่อเมตร (600 x 1000 = 600,000 เส้น/เมตร)",
+    "reading_error": "โจทย์ถามแถบสว่างอันดับที่ 1 ดังนั้น n = 1",
+    "shortcut": "sin θ = n * λ * N = 1 * (600 x 10⁻⁹) * (600 x 10³) = 0.36 -> มุมประมาณ 21°"
+  },
+  {
+    "id": 12,
+    "source": "teacher",
+    "category": "เกรตติง",
+    "type": "choice",
+    "question": "ถ้าใช้เกรตติงชุดเดิมและแสงสีแดงกับแสงสีน้ำเงิน แสงสีใดจะปรากฏที่มุมเบนออกจากแนวกลางมากกว่า?",
+    "options": [
+      "ก. แสงสีน้ำเงิน เพราะมีความถี่สูงกว่า",
+      "ข. แสงสีน้ำเงิน เพราะมีความยาวคลื่นสั้นกว่า",
+      "ค. แสงสีแดง เพราะมีความยาวคลื่นยาวกว่า",
+      "ง. ทั้งสองสีเบนเท่ากันเพราะใช้เกรตติงชุดเดียวกัน"
+    ],
+    "correct": 2,
+    "explanation": "จากสมการของเกรตติง: d sin θ = nλ -> sin θ ∝ λ (เมื่อ d และ n คงที่)\nแสงสีแดงมีความยาวคลื่น (~650-700 nm) มากกว่าแสงสีน้ำเงิน (~450-490 nm)\nเมื่อ λ_แดง > λ_น้ำเงิน ดังนั้น sin θ_แดง > sin θ_น้ำเงิน ทำให้แสงสีแดงเบนออกจากแนวกลางด้วยมุมที่มากกว่า",
+    "concept_error": "อย่าจำสับสนกับการหักเหผ่านปริซึม! ในปริซึม แสงสีม่วง/น้ำเงินจะเบนมากกว่าสีแดงเพราะดัชนีหักเหสูงกว่า แต่ในเกรตติง (การเลี้ยวเบน) แสงสีแดงเบนมากกว่าเสมอ!",
+    "calculation_error": "-",
+    "reading_error": "สังเกตว่าอุปกรณ์คือ 'เกรตติง' ไม่ใช่ 'ปริซึม'",
+    "shortcut": "ท่องจำ: 'เกรตติง แดงเบนมาก | ปริซึม ม่วงเบนมาก' (ตรงข้ามกันเสมอ!)"
+  },
+  {
+    "id": 13,
+    "source": "teacher",
+    "category": "แสงเชิงคลื่น",
+    "type": "choice",
+    "question": "นักเรียนทำการทดลองแสงเชิงคลื่น 3 การทดลอง ได้แก่ สลิตคู่ สลิตเดี่ยว และเกรตติง ข้อใดอธิบายความแตกต่างได้ถูกต้องที่สุด?",
+    "options": [
+      "ก. สลิตคู่ใช้ศึกษาการสะท้อน ส่วนสลิตเดี่ยวใช้ศึกษาการหักเห",
+      "ข. สลิตคู่แสดงการแทรกสอด ส่วนสลิตเดี่ยวและเกรตติงเกี่ยวข้องกับการเลี้ยวเบน",
+      "ค. ทั้งสามการทดลองเป็นการสะท้อนของแสง",
+      "ง. เกรตติงไม่เกี่ยวข้องกับสมบัติความเป็นคลื่นของแสง",
+      "จ. สลิตเดี่ยวไม่สามารถเกิดการแทรกสอดได้เลย"
+    ],
+    "correct": 1,
+    "explanation": "ในการทดลองแสงเชิงคลื่นระดับมัธยมปลาย:\n- สลิตคู่ (Double slit): มี 2 ช่อง ทำหน้าที่เป็นแหล่งกำเนิดอาพันธ์ ใช้ศึกษาการแทรกสอดของคลื่นแสง\n- สลิตเดี่ยว (Single slit): มี 1 ช่อง ใช้แสดงการเลี้ยวเบนของแสงผ่านช่องแคบ\n- เกรตติง (Grating): มีช่องขนาดเล็กจำนวนมากชิดกัน อาศัยการเลี้ยวเบนผ่านแต่ละช่องแล้วคลื่นย่อยมาแทรกสอดกันอย่างคมชัด\nดังนั้น ข้อ ข. จึงอธิบายความแตกต่างได้อย่างถูกต้องและตรงกับแนวข้อสอบที่สุด",
+    "concept_error": "ทั้งสามการทดลองเป็นปรากฏการณ์ของคลื่น (ไม่ใช่การสะท้อนหรือการหักเห)",
+    "calculation_error": "-",
+    "reading_error": "อ่านตัวเลือกให้ครบทุกข้อ ชอยส์ ข. ครอบคลุมที่สุด",
+    "shortcut": "คู่ = แทรกสอด | เดี่ยว/เกรตติง = เลี้ยวเบน (เกรตติงคือเลี้ยวเบนหลายช่องมารวมกัน)"
+  },
+  {
+    "id": 14,
+    "source": "teacher",
+    "category": "ทวิภาวะคลื่น-อนุภาค",
+    "type": "subjective",
+    "points": 2,
+    "question": "นักเรียนคนหนึ่งกล่าวว่า “แสงเป็นเพียงอนุภาคเท่านั้น เพราะแสงสามารถเดินทางเป็นเส้นตรงและเกิดการสะท้อนได้” จงพิจารณาว่าข้อความดังกล่าวสมเหตุสมผลหรือไม่ และใช้หลักฐานทางฟิสิกส์อย่างน้อย 2 ประการ อธิบายว่าเหตุใดแสงจึงแสดงสมบัติของคลื่นได้ (2 คะแนน)",
+    "model_answer": "1. การพิจารณา: ข้อความดังกล่าว 'ไม่สมเหตุสมผล' เนื่องจากแสงไม่ได้แสดงสมบัติเป็นเพียงอนุภาคเท่านั้น แต่แสงมีสมบัติเป็นทั้งคลื่นและอนุภาค (ทวิภาวะคลื่น-อนุภาค: Wave-Particle Duality)\n2. หลักฐานทางฟิสิกส์ยืนยันสมบัติความเป็นคลื่น (เลือก 2 ประการ):\n- ประการที่ 1: การแทรกสอดของแสง (Interference) เช่น ในการทดลองสลิตคู่ของทอมัส ยัง แสงสามารถรวมตัวกันแบบเสริม (เกิดแถบสว่าง) และแบบหักล้างกันจนมืดสนิท (เกิดแถบมืด) ซึ่งถ้าแสงเป็นเพียงอนุภาคแบบกลศาสตร์ดั้งเดิม อนุภาคไม่สามารถรวมกันแล้วหักล้างกันจนหายไปได้\n- ประการที่ 2: การเลี้ยวเบนของแสง (Diffraction) เช่น เมื่อแสงผ่านขอบสิ่งกีดขวางหรือสลิตเดี่ยว แสงสามารถเบนอ้อมขอบช่องแคบไปปรากฏในบริเวณเงามืดด้านหลังได้ ซึ่งอนุภาคที่เคลื่อนที่เป็นแนวเส้นตรงไม่สามารถเลี้ยวเบนอ้อมสิ่งกีดขวางได้\n*(หมายเหตุ: สามารถยกหลักฐาน 'การเกิดโพลาไรเซชัน (Polarization)' เพิ่มเติมได้ ซึ่งยืนยันว่าแสงเป็นคลื่นตามขวาง)*",
+    "rubric": [
+      "ระบุว่าไม่สมเหตุสมผล พร้อมให้เหตุผลเรื่องทวิภาวะ (0.5 คะแนน)",
+      "อธิบายหลักฐานที่ 1 (การแทรกสอด: เสริมเป็นแถบสว่าง หักล้างเป็นแถบมืด) (0.75 คะแนน)",
+      "อธิบายหลักฐานที่ 2 (การเลี้ยวเบน: อ้อมขอบสิ่งกีดขวางไปในเงามืด) (0.75 คะแนน)"
+    ]
+  },
+  {
+    "id": 15,
+    "source": "teacher",
+    "category": "สลิตคู่ (ยัง)",
+    "type": "choice",
+    "question": "เมื่อให้แสงที่มีความยาวคลื่น 440 นาโนเมตร ผ่านสลิตคู่ที่มีระยะระหว่างช่องทั้งสอง 220 ไมโครเมตร จะเกิดการแทรกสอดบนฉากที่อยู่ห่างออกไป 1.20 เมตร จงหาระยะห่างระหว่างแถบสว่างที่อยู่ติดกันในหน่วยมิลลิเมตร?",
+    "options": [
+      "ก. 1.2 mm",
+      "ข. 2.4 mm",
+      "ค. 3.6 mm",
+      "ง. 4.8 mm"
+    ],
+    "correct": 1,
+    "explanation": "สูตรระยะห่างระหว่างแถบสว่างที่ติดกัน: Δy = λL / d\nข้อมูลจากโจทย์:\n- λ = 440 nm = 440 x 10⁻⁹ m\n- d = 220 μm = 220 x 10⁻⁶ m\n- L = 1.20 m\n\nคำนวณ:\nΔy = (440 x 10⁻⁹ x 1.20) / (220 x 10⁻⁶)\nตัดทอน: 440 / 220 = 2\nΔy = 2 x 10⁻³ x 1.20 = 2.4 x 10⁻³ m = 2.4 mm",
+    "concept_error": "ระยะห่างระหว่างแถบสว่างที่ติดกันคือ Δy = y_(n+1) - y_n = λL/d",
+    "calculation_error": "ระวังหน่วยไมโครเมตร (μm) คือ 10⁻⁶ m ไม่ใช่ 10⁻³ m",
+    "reading_error": "โจทย์ถามหน่วยมิลลิเมตร (mm)",
+    "shortcut": "(440 / 220) x 1.2 = 2 x 1.2 = 2.4 mm (ตัวเลข 440 ตัด 220 ได้ 2 ทันที!)"
+  },
+  {
+    "id": 16,
+    "source": "teacher",
+    "category": "สลิตเดี่ยว",
+    "type": "choice",
+    "question": "แสงความยาวคลื่น 600 นาโนเมตร ผ่านสลิตเดี่ยวกว้าง 0.55 มิลลิเมตร ไปปรากฏเป็นลวดลายการเลี้ยวเบนบนฉาก อยากทราบว่าจะต้องวางฉากทางด้านหลังสลิตห่างจากสลิตกี่เซนติเมตร จึงจะทำให้แถบมืดแถบแรกบนฉากห่างจากจุดกึ่งกลางเป็นระยะ 2.4 มิลลิเมตร?",
+    "options": [
+      "ก. 110 cm",
+      "ข. 180 cm",
+      "ค. 220 cm",
+      "ง. 250 cm"
+    ],
+    "correct": 2,
+    "explanation": "สูตรแถบมืดของสลิตเดี่ยว (Single slit):\na sin θ = nλ หรือ a (y_n / L) = nλ\nข้อมูลจากโจทย์:\n- a = 0.55 mm = 0.55 x 10⁻³ m\n- λ = 600 nm = 600 x 10⁻⁹ m\n- แถบมืดแรก -> n = 1\n- y₁ = 2.4 mm = 2.4 x 10⁻³ m\n\nต้องการหา L:\nL = (a * y₁) / (n * λ)\nL = (0.55 x 10⁻³ x 2.4 x 10⁻³) / (1 x 600 x 10⁻⁹)\nL = (1.32 x 10⁻⁶) / (0.6 x 10⁻⁶) = 1.32 / 0.6 = 2.2 m\nแปลงเป็นเซนติเมตร: 2.2 m = 220 cm",
+    "concept_error": "คำเตือนสำคัญที่สุด: ใน 'สลิตเดี่ยว' สูตร a y / L = nλ คือสูตรของ 'แถบมืด' (ไม่ใช่แถบสว่างเหมือนสลิตคู่)!",
+    "calculation_error": "ลืมแปลงหน่วย เมตร เป็น เซนติเมตร (2.2 m = 220 cm)",
+    "reading_error": "ระบุว่าแถบมืดแถบแรก ดังนั้น n = 1",
+    "shortcut": "L = a*y / λ = (0.55 x 2.4) / 0.6 = 1.32 / 0.6 = 2.2 m = 220 cm"
+  },
+  {
+    "id": 17,
+    "source": "teacher",
+    "category": "เกรตติง",
+    "type": "choice",
+    "question": "เกรตติงมี 2,000 เส้นต่อเซนติเมตร ถ้าฉายแสงความยาวคลื่นขนาดหนึ่งไปยังเกรตติงนี้ แถบสว่างที่เกิดขึ้นแถบแรกบนจอจะอยู่ห่างจากแนวกลางเป็นมุม 30 องศา แสงนั้นมีความยาวคลื่นเท่าใดในหน่วยนาโนเมตร?",
+    "options": [
+      "ก. 500 nm",
+      "ข. 1,250 nm",
+      "ค. 2,500 nm",
+      "ง. 5,000 nm"
+    ],
+    "correct": 2,
+    "explanation": "สูตรเกรตติงสำหรับแถบสว่าง: d sin θ = nλ\n1. หาระยะห่างระหว่างช่อง d:\nเกรตติง 2,000 เส้น/cm -> d = 1 / 2,000 cm = 10⁻² m / 2,000 = 5 x 10⁻⁶ m\n2. แทนค่าลงในสูตร:\n- n = 1 (แถบสว่างแรก)\n- θ = 30° -> sin 30° = 0.5\n\nλ = (d sin θ) / n = (5 x 10⁻⁶ x 0.5) / 1 = 2.5 x 10⁻⁶ m\nแปลงเป็นนาโนเมตร (nm = 10⁻⁹ m):\nλ = 2.5 x 10⁻⁶ m = 2,500 x 10⁻⁹ m = 2,500 nm",
+    "concept_error": "เกรตติงสูตร d sin θ = nλ ใช้สำหรับแถบสว่าง",
+    "calculation_error": "ระวังหน่วยเส้นต่อเซนติเมตร: 1 cm = 10⁻² m อย่าเผลอใช้ 10⁻³ m (นั่นคือมิลลิเมตร)",
+    "reading_error": "โจทย์ถามหน่วยนาโนเมตร (nm)",
+    "shortcut": "d = 10⁻² / 2000 = 5 x 10⁻⁶ -> λ = d * 0.5 = 2.5 x 10⁻⁶ m = 2500 nm ตอบ ค."
+  },
+  {
+    "id": 18,
+    "source": "teacher",
+    "category": "สลิตคู่ (ยัง)",
+    "type": "subjective",
+    "points": 3,
+    "question": "ในการทดลองสลิตคู่ของยัง นักเรียนใช้แสงสีเดียวส่องผ่านสลิตคู่และพบแถบสว่าง–มืดสลับกันบนฉาก จงอธิบายว่า\n1. เหตุใดจึงเกิดแถบสว่างและแถบมืด\n2. แถบสว่างเกิดจากการแทรกสอดแบบใด\n3. แถบมืดเกิดจากการแทรกสอดแบบใด\n(3 คะแนน)",
+    "model_answer": "1. เหตุผลที่เกิดแถบสว่างและแถบมืด:\nเมื่อแสงเคลื่อนที่ผ่านช่องสลิตทั้งสอง ช่องสลิตจะทำหน้าที่เป็นแหล่งกำเนิดคลื่นอาพันธ์ที่มีความถี่เท่ากันและเฟสตรงกัน คลื่นแสงจากช่องทั้งสองจะเดินทางไปยังแต่ละตำแหน่งบนฉากด้วยระยะทางที่ไม่เท่ากัน เกิดผลต่างทางเดินของคลื่น (Path difference: ΔS) เมื่อคลื่นแสงทั้งสองขบวนเดินทางมาซ้อนทับกัน จึงเกิดการแทรกสอดกันอย่างเป็นระเบียบ ปรากฏเป็นแถบสว่างและแถบมืดสลับกันบนฉาก\n\n2. แถบสว่างเกิดจากการแทรกสอดแบบ:\nการแทรกสอดแบบเสริมกัน (Constructive Interference หรือ แนวปฏิบัพ Antinode) ซึ่งเกิดขึ้นเมื่อคลื่นแสงจากสลิตทั้งสองมาพบกันโดยมีเฟสตรงกัน (ผลต่างทางเดิน ΔS = nλ โดย n = 0, 1, 2, ...) สันคลื่นรวมกับสันคลื่น ทำให้แอมพลิจูดรวมสูงสุด เกิดเป็นแถบสว่าง\n\n3. แถบมืดเกิดจากการแทรกสอดแบบ:\nการแทรกสอดแบบหักล้างกัน (Destructive Interference หรือ แนวบัพ Node) ซึ่งเกิดขึ้นเมื่อคลื่นแสงจากสลิตทั้งสองมาพบกันโดยมีเฟสตรงข้ามกัน 180° (ผลต่างทางเดิน ΔS = (n - 1/2)λ โดย n = 1, 2, 3, ...) สันคลื่นรวมกับท้องคลื่น แอมพลิจูดหักล้างกันจนความเข้มแสงเป็นศูนย์ เกิดเป็นแถบมืด",
+    "rubric": [
+      "ข้อ 1: อธิบายการเป็นแหล่งกำเนิดอาพันธ์ ผลต่างทางเดิน และการแทรกสอดได้ชัดเจน (1.0 คะแนน)",
+      "ข้อ 2: ตอบการแทรกสอดแบบเสริมกัน (Constructive / แนวปฏิบัพ / เฟสตรงกัน) (1.0 คะแนน)",
+      "ข้อ 3: ตอบการแทรกสอดแบบหักล้างกัน (Destructive / แนวบัพ / เฟสตรงข้าม) (1.0 คะแนน)"
+    ]
+  },
+  {
+    "id": 19,
+    "source": "teacher",
+    "category": "เกรตติง",
+    "type": "subjective",
+    "points": 3,
+    "question": "เมื่อนักเรียนใช้แสงสีขาวส่องผ่านเกรตติง จะพบแถบสีต่าง ๆ ปรากฏบนฉากทั้งสองด้านของแถบสว่างตรงกลาง จงอธิบาย\n1. เหตุใดแสงสีขาวจึงแยกออกเป็นสีต่าง ๆ\n2. แสงสีแดงกับแสงสีน้ำเงิน สีใดจะเบนออกจากแนวกลางมากกว่า\n3. หากเปลี่ยนจากแสงสีขาวเป็นแสงสีแดง รูปแบบที่สังเกตบนฉากจะแตกต่างกันอย่างไร\n(3 คะแนน)",
+    "model_answer": "1. เหตุผลที่แสงสีขาวแยกออกเป็นสีต่าง ๆ:\nเนื่องจากแสงสีขาวประกอบด้วยแสงหลายความยาวคลื่น เมื่อผ่านเกรตติงจะเกิดการเลี้ยวเบนและแทรกสอดตามสมการ d sin θ = nλ สำหรับแถบสว่างอันดับที่ n ≥ 1 มุมเบน θ จะแปรผันตรงกับความยาวคลื่น (sin θ ∝ λ) เมื่อแสงแต่ละสีมีความยาวคลื่นไม่เท่ากัน จึงเบนด้วยมุมที่ต่างกัน เกิดการกระจายแสงแยกออกเป็นแถบสเปกตรัมสีต่างๆ (โดยแถบกลาง n = 0 ทุกสีเบนด้วยมุม 0° เท่ากัน จึงรวมกันเป็นแถบสว่างสีขาว)\n\n2. แสงสีแดงกับแสงสีน้ำเงิน สีใดเบนมากกว่า:\n'แสงสีแดง' จะเบนออกจากแนวกลางมากกว่าแสงสีน้ำเงิน เนื่องจากความยาวคลื่นของแสงสีแดง (~650-700 nm) มีค่ามากกว่าความยาวคลื่นของแสงสีน้ำเงิน (~450-490 nm)\n\n3. ความแตกต่างเมื่อเปลี่ยนเป็นแสงสีแดงเดี่ยวๆ:\nบนฉากจะ 'ไม่ปรากฏแถบสเปกตรัมสีรุ้งต่อเนื่อง' แต่จะเห็นเป็น 'แถบหรือเส้นสว่างสีแดงคมชัดเดี่ยวๆ สลับกับแถบมืดสนิท' โดยแถบสว่างกลาง (n=0) จะเป็นสีแดง และมีแถบสว่างอันดับ 1, 2, ... เป็นเส้นสีแดงที่มุมเฉพาะเพียงค่าเดียวตามความยาวคลื่นของแสงสีแดง",
+    "rubric": [
+      "ข้อ 1: อธิบายเหตุผลการแยกสีตามสมการ d sin θ = nλ และความยาวคลื่นต่างกัน (1.0 คะแนน)",
+      "ข้อ 2: ตอบแสงสีแดง พร้อมระบุเหตุผลว่า λ_แดง > λ_น้ำเงิน (1.0 คะแนน)",
+      "ข้อ 3: อธิบายความแตกต่างว่าไม่เกิดแถบสีรุ้ง แต่เห็นเป็นเส้นสีแดงเดี่ยวๆ คมชัด (1.0 คะแนน)"
+    ]
+  },
+  {
+    "id": 20,
+    "source": "teacher",
+    "category": "การทดลองแสงเชิงคลื่น",
+    "type": "subjective",
+    "points": 3,
+    "question": "นักเรียนทำการทดลอง 3 การทดลอง ได้แก่\nการทดลอง A: แสงผ่านสลิตคู่และเกิดแถบสว่าง–มืดสลับกัน\nการทดลอง B: แสงผ่านสลิตเดี่ยวและเกิดแถบสว่างกลางที่กว้าง พร้อมแถบสว่าง–มืดด้านข้าง\nการทดลอง C: แสงผ่านเกรตติงและเกิดแถบสีต่าง ๆ บนฉาก\nจงระบุว่าแต่ละการทดลองแสดงปรากฏการณ์ใด และอธิบายว่าผลการทดลองเหล่านี้สนับสนุนแนวคิดว่า แสงมีสมบัติเป็นคลื่น อย่างไร\n(3 คะแนน)",
+    "model_answer": "1. การระบุปรากฏการณ์ในแต่ละการทดลอง:\n- การทดลอง A (สลิตคู่): แสดงปรากฏการณ์ 'การแทรกสอดของแสง (Interference)'\n- การทดลอง B (สลิตเดี่ยว): แสดงปรากฏการณ์ 'การเลี้ยวเบนของแสง (Diffraction)' (ร่วมกับการแทรกสอดของคลื่นย่อยตามหลักฮอยเกนส์)\n- การทดลอง C (เกรตติง): แสดงปรากฏการณ์ 'การเลี้ยวเบนและการแทรกสอดของแสง (Diffraction & Interference)' ผ่านช่องแคบจำนวนมาก\n\n2. การสนับสนุนแนวคิดว่าแสงมีสมบัติเป็นคลื่น:\nปรากฏการณ์ 'การแทรกสอด' (การรวมกันแบบเสริมจนสว่างและแบบหักล้างจนมืดสนิท) และ 'การเลี้ยวเบน' (การที่แสงสามารถอ้อมผ่านขอบช่องแคบหรือสิ่งกีดขวางไปตกในบริเวณเงามืดด้านหลังได้) เป็น 'สมบัติเฉพาะตัวของคลื่น' เท่านั้น\nหากแสงเป็นเพียงกลุ่มอนุภาคตามกลศาสตร์ดั้งเดิม อนุภาคจะต้องเคลื่อนที่เป็นเส้นตรงและตกกระทบฉากเป็นแนวเส้นตรงตามขนาดของช่องสลิต และไม่สามารถหักล้างกันเองจนเกิดแถบมืดสนิทได้ ผลการทดลองทั้ง 3 การทดลองนี้จึงเป็นหลักฐานเชิงประจักษ์ทางฟิสิกส์ที่พิสูจน์อย่างแน่ชัดว่า แสงแสดงพฤติกรรมเป็นคลื่น",
+    "rubric": [
+      "ระบุปรากฏการณ์ A (แทรกสอด), B (เลี้ยวเบน), C (เลี้ยวเบน+แทรกสอด) ครบถ้วน (1.5 คะแนน)",
+      "อธิบายเชื่อมโยงว่าการแทรกสอดและการเลี้ยวเบนเป็นสมบัติเฉพาะของคลื่นที่อนุภาคทำไม่ได้ (1.5 คะแนน)"
+    ]
+  },
+  {
+    "id": 21,
+    "source": "advanced",
+    "category": "การแทรกสอดของคลื่น",
+    "type": "choice",
+    "question": "[โจทย์ดักทาง: เฟสตรงข้ามกัน] แหล่งกำเนิดคลื่นสองแหล่ง S₁ และ S₂ อยู่ห่างกัน 10 cm สั่นด้วยความถี่เท่ากันแต่มี 'เฟสตรงข้ามกัน 180°' ให้คลื่นความยาวคลื่น 2 cm จุดกึ่งกลางระหว่าง S₁ และ S₂ จะเป็นแนวใด?",
+    "options": [
+      "ก. แนวปฏิบัพกลาง (A₀) เพราะระยะทางเท่ากัน",
+      "ข. แนวบัพกลาง (N₀) เพราะคลื่นหักล้างกัน",
+      "ค. แนวปฏิบัพที่ 1 (A₁)",
+      "ง. แนวบัพที่ 1 (N₁)"
+    ],
+    "correct": 1,
+    "explanation": "ระวังจุดหลอกอันตรายที่สุด!\nที่จุดกึ่งกลางระหว่าง S₁ และ S₂ ระยะทางจากทั้งสองแหล่งกำเนิดเท่ากันพอดี (Path difference: ΔS = 0)\n- ถ้าแหล่งกำเนิด 'เฟสตรงกัน': ΔS = 0 สันคลื่นจะเจอสันคลื่น เกิดเป็นแนวปฏิบัพกลาง (A₀)\n- แต่โจทย์ข้อนี้ระบุว่าแหล่งกำเนิด 'เฟสตรงข้ามกัน 180°': เมื่อระยะทางเท่ากัน คลื่นหนึ่งส่งสันคลื่น อีกคลื่นหนึ่งจะส่งท้องคลื่นมาถึงพร้อมกันพอดี ทำให้ 'หักล้างกันอย่างสมบูรณ์' จุดกึ่งกลางจึงกลายเป็น 'แนวบัพกลาง (N₀)'",
+    "concept_error": "จำไว้ขึ้นใจ: เฟสตรงข้าม แนวกลางเป็น 'บัพ (Node)' เสมอ!",
+    "calculation_error": "-",
+    "reading_error": "คำว่า 'เฟสตรงข้ามกัน 180°' คือคีย์เวิร์ดเปลี่ยนชีวิต",
+    "shortcut": "เฟสตรงกัน -> กลางคือ A₀ | เฟสตรงข้าม -> กลางคือ N₀ ตอบ ข. ทันที"
+  },
+  {
+    "id": 22,
+    "source": "advanced",
+    "category": "การสะท้อนของคลื่น",
+    "type": "choice",
+    "question": "[โจทย์ลึก: คลื่นในเส้นเชือก] คลื่นดลรูปสันคลื่นเคลื่อนที่ในเชือกเส้นเล็กไปชนรอยต่อกับเชือกเส้นใหญ่ คลื่นสะท้อนและคลื่นส่งผ่านไปยังเชือกเส้นใหญ่จะมีลักษณะเป็นอย่างไร?",
+    "options": [
+      "ก. คลื่นสะท้อนเป็นสันคลื่น, คลื่นส่งผ่านเป็นท้องคลื่น",
+      "ข. คลื่นสะท้อนกลับเฟส 180° (เป็นท้องคลื่น), คลื่นส่งผ่านเฟสเดิม (เป็นสันคลื่น)",
+      "ค. คลื่นสะท้อนและคลื่นส่งผ่านกลับเฟสเป็นท้องคลื่นทั้งคู่",
+      "ง. คลื่นสะท้อนและคลื่นส่งผ่านคงเฟสเดิมเป็นสันคลื่นทั้งคู่"
+    ],
+    "correct": 1,
+    "explanation": "เมื่อคลื่นเดินทางจากตัวกลางความหนาแน่นน้อย (เชือกเส้นเล็ก) ไปยังตัวกลางความหนาแน่นมาก (เชือกเส้นใหญ่):\n1. จุดรอยต่อจะทำหน้าที่เสมือน 'ปลายตรึงแน่น (Fixed end)' ทำให้คลื่นสะท้อนมี 'เฟสเปลี่ยนไป 180°' (จากสันคลื่นกลับเป็นท้องคลื่น)\n2. สำหรับคลื่นส่งผ่าน (Transmitted wave) จะ 'คงเฟสเดิมเสมอ' ในทุกกรณี (ยังคงเป็นสันคลื่นเหมือนเดิม)",
+    "concept_error": "คลื่นส่งผ่านไม่มีวันกลับเฟส! จำไว้เสมอว่าคลื่นส่งผ่านเฟสเดิมตลอด ส่วนคลื่นสะท้อนจะกลับเฟสเมื่อเจอตัวกลางที่ตึงกว่า/หนาแน่นกว่า (เหมือนชนกำแพง)",
+    "calculation_error": "-",
+    "reading_error": "เล็ก -> ใหญ่ รอยต่อทำหน้าที่เป็นปลายตรึง (กลับเฟส)",
+    "shortcut": "เล็กไปใหญ่: สะท้อนกลับเฟส 180° | ใหญ่ไปเล็ก: สะท้อนเฟสเดิม | ส่งผ่าน: เฟสเดิมตลอดกาล"
+  },
+  {
+    "id": 23,
+    "source": "advanced",
+    "category": "การหักเหของคลื่น",
+    "type": "choice",
+    "question": "[โจทย์ประยุกต์: มุมวิกฤต] คลื่นน้ำเคลื่อนที่จากบริเวณน้ำตื้นไปยังบริเวณน้ำลึก โดยมุมตกกระทบในน้ำตื้นเท่ากับ 30° ถ้าอัตราเร็วของคลื่นในน้ำลึกเป็น 2 เท่าของอัตราเร็วในน้ำตื้น มุมหักเหในน้ำลึกจะมีค่ากี่องศา?",
+    "options": [
+      "ก. 30°",
+      "ข. 45°",
+      "ค. 60°",
+      "ง. 90° (เกิดการสะท้อนกลับหมดที่มุมวิกฤตพอดี)"
+    ],
+    "correct": 3,
+    "explanation": "จากกฎของสเนลล์สำหรับการหักเหของคลื่น:\nsin θ₁ / sin θ₂ = v₁ / v₂\nกำหนดให้:\n- ตัวกลางที่ 1 คือ น้ำตื้น: θ₁ = 30° -> sin 30° = 0.5, อัตราเร็ว = v₁\n- ตัวกลางที่ 2 คือ น้ำลึก: v₂ = 2v₁\n\nแทนค่า:\n0.5 / sin θ₂ = v₁ / (2v₁)\n0.5 / sin θ₂ = 0.5\nsin θ₂ = 1.0\nดังนั้น θ₂ = arcsin(1) = 90°\nนั่นคือ คลื่นหักเหขนานไปกับรอยต่อพอดี แสดงว่ามุมตกกระทบ 30° นี้คือ 'มุมวิกฤต (Critical Angle)'",
+    "concept_error": "การสะท้อนกลับหมดจะเกิดได้เมื่อคลื่นเคลื่อนที่จากบริเวณความเร็วน้อย (น้ำตื้น) ไปยังบริเวณความเร็วมาก (น้ำลึก) เท่านั้น",
+    "calculation_error": "sin θ₂ = 2 * sin 30° = 2 * 0.5 = 1",
+    "reading_error": "สังเกตอัตราเร็ว v₂ = 2v₁",
+    "shortcut": "sin θ₂ = (v₂/v₁) sin θ₁ = 2 * 0.5 = 1 -> θ₂ = 90° ตอบ ง."
+  },
+  {
+    "id": 24,
+    "source": "advanced",
+    "category": "สลิตคู่ (ยัง)",
+    "type": "choice",
+    "question": "[โจทย์ประยุกต์ยอดฮิต: จุ่มชุดทดลองลงในน้ำ] ในการทดลองสลิตคู่ในอากาศ วัดระยะห่างระหว่างแถบสว่างที่อยู่ติดกันได้ 3.0 mm ถ้านำชุดการทดลองทั้งหมดไปจุ่มในน้ำที่มีดัชนีหักเห n = 4/3 โดยไม่เปลี่ยนระยะห่างใดๆ ระยะห่างระหว่างแถบสว่างจะกลายเป็นกี่มิลลิเมตร?",
+    "options": [
+      "ก. 4.0 mm",
+      "ข. 2.25 mm",
+      "ค. 3.0 mm",
+      "ง. 1.5 mm"
+    ],
+    "correct": 1,
+    "explanation": "1. ในอากาศ: ระยะห่างระหว่างแถบสว่าง Δy = λ_อากาศ * L / d = 3.0 mm\n2. เมื่อนำไปจุ่มในน้ำ: แสงเคลื่อนที่ในน้ำจะมีความยาวคลื่นลดลงตามความสัมพันธ์ λ_น้ำ = λ_อากาศ / n\n3. ดังนั้น ระยะห่างระหว่างแถบสว่างใหม่ Δy' จะเป็น:\nΔy' = λ_น้ำ * L / d = (λ_อากาศ / n) * (L / d) = Δy / n\nแทนค่า n = 4/3:\nΔy' = 3.0 / (4/3) = 3.0 * (3/4) = 9/4 = 2.25 mm\nสรุป: แถบสว่างจะอยู่ชิดกันมากขึ้น",
+    "concept_error": "เมื่อแสงเข้าสู่ตัวกลางที่มีดัชนีหักเหสูงขึ้น (n มากขึ้น) ความยาวคลื่นจะสั้นลง (λ ลดลง) ทำให้ระยะห่างแถบ (Δy) แคบลง",
+    "calculation_error": "3 หารด้วย 4/3 คือ 3 คูณ 3/4 ได้ 2.25 อย่าเผลอไปคูณ 4/3 ได้ 4.0",
+    "reading_error": "ระวังคำถามถามระยะห่างใหม่",
+    "shortcut": "จุ่มน้ำ -> แถบชิดลง -> Δy ใหม่ = Δy เดิม / n = 3 / (4/3) = 2.25 mm"
+  },
+  {
+    "id": 25,
+    "source": "advanced",
+    "category": "สลิตเดี่ยว",
+    "type": "choice",
+    "question": "[โจทย์วิเคราะห์: แถบสว่างกลางสลิตเดี่ยว] ในการทดลองสลิตเดี่ยวกว้าง a ความกว้างของแถบสว่างกลางสัมพันธ์กับความกว้างของแถบสว่างข้างเคียงอย่างไร และถ้าเพิ่มความกว้างช่องสลิต a ให้กว้างขึ้น แถบสว่างกลางจะเปลี่ยนแปลงอย่างไร?",
+    "options": [
+      "ก. กว้างเท่ากับแถบข้างเคียง, แถบสว่างกลางจะกว้างขึ้น",
+      "ข. กว้างเป็น 2 เท่าของแถบข้างเคียง, แถบสว่างกลางจะแคบลง",
+      "ค. กว้างเป็น 2 เท่าของแถบข้างเคียง, แถบสว่างกลางจะกว้างขึ้น",
+      "ง. กว้างเป็นครึ่งหนึ่งของแถบข้างเคียง, แถบสว่างกลางจะแคบลง"
+    ],
+    "correct": 1,
+    "explanation": "1. ขอบของแถบสว่างกลางถูกขนาบด้วยแถบมืดอันดับที่ 1 ทั้งสองข้าง (จาก y = -λL/a ถึง y = +λL/a)\nความกว้างของแถบสว่างกลาง = 2 * (λL / a) = 2λL/a\nในขณะที่แถบสว่างข้างเคียงมีความกว้างเพียง λL/a ดังนั้น แถบสว่างกลางจึง 'กว้างเป็น 2 เท่า' ของแถบสว่างข้างเคียงเสมอ\n2. จากสูตรความกว้าง = 2λL / a จะเห็นว่าความกว้างแปรผกผันกับ a เมื่อเรา 'เพิ่มขนาดช่องสลิต a' ให้กว้างขึ้น แถบสว่างกลางจะ 'แคบลง' (บีบเล็กลง)",
+    "concept_error": "เด็กส่วนใหญ่คิดว่าขยายช่องสลิตแล้วแถบแสงบนฉากจะกว้างขึ้น! ฟิสิกส์เชิงคลื่นกลับกัน: ยิ่งช่องสลิตกว้าง การเลี้ยวเบนยิ่งแย่ แถบแสงบนฉากจึงยิ่งแคบลงเข้าใกล้ขนาดเรขาคณิต",
+    "calculation_error": "-",
+    "reading_error": "ดูผลของการ 'เพิ่ม a' ให้รอบคอบ",
+    "shortcut": "สลิตเดี่ยว แถบกลางกว้าง 2 เท่า | ช่อง a กว้างขึ้น -> แถบกลางแคบลง (แปรผกผัน)"
+  },
+  {
+    "id": 26,
+    "source": "advanced",
+    "category": "สลิตคู่และสลิตเดี่ยวซ้อนทับ",
+    "type": "choice",
+    "question": "[ข้อสอบคัดเลือก / สอวน.] แสงความยาวคลื่นหนึ่งผ่านสลิตคู่ที่มีความกว้างของแต่ละช่องเท่ากับ a และระยะห่างระหว่างจุดกึ่งกลางช่องทั้งสองเป็น d = 4a ภายในแถบสว่างกลางของการเลี้ยวเบน จะมีแถบสว่างของการแทรกสอดปรากฏอยู่ทั้งหมดกี่แถบ?",
+    "options": [
+      "ก. 4 แถบ",
+      "ข. 7 แถบ",
+      "ค. 8 แถบ",
+      "ง. 9 แถบ"
+    ],
+    "correct": 1,
+    "explanation": "ข้อนี้เป็นข้อสอบประยุกต์ขั้นสูงเรื่องการเลี้ยวเบนซ้อนทับการแทรกสอด (Missing Orders):\n1. ขอบเขตของแถบสว่างกลางของการเลี้ยวเบน (สลิตเดี่ยวกว้าง a) สิ้นสุดที่แถบมืดอันดับ 1: a sin θ = 1 * λ -> sin θ = λ / a\n2. ตำแหน่งแถบสว่างของการแทรกสอด (สลิตคู่ระยะ d): d sin θ = nλ\nแทนค่า d = 4a: (4a) sin θ = nλ -> sin θ = nλ / (4a)\n3. หาอันดับที่ชนกับขอบแถบมืดพอดี (Missing order):\nλ / a = nλ / (4a) -> n = 4\nนั่นหมายความว่า แถบสว่างการแทรกสอดอันดับที่ n = ±4 จะไปตรงกับแถบมืดของการเลี้ยวเบนพอดี ทำให้ถูกกลืนหายไป (ไม่สว่าง)\n4. ดังนั้น แถบสว่างที่ปรากฏให้เห็นได้ภายในแถบกลาง จะมีอันดับ n = -3, -2, -1, 0, +1, +2, +3\nนับจำนวนแถบได้ทั้งหมด = 3 + 1 + 3 = 7 แถบ",
+    "concept_error": "สูตรลัดหาแถบสว่างภายในแถบสว่างกลาง: จำนวนแถบ = 2(d/a) - 1 (ใช้ได้เมื่อ d/a เป็นจำนวนเต็ม)",
+    "calculation_error": "n = 4 คือแถบที่หายไป อย่าเอา 4 x 2 = 8 ต้องเป็น 2(4-1) + 1 = 7",
+    "reading_error": "โจทย์ถามแถบที่ปรากฏ 'ภายใน' แถบสว่างกลาง",
+    "shortcut": "สูตรลัดทันใจ: จำนวนแถบ = 2(d/a) - 1 = 2(4) - 1 = 7 แถบ ตอบ ข. ภายใน 3 วินาที!"
+  },
+  {
+    "id": 27,
+    "source": "advanced",
+    "category": "เกรตติง",
+    "type": "choice",
+    "question": "[โจทย์วิเคราะห์: การซ้อนทับของสเปกตรัม] เมื่อฉายแสงสีขาว (ความยาวคลื่น 400 - 700 nm) ผ่านเกรตติง สเปกตรัมอันดับที่ 2 ของแสงสีแดง (700 nm) จะซ้อนทับกับสเปกตรัมอันดับที่ 3 ของแสงที่มีความยาวคลื่นกี่นาโนเมตร?",
+    "options": [
+      "ก. 350.0 nm",
+      "ข. 466.7 nm",
+      "ค. 525.0 nm",
+      "ง. ไม่มีการซ้อนทับกัน"
+    ],
+    "correct": 1,
+    "explanation": "การซ้อนทับกันหมายถึงแสงทั้งสองไปตกที่มุมเบน θ เดียวกันบนฉาก:\nจากสมการเกรตติง: d sin θ = nλ\nเมื่อ d และ sin θ เท่ากัน จะได้ความสัมพันธ์:\nn₁λ₁ = n₂λ₂\n\nโจทย์กำหนด:\n- อันดับที่ 2 (n₁ = 2) ของแสงสีแดง (λ₁ = 700 nm)\n- อันดับที่ 3 (n₂ = 3) ของแสงความยาวคลื่น λ₂\n\nแทนค่า:\n2 * (700 nm) = 3 * λ₂\n1,400 = 3λ₂\nλ₂ = 1,400 / 3 ≈ 466.7 nm\n(ซึ่ง 466.7 nm อยู่ในช่วงแสงสีน้ำเงิน ซึ่งอยู่ในช่วงแสงขาว 400-700 nm พอดี ดังนั้นจึงเกิดการซ้อนทับกันจริง)",
+    "concept_error": "มุมเดียวกันบนเกรตติง หมายถึงผลคูณ n * λ มีค่าเท่ากัน",
+    "calculation_error": "1400 / 3 = 466.67 nm",
+    "reading_error": "จับคู่อันดับและสีให้ตรง: อันดับ 2 คู่กับ 700 nm, อันดับ 3 หา λ",
+    "shortcut": "n₁λ₁ = n₂λ₂ -> 2(700) = 3(λ) -> λ = 1400/3 = 466.7 nm ตอบ ข."
+  },
+  {
+    "id": 28,
+    "source": "advanced",
+    "category": "เกรตติง",
+    "type": "choice",
+    "question": "[โจทย์คำนวณจำนวนแถบสูงสุด] เกรตติงมี 5,000 เส้นต่อเซนติเมตร ใช้แสงความยาวคลื่น 500 nm จะสามารถมองเห็นแถบสว่างบนฉากได้ทั้งหมดกี่แถบ?",
+    "options": [
+      "ก. 4 แถบ",
+      "ข. 8 แถบ",
+      "ค. 9 แถบ",
+      "ง. 10 แถบ"
+    ],
+    "correct": 2,
+    "explanation": "1. หาระยะห่างระหว่างช่อง d:\nd = 1 / 5,000 cm = 10⁻² m / 5,000 = 2 x 10⁻⁶ m\n2. หาอันดับสว่างสูงสุดที่เป็นไปได้ (n_max) โดยพิจารณาที่มุมเบนมากที่สุด θ = 90° (sin 90° = 1):\nd sin θ = nλ\nd (1) = n_max * λ\nn_max = d / λ = (2 x 10⁻⁶ m) / (500 x 10⁻⁹ m) = 2,000 / 500 = 4\n3. หาจำนวนแถบสว่างทั้งหมด:\nแถบสว่างทั้งหมดประกอบด้วย:\n- แถบสว่างกลาง (n = 0) จำนวน 1 แถบ\n- แถบสว่างด้านซ้าย n = 1, 2, 3, 4 จำนวน 4 แถบ\n- แถบสว่างด้านขวา n = 1, 2, 3, 4 จำนวน 4 แถบ\nรวมทั้งหมด = 2(n_max) + 1 = 2(4) + 1 = 9 แถบ",
+    "concept_error": "อย่าลืมบวก 'แถบตรงกลาง (n=0)' เสมอ! และอย่าลืมว่ามีสองฝั่งซ้าย-ขวา",
+    "calculation_error": "2 x 10⁻⁶ / 500 x 10⁻⁹ = 4 ไม่ใช่ 2",
+    "reading_error": "โจทย์ถามจำนวนแถบ 'ทั้งหมด' บนฉาก ไม่ใช่ถามแค่อันดับสูงสุด",
+    "shortcut": "n_max = d/λ = 4 -> จำนวนแถบทั้งหมด = 2(4) + 1 = 9 แถบ ตอบ ค."
+  },
+  {
+    "id": 29,
+    "source": "advanced",
+    "category": "การแทรกสอดของคลื่น",
+    "type": "choice",
+    "question": "[โจทย์นับจำนวนแนว] แหล่งกำเนิดคลื่นอาพันธ์สองแหล่งเฟสตรงกัน วางห่างกัน 11 cm มีความถี่ 10 Hz คลื่นเคลื่อนที่ด้วยอัตราเร็ว 40 cm/s จงหาว่าระหว่างแหล่งกำเนิดทั้งสอง จะมีแนวบัพ (หักล้างกัน) เกิดขึ้นทั้งหมดกี่แนว?",
+    "options": [
+      "ก. 4 แนว",
+      "ข. 5 แนว",
+      "ค. 6 แนว",
+      "ง. 7 แนว"
+    ],
+    "correct": 2,
+    "explanation": "1. หาความยาวคลื่น λ:\nจาก v = fλ -> λ = v / f = 40 / 10 = 4 cm\n2. หาจำนวนแนวบัพ (Node) ระหว่างแหล่งกำเนิด:\nเงื่อนไขแนวบัพ (เฟสตรงกัน): d sin θ = (n - 0.5)λ\nมุมสูงสุดคือ θ = 90° (sin 90° = 1):\nd > (n - 0.5)λ  (ใช้เครื่องหมาย < หรือ > ตามขอบเขต 'ระหว่าง' แหล่งกำเนิด ไม่รวมตัวแหล่งกำเนิด)\n11 > (n - 0.5) * 4\n11 / 4 > n - 0.5\n2.75 > n - 0.5\nn < 3.25\nดังนั้น n ที่เป็นจำนวนเต็มได้คือ n = 1, 2, 3\n3. จำนวนแนวบัพทั้งหมดมี 2 ซีก (ซ้ายและขวา):\nจำนวนแนวบัพทั้งหมด = 2 * 3 = 6 แนว",
+    "concept_error": "แนวบัพไม่มีแนว n = 0 มีเฉพาะซีกซ้ายและขวา n = 1, 2, 3 รวมเป็น 6 แนว",
+    "calculation_error": "11/4 = 2.75 -> บวก 0.5 ได้ 3.25 ปัดลงได้ 3",
+    "reading_error": "โจทย์ถาม 'แนวบัพ' (Node) ไม่ใช่แนวปฏิบัพ",
+    "shortcut": "n_node = (11/4) + 0.5 = 3.25 -> ปัดลง = 3 -> สองฝั่ง 3x2 = 6 แนว ตอบ ค."
+  },
+  {
+    "id": 30,
+    "source": "advanced",
+    "category": "สลิตคู่ (ยัง)",
+    "type": "choice",
+    "question": "ในการทดลองสลิตคู่ ถ้าเปลี่ยนแหล่งกำเนิดแสงจากแสงสีแดง (ความยาวคลื่นมาก) เป็นแสงสีม่วง (ความยาวคลื่นน้อย) โดยระยะห่างสลิตและฉากคงเดิม ลวดลายบนฉากจะเปลี่ยนแปลงอย่างไร?",
+    "options": [
+      "ก. แถบสว่างจะอยู่ห่างกันมากขึ้น",
+      "ข. แถบสว่างจะอยู่ชิดกันมากขึ้น",
+      "ค. แถบสว่างจะหายไปกลายเป็นความสว่างสม่ำเสมอ",
+      "ง. ระยะห่างระหว่างแถบไม่เปลี่ยนแปลงแต่ความสว่างเพิ่มขึ้น"
+    ],
+    "correct": 1,
+    "explanation": "จากสูตรระยะห่างระหว่างแถบสว่างของสลิตคู่: Δy = λL / d\nเมื่อระยะห่างสลิต (d) และระยะห่างฉาก (L) คงที่ จะได้ว่า Δy ∝ λ\nเนื่องจากแสงสีม่วงมีความยาวคลื่นน้อยกว่าแสงสีแดง (λ_ม่วง < λ_แดง)\nส่งผลให้ระยะห่างระหว่างแถบสว่าง Δy ลดลง นั่นคือ แถบสว่างและแถบมืดจะ 'เบียดชิดกันมากขึ้น'",
+    "concept_error": "λ เล็ก แถบชิด | λ ใหญ่ แถบกว้างห่างกัน",
+    "calculation_error": "-",
+    "reading_error": "เปลี่ยนจาก 'แดง เป็น ม่วง' (ความยาวคลื่นลดลง)",
+    "shortcut": "แลมบ์ดาลด = แถบชิด ตอบ ข."
+  },
+  {
+    "id": 31,
+    "source": "advanced",
+    "category": "สลิตคู่ vs สลิตเดี่ยว",
+    "type": "choice",
+    "question": "ถ้าใช้เทปทึบแสงปิดช่องสลิตช่องใดช่องหนึ่งของการทดลองสลิตคู่ของยัง สิ่งที่จะเกิดขึ้นบนฉากคือข้อใด?",
+    "options": [
+      "ก. ฉากจะมืดสนิททันที",
+      "ข. ลวดลายการแทรกสอดจะหายไป กลายเป็นลวดลายการเลี้ยวเบนของสลิตเดี่ยวแทน",
+      "ค. แถบสว่างจะแยกห่างจากกันเป็น 2 เท่า",
+      "ง. ลวดลายยังเหมือนเดิมแต่แถบสว่างมีจำนวนลดลงครึ่งหนึ่ง"
+    ],
+    "correct": 1,
+    "explanation": "การแทรกสอดของสลิตคู่ต้องอาศัยคลื่นแสงจาก '2 ช่อง' ทำหน้าที่เป็นแหล่งกำเนิดอาพันธ์มารวมกัน\nเมื่อเราปิดช่องใดช่องหนึ่ง แสงจะผ่านได้เพียงช่องเดียว อุปกรณ์จึงเปลี่ยนสภาพกลายเป็นการทดลอง 'สลิตเดี่ยว (Single slit)' ทันที\nลวดลายบนฉากจึงกลายเป็น ลวดลายการเลี้ยวเบนของสลิตเดี่ยว ที่มีแถบสว่างกลางกว้างและสว่างมาก ส่วนแถบข้างเคียงจะมืดลงอย่างรวดเร็ว",
+    "concept_error": "การปิด 1 ช่องไม่ได้ทำให้ฉากมืด เพราะแสงยังผ่านอีกช่องหนึ่งได้",
+    "calculation_error": "-",
+    "reading_error": "ปิดช่องใดช่องหนึ่ง = เหลือ 1 ช่อง = สลิตเดี่ยว",
+    "shortcut": "ปิด 1 ช่องสลิตคู่ = สลิตเดี่ยว (เลี้ยวเบน) ตอบ ข."
+  },
+  {
+    "id": 32,
+    "source": "advanced",
+    "category": "การสะท้อนของคลื่น",
+    "type": "choice",
+    "question": "ถ้าส่งคลื่นผิวน้ำ 'หน้าตรง' เข้ากระทบผิวสะท้อนโค้งรูปพาราโบลา คลื่นสะท้อนจะมีลักษณะการเคลื่อนที่อย่างไร?",
+    "options": [
+      "ก. สะท้อนกลับไปเป็นคลื่นหน้าตรงในทิศทางตรงกันข้าม",
+      "ข. สะท้อนเป็นคลื่นวงกลมที่ลู่เข้าไปรวมกันที่จุดโฟกัส แล้วแผ่กระจายเป็นคลื่นวงกลมต่อไป",
+      "ค. สะท้อนแผ่ออกเป็นหน้าคลื่นวงกลมทันทีโดยไม่ผ่านจุดโฟกัส",
+      "ง. ไม่เกิดการสะท้อนเพราะผิวโค้งดูดกลืนคลื่นทั้งหมด"
+    ],
+    "correct": 1,
+    "explanation": "สมบัติการรวมคลื่นของผิวโค้งพาราโบลา:\nเมื่อคลื่นหน้าตรง (รังสีขนานกับแกนมุขสำคัญ) ตกกระทบผิวสะท้อนพาราโบลา คลื่นสะท้อนจะกลายเป็น 'คลื่นวงกลมที่ลู่เข้าสู่จุดโฟกัส (F)' จากนั้นเมื่อเคลื่อนที่ผ่านจุดโฟกัสไปแล้ว จะกลายเป็นคลื่นวงกลมที่แผ่ขยายตัวออกจากจุดโฟกัสต่อไป (นี่คือหลักการทำงานของจานรับสัญญาณดาวเทียมและกล้องโทรทรรศน์สะท้อนแสง)",
+    "concept_error": "สลับกับข้อ 1: ข้อ 1 แหล่งกำเนิดอยู่ที่จุดโฟกัสสะท้อนเป็นหน้าตรง | ข้อนี้ คลื่นหน้าตรงเข้าไปจะสะท้อนมารวมที่จุดโฟกัส",
+    "calculation_error": "-",
+    "reading_error": "สังเกตคลื่นตกกระทบเป็น 'หน้าตรง'",
+    "shortcut": "หน้าตรงเข้าพาราโบลา -> ลู่เข้าโฟกัส ตอบ ข."
+  },
+  {
+    "id": 33,
+    "source": "advanced",
+    "category": "การแทรกสอดของคลื่น",
+    "type": "choice",
+    "question": "ในการทดลองแทรกสอดของคลื่นน้ำ หากเพิ่มความถี่ของแหล่งกำเนิดคลื่นเป็น 2 เท่า โดยอัตราเร็วคลื่นคงที่ ลวดลายการแทรกสอดจะเปลี่ยนแปลงอย่างไร?",
+    "options": [
+      "ก. แนวแทรกสอดจะห่างออกจากกัน และจำนวนแนวทั้งหมดลดลง",
+      "ข. แนวแทรกสอดจะเบียดชิดกันมากขึ้น และจำนวนแนวทั้งหมดเพิ่มขึ้น",
+      "ค. แนวแทรกสอดจะคงเดิมทุกประการเพราะอัตราเร็วเท่าเดิม",
+      "ง. แนวแทรกสอดจะหายไปเพราะความถี่สูงเกินไป"
+    ],
+    "correct": 1,
+    "explanation": "1. จากสมการคลื่น v = fλ เมื่อ v คงที่ และ f เพิ่มเป็น 2 เท่า จะได้ว่า ความยาวคลื่น λ จะลดลงเหลือครึ่งหนึ่ง (λ' = λ/2)\n2. จากเงื่อนไขการแทรกสอด d sin θ = nλ -> sin θ = nλ / d\nเมื่อ λ ลดลง ค่ามุม θ ของแต่ละแนวจะลดลง ทำให้แนวปฏิบัพและแนวบัพ 'เบียดชิดเข้าหากันมากขึ้น'\n3. จำนวนแนวสูงสุด n_max = d / λ เมื่อ λ ลดลง ค่า n_max จึง 'เพิ่มขึ้น' ส่งผลให้มีจำนวนแนวแทรกสอดบนผิวน้ำมากขึ้น",
+    "concept_error": "ความถี่สูง = แลมบ์ดาเล็ก = แนวชิด = จำนวนแนวเพิ่มขึ้น",
+    "calculation_error": "-",
+    "reading_error": "เพิ่มความถี่ f -> λ ลดลง",
+    "shortcut": "f เพิ่ม -> λ ลด -> แนวชิดกัน -> เส้นแนวเยอะขึ้น ตอบ ข."
+  },
+  {
+    "id": 34,
+    "source": "advanced",
+    "category": "ทวิภาวะและสมบัติแสง",
+    "type": "choice",
+    "question": "ปรากฏการณ์ใดของแสงที่เป็นหลักฐานชี้ชัดที่สุดว่า แสงเป็น 'คลื่นตามขวาง (Transverse Wave)' ไม่ใช่คลื่นตามยาว?",
+    "options": [
+      "ก. การสะท้อนของแสง",
+      "ข. การหักเหของแสง",
+      "ค. การแทรกสอดของแสง",
+      "ง. การเกิดโพลาไรเซชัน (Polarization)"
+    ],
+    "correct": 3,
+    "explanation": "ข้อสอบจำแนกสมบัติคลื่นยอดนิยม:\n- การสะท้อน, หักเห, เลี้ยวเบน, แทรกสอด: เกิดได้ในคลื่น 'ทุกชนิด' ทั้งคลื่นตามยาว (เช่น คลื่นเสียง) และคลื่นตามขวาง (เช่น คลื่นน้ำ คลื่นแสง)\n- 'การเกิดโพลาไรเซชัน (Polarization)': สามารถเกิดขึ้นได้เฉพาะกับ 'คลื่นตามขวางเท่านั้น' เนื่องจากคลื่นตามขวางมีการสั่นของสนามในทิศทางที่ตั้งฉากกับทิศการเคลื่อนที่ ทำให้สามารถกรองทิศทางการสั่นด้วยแผ่นโพลาลอยด์ได้ ปรากฏการณ์นี้จึงเป็นหลักฐานเด็ดขาดที่ยืนยันว่าแสงเป็นคลื่นตามขวาง",
+    "concept_error": "การแทรกสอดและการเลี้ยวเบนพิสูจน์ว่าเป็น 'คลื่น' แต่ไม่ได้ระบุว่าเป็นคลื่นตามยาวหรือตามขวาง (เสียงก็แทรกสอดได้) แต่โพลาไรเซชันพิสูจน์ว่าเป็น 'คลื่นตามขวาง'",
+    "calculation_error": "-",
+    "reading_error": "คำถามเจาะจงว่า 'คลื่นตามขวาง'",
+    "shortcut": "ท่องจำ: 'สะท้อน หักเห แทรกสอด เลี้ยวเบน = เป็นคลื่น | โพลาไรเซชัน = คลื่นตามขวาง เท่านั้น!' ตอบ ง."
+  },
+  {
+    "id": 35,
+    "source": "advanced",
+    "category": "เกรตติง vs ปริซึม",
+    "type": "choice",
+    "question": "[ข้อสอบเปรียบเทียบชิงคะแนนเต็ม] การกระจายแสงสีขาวด้วย 'เกรตติง' แตกต่างจากการกระจายแสงสีขาวด้วย 'ปริซึมแก้ว' อย่างไร?",
+    "options": [
+      "ก. เกรตติง แสงสีม่วงเบนมากที่สุด ส่วนปริซึม แสงสีแดงเบนมากที่สุด",
+      "ข. เกรตติง แสงสีแดงเบนมากที่สุด ส่วนปริซึม แสงสีม่วงเบนมากที่สุด",
+      "ค. ทั้งเกรตติงและปริซึม แสงสีแดงเบนมากที่สุดเหมือนกัน",
+      "ง. ทั้งเกรตติงและปริซึม แสงสีม่วงเบนมากที่สุดเหมือนกัน"
+    ],
+    "correct": 1,
+    "explanation": "ความแตกต่างระหว่างเกรตติงกับปริซึม:\n1. เกรตติง (เกิดจากการเลี้ยวเบนและแทรกสอด): d sin θ = nλ มุมเบนแปรผันตรงกับความยาวคลื่น (θ ∝ λ) ดังนั้น 'แสงสีแดง (λ มาก) จะเบนมากที่สุด' และแสงสีม่วง (λ น้อย) จะเบนน้อยที่สุด\n2. ปริซึม (เกิดจากการหักเหของแสง): ดัชนีหักเหของแก้วขึ้นกับความถี่ แสงสีม่วงมีความถี่สูงจะเคลื่อนที่ช้ากว่าในแก้ว (ดัชนีหักเห n_ม่วง > n_แดง) จึงเกิดการหักเหเบนออกจากแนวเดิมมากที่สุด ดังนั้นในปริซึม 'แสงสีม่วงจะเบนมากที่สุด' และแสงสีแดงจะเบนน้อยที่สุด\nสรุป: สลับลำดับสีกันอย่างสิ้นเชิง!",
+    "concept_error": "เกรตติง = การเลี้ยวเบน (แดงเบนมาก) | ปริซึม = การหักเห (ม่วงเบนมาก)",
+    "calculation_error": "-",
+    "reading_error": "จับคู่ลำดับให้ถูก: เกรตติง(แดงมาก) vs ปริซึม(ม่วงมาก)",
+    "shortcut": "เกรตติง=แดงเบนมาก | ปริซึม=ม่วงเบนมาก ตอบ ข."
+  }
+];
+
+  let userAnswers = {};
+  let activeFilter = 'all';
+  let simActive = false;
+  let simTimeRemaining = 40 * 60;
+  let simTimerInterval = null;
+  let parabolaMode = 1;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadProgress();
+    renderQuestionsList();
+    renderWeakPoints();
+    updateMetrics();
+    initCanvases();
+  });
+
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
+
+    const targetSec = document.getElementById('tab-' + tabId);
+    if (targetSec) targetSec.classList.add('active');
+
+    const tabsMap = {
+      'dashboard': 0,
+      'learning': 1,
+      'instant-practice': 2,
+      'simulator': 3,
+      'cram-mode': 4,
+      'weak-points': 5
+    };
+    const btns = document.querySelectorAll('.nav-tab-btn');
+    if (btns[tabsMap[tabId]]) btns[tabsMap[tabId]].classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (tabId === 'learning') {
+      setTimeout(initCanvases, 100);
+    }
+  }
+
+  function filterQuestions(filterType, element) {
+    activeFilter = filterType;
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    if (element) element.classList.add('active');
+    renderQuestionsList();
+  }
+
+  function renderQuestionsList() {
+    const container = document.getElementById('questions-list');
+    container.innerHTML = '';
+
+    let filtered = questionsDB.filter(q => {
+      if (activeFilter === 'all') return true;
+      if (activeFilter === 'teacher') return q.source === 'teacher';
+      if (activeFilter === 'advanced') return q.source === 'advanced';
+      if (activeFilter === 'calc') return q.calculation_error && q.calculation_error !== '-';
+      if (activeFilter === 'theory') return q.type === 'subjective' || q.calculation_error === '-';
+      if (activeFilter === 'wrong') return userAnswers[q.id] && !userAnswers[q.id].isCorrect;
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 3rem; color: var(--text-muted);">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔍</div>
+          <div>ไม่พบข้อสอบในหมวดหมู่นี้</div>
+        </div>
+      `;
+      return;
+    }
+
+    filtered.forEach(q => {
+      const card = document.createElement('div');
+      card.className = 'q-card';
+      card.id = `q-card-${q.id}`;
+
+      const answered = userAnswers[q.id];
+      if (answered) {
+        card.classList.add(answered.isCorrect ? 'answered-correct' : 'answered-wrong');
+      }
+
+      let badgeHTML = q.source === 'teacher' 
+        ? `<span class="card-badge" style="background: rgba(16,185,129,0.15); color: var(--emerald); border-color: rgba(16,185,129,0.3);">แนวข้อสอบจริงของครู</span>`
+        : `<span class="card-badge" style="background: rgba(139,92,246,0.15); color: var(--purple); border-color: rgba(139,92,246,0.3);">ข้อสอบประยุกต์ดักทาง / สอวน.</span>`;
+
+      if (q.type === 'subjective') {
+        badgeHTML += ` <span class="card-badge" style="background: rgba(245,158,11,0.15); color: var(--amber); border-color: rgba(245,158,11,0.3);">อัตนัย ${q.points} คะแนน</span>`;
+      }
+
+      let contentHTML = `
+        <div class="q-meta">
+          <div>
+            <strong style="color: var(--cyan); font-size: 0.95rem;">ข้อที่ ${q.id}</strong>
+            <span style="margin: 0 0.5rem; color: var(--border-accent);">|</span>
+            <span>หมวด: ${q.category}</span>
+          </div>
+          <div>${badgeHTML}</div>
+        </div>
+        <div class="q-title">${q.question.split('\n').join('<br>')}</div>
+      `;
+
+      if (q.type === 'choice') {
+        contentHTML += `<div class="options-grid">`;
+        q.options.forEach((opt, idx) => {
+          let optClass = 'opt-btn';
+          let disabled = answered ? 'disabled' : '';
+          if (answered) {
+            if (idx === q.correct) optClass += ' correct';
+            else if (idx === answered.selected && !answered.isCorrect) optClass += ' wrong';
+          }
+          contentHTML += `
+            <button class="${optClass}" ${disabled} onclick="handleAnswerChoice(${q.id}, ${idx})">
+              <span>${opt}</span>
+            </button>
+          `;
+        });
+        contentHTML += `</div>`;
+      } else if (q.type === 'subjective') {
+        contentHTML += `
+          <textarea class="subj-input" id="subj-input-${q.id}" placeholder="พิมพ์ร่างคำตอบของคุณที่นี่เพื่อทดสอบความจำ (หรือกดปุ่มตรวจคำตอบทันที)..."></textarea>
+          <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
+            <button class="btn btn-primary btn-sm" onclick="revealSubjectiveAnswer(${q.id})">
+              <span>🔍</span> ตรวจคำตอบและดูเกณฑ์การให้คะแนนเต็ม (Rubric)
+            </button>
+          </div>
+        `;
+      }
+
+      contentHTML += `<div id="diag-${q.id}">`;
+      if (answered) {
+        contentHTML += renderDiagnosticHTML(q, answered);
+      }
+      contentHTML += `</div>`;
+
+      card.innerHTML = contentHTML;
+      container.appendChild(card);
+    });
+  }
+
+  function handleAnswerChoice(qId, selectedIdx) {
+    const q = questionsDB.find(item => item.id === qId);
+    if (!q) return;
+
+    const isCorrect = (selectedIdx === q.correct);
+    userAnswers[qId] = {
+      selected: selectedIdx,
+      isCorrect: isCorrect,
+      timeSpent: 0
+    };
+    saveProgress();
+
+    const card = document.getElementById(`q-card-${qId}`);
+    if (card) {
+      card.classList.remove('answered-correct', 'answered-wrong');
+      card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+
+      const buttons = card.querySelectorAll('.opt-btn');
+      buttons.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === q.correct) btn.classList.add('correct');
+        else if (idx === selectedIdx && !isCorrect) btn.classList.add('wrong');
+      });
+
+      const diagContainer = document.getElementById(`diag-${qId}`);
+      if (diagContainer) {
+        diagContainer.innerHTML = renderDiagnosticHTML(q, userAnswers[qId]);
+      }
+    }
+
+    updateMetrics();
+    renderWeakPoints();
+  }
+
+  function revealSubjectiveAnswer(qId) {
+    const q = questionsDB.find(item => item.id === qId);
+    if (!q) return;
+
+    userAnswers[qId] = {
+      selected: 0,
+      isCorrect: true,
+      timeSpent: 0
+    };
+    saveProgress();
+
+    const diagContainer = document.getElementById(`diag-${qId}`);
+    if (diagContainer) {
+      let rubricItems = q.rubric.map(r => `<li>${r}</li>`).join('');
+      diagContainer.innerHTML = `
+        <div class="diagnostic-panel" style="border-left: 4px solid var(--purple);">
+          <div style="font-weight: 700; color: #FFF; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <span class="diag-tag tag-rubric">แนวคำตอบระดับคะแนนเต็ม 100%</span>
+          </div>
+          <div style="font-size: 0.9rem; color: #E2E8F0; white-space: pre-line; margin-bottom: 1rem; background: var(--bg-card); padding: 0.85rem; border-radius: var(--radius-sm);">
+            ${q.model_answer}
+          </div>
+          <div style="font-weight: 600; color: var(--cyan); font-size: 0.85rem; margin-bottom: 0.35rem;">
+            📋 เกณฑ์การตรวจให้คะแนนของครู (Scoring Rubric):
+          </div>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); margin-left: 1.25rem;">
+            ${rubricItems}
+          </ul>
+        </div>
+      `;
+    }
+
+    updateMetrics();
+  }
+
+  function renderDiagnosticHTML(q, answerState) {
+    const isCorrect = answerState.isCorrect;
+    let headerText = isCorrect 
+      ? `<span style="color: var(--emerald); font-weight: 700; display: flex; align-items: center; gap: 0.4rem;">✅ ถูกต้องสมบูรณ์ (+1 คะแนน)</span>`
+      : `<span style="color: var(--rose); font-weight: 700; display: flex; align-items: center; gap: 0.4rem;">❌ ตอบผิด • วิเคราะห์ข้อผิดพลาด</span>`;
+
+    let html = `
+      <div class="diagnostic-panel" style="border-left: 4px solid ${isCorrect ? 'var(--emerald)' : 'var(--rose)'};">
+        <div style="margin-bottom: 0.85rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">
+          ${headerText}
+        </div>
+
+        <div class="diag-section">
+          <strong style="color: #FFF;">เฉลยละเอียดและเหตุผล:</strong><br>
+          <span style="color: #CBD5E1; white-space: pre-line;">${q.explanation}</span>
+        </div>
+    `;
+
+    if (!isCorrect) {
+      if (q.concept_error) {
+        html += `
+          <div class="diag-section">
+            <span class="diag-tag tag-concept">Concept Error</span>
+            <span style="color: #FDA4AF;">${q.concept_error}</span>
+          </div>
+        `;
+      }
+      if (q.calculation_error && q.calculation_error !== '-') {
+        html += `
+          <div class="diag-section">
+            <span class="diag-tag tag-calc">Calculation Error</span>
+            <span style="color: #FDE68A;">${q.calculation_error}</span>
+          </div>
+        `;
+      }
+      if (q.reading_error && q.reading_error !== '-') {
+        html += `
+          <div class="diag-section">
+            <span class="diag-tag tag-read">Reading Trap</span>
+            <span style="color: #93C5FD;">${q.reading_error}</span>
+          </div>
+        `;
+      }
+    }
+
+    if (q.shortcut) {
+      html += `
+        <div class="diag-section" style="margin-top: 0.5rem; background: rgba(16,185,129,0.08); padding: 0.5rem 0.75rem; border-radius: 4px;">
+          <span class="diag-tag tag-shortcut">Shortcut คิดลัด 5 วิ</span>
+          <span style="color: #A7F3D0; font-weight: 500;">${q.shortcut}</span>
+        </div>
+      `;
+    }
+
+    html += `</div>`;
+    return html;
+  }
+
+  function updateMetrics() {
+    const totalQ = questionsDB.length;
+    const answeredCount = Object.keys(userAnswers).length;
+    let correctCount = 0;
+
+    for (let id in userAnswers) {
+      if (userAnswers[id].isCorrect) correctCount++;
+    }
+
+    const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+    const progressPercent = Math.round((answeredCount / totalQ) * 100);
+
+    const mTotal = document.getElementById('metric-total-q');
+    const mAnswered = document.getElementById('metric-answered');
+    const mAnsweredSub = document.getElementById('metric-answered-sub');
+    const mAcc = document.getElementById('metric-accuracy');
+
+    if (mTotal) mTotal.innerText = totalQ;
+    if (mAnswered) mAnswered.innerText = answeredCount;
+    if (mAnsweredSub) mAnsweredSub.innerText = `${progressPercent}% ของทั้งหมด`;
+    if (mAcc) {
+      mAcc.innerText = `${accuracy}%`;
+      mAcc.style.color = accuracy >= 80 ? 'var(--emerald)' : (accuracy >= 50 ? 'var(--amber)' : 'var(--rose)');
+    }
+  }
+
+  function renderWeakPoints() {
+    const container = document.getElementById('weak-point-categories');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const categories = [
+      'การสะท้อนของคลื่น',
+      'การหักเหของคลื่น',
+      'การเลี้ยวเบนของคลื่น',
+      'การแทรกสอดของคลื่น',
+      'สลิตคู่ (ยัง)',
+      'สลิตเดี่ยว',
+      'เกรตติง',
+      'ทวิภาวะคลื่น-อนุภาค'
+    ];
+
+    categories.forEach(cat => {
+      const catQuestions = questionsDB.filter(q => q.category.includes(cat) || cat.includes(q.category));
+      const total = catQuestions.length;
+      let answered = 0;
+      let correct = 0;
+
+      catQuestions.forEach(q => {
+        if (userAnswers[q.id]) {
+          answered++;
+          if (userAnswers[q.id].isCorrect) correct++;
+        }
+      });
+
+      const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+      let statusBadge = '';
+      if (answered === 0) {
+        statusBadge = `<span class="card-badge" style="color: var(--text-sub); border-color: var(--border-subtle);">ยังไม่ได้ฝึก</span>`;
+      } else if (pct === 100 && answered === total) {
+        statusBadge = `<span class="status-tag status-ready">✅ แม่นยำ 100%</span>`;
+      } else if (pct < 60) {
+        statusBadge = `<span class="status-tag" style="background: rgba(244,63,94,0.15); color: var(--rose); border: 1px solid rgba(244,63,94,0.3);">⚠️ จุดเสี่ยงต้องทวน</span>`;
+      } else {
+        statusBadge = `<span class="status-tag status-pending">ปานกลาง (${pct}%)</span>`;
+      }
+
+      const box = document.createElement('div');
+      box.className = 'card';
+      box.style.background = 'var(--bg-card)';
+      box.style.padding = '1.25rem';
+      box.style.marginBottom = '0';
+      box.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <strong style="color: #FFF; font-size: 0.95rem;">${cat}</strong>
+          <div>${statusBadge}</div>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+          <span>ทำถูก ${correct} จาก ${total} ข้อ</span>
+          <span style="font-family: var(--font-mono); color: var(--cyan);">${pct}%</span>
+        </div>
+        <div class="wp-bar-track">
+          <div class="wp-bar-fill" style="width: ${pct}%; background: ${pct < 60 ? 'var(--rose)' : (pct < 80 ? 'var(--amber)' : 'var(--emerald)')};"></div>
+        </div>
+      `;
+      container.appendChild(box);
+    });
+  }
+
+  let simQuestions = [];
+  let simAnswers = {};
+
+  function startSimulation() {
+    document.getElementById('sim-intro-card').style.display = 'none';
+    const container = document.getElementById('sim-questions-container');
+    container.style.display = 'block';
+    container.innerHTML = '';
+
+    simQuestions = questionsDB.slice(0, 20);
+    simAnswers = {};
+    simActive = true;
+    simTimeRemaining = 40 * 60;
+
+    if (simTimerInterval) clearInterval(simTimerInterval);
+    simTimerInterval = setInterval(() => {
+      simTimeRemaining--;
+      if (simTimeRemaining <= 0) {
+        clearInterval(simTimerInterval);
+        finishSimulation();
+      }
+      const mins = Math.floor(simTimeRemaining / 60);
+      const secs = simTimeRemaining % 60;
+      const formatted = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      const timerElem = document.getElementById('sim-timer');
+      if (timerElem) timerElem.innerText = `⏱️ ${formatted}`;
+    }, 1000);
+
+    simQuestions.forEach((q, idx) => {
+      const card = document.createElement('div');
+      card.className = 'q-card';
+      card.style.background = 'var(--bg-card)';
+      card.innerHTML = `
+        <div class="q-meta">
+          <strong style="color: var(--cyan);">ข้อที่ ${idx + 1} (รหัสข้อ ${q.id})</strong>
+          <span>หมวด: ${q.category}</span>
+        </div>
+        <div class="q-title">${q.question.split('\n').join('<br>')}</div>
+        ${q.type === 'choice' ? `
+          <div class="options-grid">
+            ${q.options.map((opt, oIdx) => `
+              <button class="opt-btn" id="sim-btn-${q.id}-${oIdx}" onclick="selectSimAnswer(${q.id}, ${oIdx})">
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+        ` : `
+          <textarea class="subj-input" id="sim-subj-${q.id}" placeholder="เขียนตอบตามเกณฑ์อัตนัย..."></textarea>
+        `}
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function selectSimAnswer(qId, oIdx) {
+    simAnswers[qId] = oIdx;
+    const q = questionsDB.find(item => item.id === qId);
+    if (q && q.type === 'choice') {
+      q.options.forEach((_, idx) => {
+        const btn = document.getElementById(`sim-btn-${qId}-${idx}`);
+        if (btn) {
+          if (idx === oIdx) {
+            btn.style.borderColor = 'var(--cyan)';
+            btn.style.background = 'rgba(6,182,212,0.15)';
+          } else {
+            btn.style.borderColor = 'var(--border-subtle)';
+            btn.style.background = 'var(--bg-card)';
+          }
+        }
+      });
+    }
+    const counter = document.getElementById('sim-q-counter');
+    if (counter) counter.innerText = `ตอบแล้ว ${Object.keys(simAnswers).length} / ${simQuestions.length} ข้อ`;
+  }
+
+  function finishSimulation() {
+    if (simTimerInterval) clearInterval(simTimerInterval);
+    simActive = false;
+
+    let totalScore = 0;
+    let maxScore = 0;
+
+    simQuestions.forEach(q => {
+      if (q.type === 'choice') {
+        maxScore += 1;
+        if (simAnswers[q.id] === q.correct) totalScore += 1;
+      } else {
+        maxScore += (q.points || 2);
+        totalScore += (q.points || 2);
+      }
+    });
+
+    const pct = Math.round((totalScore / maxScore) * 100);
+    const container = document.getElementById('sim-questions-container');
+    container.style.display = 'none';
+
+    const resultCard = document.getElementById('sim-result-card');
+    resultCard.style.display = 'block';
+    resultCard.innerHTML = `
+      <div style="text-align: center; padding: 2rem;">
+        <div style="font-size: 3rem; margin-bottom: 0.5rem;">${pct >= 80 ? '🏆' : (pct >= 50 ? '📈' : '⚠️')}</div>
+        <h2 style="color: #FFF; font-size: 1.8rem; font-weight: 700;">ผลการทดสอบจำลองเสมือนจริง</h2>
+        <div style="font-size: 3rem; font-weight: 700; font-family: var(--font-mono); color: var(--cyan); margin: 0.5rem 0;">
+          ${totalScore} / ${maxScore} คะแนน (${pct}%)
+        </div>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem auto;">
+          ${pct === 100 ? 'ยอดเยี่ยมที่สุด! คุณมีความพร้อมระดับ 100% สำหรับการสอบปลายภาคฟิสิกส์ ม.5' : 'ทำได้ดี แต่ยังมีบางจุดที่ต้องระวัง ดูเฉลยและจุดหลอกในโหมดเฉลยทีละข้อเพื่อปิดจุดอ่อนให้สมบูรณ์'}
+        </p>
+        <button class="btn btn-primary" onclick="switchTab('instant-practice')">
+          ไปทบทวนข้อผิดพลาดในโหมดเฉลยทีละข้อ
+        </button>
+      </div>
+    `;
+  }
+
+  function toggleAccordion(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.accordion-header span:last-child').forEach(s => s.innerText = '▼');
+
+    if (!isOpen) {
+      body.classList.add('open');
+      header.querySelector('span:last-child').innerText = '▲';
+    }
+  }
+
+  function saveProgress() {
+    try {
+      localStorage.setItem('physics_os_m5_progress', JSON.stringify(userAnswers));
+    } catch (e) {}
+  }
+
+  function loadProgress() {
+    try {
+      const data = localStorage.getItem('physics_os_m5_progress');
+      if (data) userAnswers = JSON.parse(data);
+    } catch (e) {}
+  }
+
+  function resetProgress() {
+    if (confirm('คุณต้องการรีเซ็ตประวัติการฝึกทำข้อสอบทั้งหมดใช่หรือไม่?')) {
+      userAnswers = {};
+      saveProgress();
+      renderQuestionsList();
+      renderWeakPoints();
+      updateMetrics();
+    }
+  }
+
+  function initCanvases() {
+    drawParabolaCanvas();
+    drawRefractionCanvas();
+    drawDiffractionCanvas(1);
+    drawIntensityCanvas();
+  }
+
+  function toggleParabolaMode() {
+    parabolaMode = parabolaMode === 1 ? 2 : 1;
+    const txt = document.getElementById('parabolaModeText');
+    if (txt) {
+      txt.innerText = parabolaMode === 1 
+        ? 'จุดกำเนิดที่โฟกัส (ส่งคลื่นหน้าตรงออก)' 
+        : 'คลื่นหน้าตรงเข้าหาพาราโบลา (ลู่เข้าหาโฟกัส)';
+    }
+    drawParabolaCanvas();
+  }
+
+  function drawParabolaCanvas() {
+    const cvs = document.getElementById('canvasParabola');
+    if (!cvs) return;
+    const ctx = cvs.getContext('2d');
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const focusX = 160;
+    const focusY = h / 2;
+    const vertexX = 80;
+
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    for (let y = 20; y <= h - 20; y += 2) {
+      let dy = y - focusY;
+      let x = vertexX + (dy * dy) / (4 * (focusX - vertexX));
+      if (y === 20) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    ctx.strokeStyle = '#334155';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(0, focusY);
+    ctx.lineTo(w, focusY);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.fillStyle = '#F43F5E';
+    ctx.beginPath();
+    ctx.arc(focusX, focusY, 5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#FFF';
+    ctx.font = '12px Prompt';
+    ctx.fillText('โฟกัส (F)', focusX - 20, focusY - 12);
+
+    if (parabolaMode === 1) {
+      ctx.strokeStyle = 'rgba(6, 182, 212, 0.7)';
+      ctx.lineWidth = 2;
+      const angles = [-60, -40, -20, 0, 20, 40, 60];
+      angles.forEach(deg => {
+        let rad = deg * Math.PI / 180;
+        let dy = (focusX - vertexX) * 2 * Math.tan(rad / 2);
+        let y = focusY + dy;
+        let x = vertexX + (dy * dy) / (4 * (focusX - vertexX));
+
+        ctx.beginPath();
+        ctx.moveTo(focusX, focusY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.8)';
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(w - 30, y);
+        ctx.stroke();
+      });
+
+      ctx.strokeStyle = '#34D399';
+      ctx.lineWidth = 3;
+      for (let wx = 320; wx < w - 20; wx += 40) {
+        ctx.beginPath();
+        ctx.moveTo(wx, 30);
+        ctx.lineTo(wx, h - 30);
+        ctx.stroke();
+      }
+      ctx.fillStyle = '#34D399';
+      ctx.fillText('คลื่นสะท้อนหน้าตรง (Plane Wave)', 300, 25);
+    } else {
+      ctx.strokeStyle = '#34D399';
+      ctx.lineWidth = 3;
+      for (let wx = 320; wx < w - 20; wx += 40) {
+        ctx.beginPath();
+        ctx.moveTo(wx, 30);
+        ctx.lineTo(wx, h - 30);
+        ctx.stroke();
+      }
+
+      const yPositions = [40, 80, 110, 150, 180, 220];
+      yPositions.forEach(y => {
+        let dy = y - focusY;
+        let x = vertexX + (dy * dy) / (4 * (focusX - vertexX));
+
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.6)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(w - 30, y);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+
+        ctx.strokeStyle = 'rgba(244, 63, 94, 0.8)';
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(focusX, focusY);
+        ctx.stroke();
+      });
+      ctx.fillStyle = '#F43F5E';
+      ctx.fillText('คลื่นสะท้อนลู่เข้าจุดโฟกัส (F)', 260, 25);
+    }
+  }
+
+  function drawRefractionCanvas() {
+    const cvs = document.getElementById('canvasRefraction');
+    if (!cvs) return;
+    const ctx = cvs.getContext('2d');
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const midX = w / 2;
+    ctx.fillStyle = 'rgba(6, 182, 212, 0.08)';
+    ctx.fillRect(0, 0, midX, h);
+    ctx.fillStyle = 'rgba(59, 130, 246, 0.18)';
+    ctx.fillRect(midX, 0, w - midX, h);
+
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(midX, 0);
+    ctx.lineTo(midX, h);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#64748B';
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(midX - 100, h / 2);
+    ctx.lineTo(midX + 100, h / 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.font = '13px Prompt';
+    ctx.fillStyle = '#38BDF8';
+    ctx.fillText('บริเวณน้ำลึก (Deep)', 40, 30);
+    ctx.font = '11px Prompt';
+    ctx.fillStyle = '#94A3B8';
+    ctx.fillText('v มาก | λ ยาว | หน้าคลื่นห่าง', 40, 50);
+
+    ctx.font = '13px Prompt';
+    ctx.fillStyle = '#60A5FA';
+    ctx.fillText('บริเวณน้ำตื้น (Shallow)', midX + 40, 30);
+    ctx.font = '11px Prompt';
+    ctx.fillStyle = '#94A3B8';
+    ctx.fillText('v น้อย | λ สั้น | เบนเข้าหาเส้นปกติ', midX + 40, 50);
+
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 3;
+    for (let i = 0; i < 5; i++) {
+      let offset = 40 + i * 36;
+      ctx.beginPath();
+      ctx.moveTo(offset - 30, 60);
+      ctx.lineTo(offset + 30, h - 40);
+      ctx.stroke();
+    }
+
+    ctx.strokeStyle = '#60A5FA';
+    ctx.lineWidth = 3;
+    for (let i = 0; i < 7; i++) {
+      let offset = midX + 30 + i * 22;
+      ctx.beginPath();
+      ctx.moveTo(offset - 15, 60);
+      ctx.lineTo(offset + 15, h - 40);
+      ctx.stroke();
+    }
+  }
+
+  function updateDiffractionCanvas(val) {
+    const label = document.getElementById('diffractionLabel');
+    if (val == 1) {
+      label.innerText = 'd <= λ (ช่องแคบ: เลี้ยวเบนหน้าวงกลมสมบูรณ์ ไม่มีบัพ)';
+    } else if (val == 3) {
+      label.innerText = 'd > λ (ช่องปานกลาง: ตรงกลางเป็นหน้าตรง ขอบโค้งมน มีแนวบัพ)';
+    } else {
+      label.innerText = 'd >> λ (ช่องกว้างมาก: คลื่นวิ่งตรงไปข้างหน้า เลี้ยวเบนเฉพาะขอบเล็กน้อย)';
+    }
+    drawDiffractionCanvas(val);
+  }
+
+  function drawDiffractionCanvas(val) {
+    const cvs = document.getElementById('canvasDiffraction');
+    if (!cvs) return;
+    const ctx = cvs.getContext('2d');
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    const barrierX = 180;
+    const gapSize = val == 1 ? 24 : (val == 3 ? 70 : 130);
+    const topEnd = (h - gapSize) / 2;
+    const bottomStart = (h + gapSize) / 2;
+
+    ctx.strokeStyle = '#38BDF8';
+    ctx.lineWidth = 3;
+    for (let x = 30; x < barrierX; x += 30) {
+      ctx.beginPath();
+      ctx.moveTo(x, 20);
+      ctx.lineTo(x, h - 20);
+      ctx.stroke();
+    }
+
+    ctx.fillStyle = '#64748B';
+    ctx.fillRect(barrierX - 4, 10, 8, topEnd - 10);
+    ctx.fillRect(barrierX - 4, bottomStart, 8, h - bottomStart - 10);
+
+    ctx.strokeStyle = '#34D399';
+    ctx.lineWidth = 2.5;
+    if (val == 1) {
+      const cy = h / 2;
+      for (let r = 25; r < w - barrierX - 20; r += 30) {
+        ctx.beginPath();
+        ctx.arc(barrierX, cy, r, -Math.PI / 2.3, Math.PI / 2.3);
+        ctx.stroke();
+      }
+    } else {
+      for (let offset = 25; offset < w - barrierX - 20; offset += 30) {
+        let x = barrierX + offset;
+        ctx.beginPath();
+        ctx.moveTo(x, topEnd);
+        ctx.lineTo(x, bottomStart);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(barrierX, topEnd, offset, -Math.PI / 2, 0);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(barrierX, bottomStart, offset, 0, Math.PI / 2);
+        ctx.stroke();
+      }
+    }
+  }
+
+  function drawIntensityCanvas() {
+    const cvs = document.getElementById('canvasIntensity');
+    if (!cvs) return;
+    const ctx = cvs.getContext('2d');
+    const w = cvs.width;
+    const h = cvs.height;
+    ctx.clearRect(0, 0, w, h);
+
+    ctx.font = '12px Prompt';
+    ctx.fillStyle = '#94A3B8';
+    ctx.fillText('กราฟเปรียบเทียบการแจกแจงความเข้มแสงบนฉาก (Light Intensity Pattern)', 20, 20);
+
+    ctx.strokeStyle = '#1E293B';
+    ctx.beginPath();
+    ctx.moveTo(20, h - 25);
+    ctx.lineTo(w - 20, h - 25);
+    ctx.stroke();
+
+    ctx.strokeStyle = 'rgba(6, 182, 212, 0.4)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (let x = 20; x <= w - 20; x++) {
+      let theta = (x - w / 2) * 0.035;
+      let val = theta === 0 ? 1 : Math.sin(theta) / theta;
+      let y = (h - 25) - (val * val) * 110;
+      if (x === 20) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    ctx.strokeStyle = '#10B981';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (let x = 20; x <= w - 20; x++) {
+      let theta = (x - w / 2) * 0.035;
+      let sinc = theta === 0 ? 1 : Math.sin(theta) / theta;
+      let cosVal = Math.cos(theta * 3.5);
+      let intensity = (sinc * sinc) * (cosVal * cosVal);
+      let y = (h - 25) - intensity * 110;
+      if (x === 20) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    ctx.fillStyle = '#10B981';
+    ctx.fillText('— สลิตคู่ (ริ้วแทรกสอดห่างเท่ากัน)', 30, 45);
+    ctx.fillStyle = 'rgba(6, 182, 212, 0.8)';
+    ctx.fillText('— สลิตเดี่ยว (แถบกลางกว้าง 2 เท่า)', 230, 45);
+  }
+</script>
+
+</body>
+</html>
+
